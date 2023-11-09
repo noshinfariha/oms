@@ -15,11 +15,23 @@
             <h1>
                 Input your Information!
             </h1>
-            <form action="{{url('/orphan/store')}}"method="post">
-                @csrf 
+            <form action="{{url('/staff/store')}}"method="post"> 
+                @csrf
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Orphan Name</label>
-                    <input type="text" name="orphan_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter First Name">
+                    <label for="exampleInputEmail1">Full Name</label>
+                    <input type="text" name="fullname" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter First Name">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email</label>
+                    <input type="text" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Mail">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Password</label>
+                    <input type="password" name="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Password">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Phone</label>
+                    <input type="text" name="phone" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Number">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Address</label>
@@ -27,33 +39,22 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Date of Birth</label>
-                    <input required type="date" name="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Date of Birth">
-                    @error('date')
-                    <div class="alert alert-danger">{{ $message }}</div>
-                        @enderror
+                    <input type="date" name="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Date of Birth">
                 </div>
-                        
                 <div class="form-group">
                     <label for="exampleInputEmail1">Image</label>
-                    <input  type="file" name="image" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                    @error('image')
-                    <div class="alert alert-danger">{{ $message }}</div>
-                        @enderror
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Religion</label>
-                    <input type="text" name="religion" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Religion">
+                    <input type="file" name="image" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
                 <div class="form-group
                 <label for="exampleInputEmail1">Gender</label><br>
-                <input type="radio" name="gender"id="male">
+                <input type="radio" name="radio"id="male">
                 <label for="male">Male</label><br>
-                <input type="radio" name="gender"id="female">
+                <input type="radio" name="radio"id="female">
                 <label for="female">Female</label>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Status</label>
-                    <input type="text" name="status" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Status">
+                    <input type="text" name="status" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
                 <button type="submit" class="btn btn-primary mt-2">Submit</button>
             </form>

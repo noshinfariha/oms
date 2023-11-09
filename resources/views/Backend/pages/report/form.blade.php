@@ -27,18 +27,11 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Date of Birth</label>
-                    <input required type="date" name="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Date of Birth">
-                    @error('date')
-                    <div class="alert alert-danger">{{ $message }}</div>
-                        @enderror
+                    <input type="date" name="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Date of Birth">
                 </div>
-                        
                 <div class="form-group">
                     <label for="exampleInputEmail1">Image</label>
-                    <input  type="file" name="image" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                    @error('image')
-                    <div class="alert alert-danger">{{ $message }}</div>
-                        @enderror
+                    <input type="file" name="image" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Religion</label>
@@ -46,9 +39,9 @@
                 </div>
                 <div class="form-group
                 <label for="exampleInputEmail1">Gender</label><br>
-                <input type="radio" name="gender"id="male">
+                <input type="radio" name="radio"id="male">
                 <label for="male">Male</label><br>
-                <input type="radio" name="gender"id="female">
+                <input type="radio" name="radio"id="female">
                 <label for="female">Female</label>
                 </div>
                 <div class="form-group">

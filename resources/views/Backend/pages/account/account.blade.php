@@ -2,8 +2,8 @@
 @section('content')
 <h2>Orphans Information</h2>
 
-<a href="{{url('/orphan/form')}}">
-  <button type="button" class="btn btn-dark">Add Orphan</button>
+<a href="{{url('/account/form')}}">
+  <button type="button" class="btn btn-dark">Account info</button>
   <table class="table table-striped table-dark">
     <thead>
       <tr>
@@ -14,11 +14,11 @@
         <th scope="col">Image</th>
         <th scope="col">Religion</th>
         <th scope="col">Gender</th>
-        <th scope="col">Action</th>
+        <th scope="col">Status</th>
       </tr>
     </thead>
     <tbody>
-@foreach($orphansdata as $item)
+@foreach($accountsdata as $item)
       <tr>
         <th scope="row">{{$item->id}}</th>
         <td>{{$item->orphan_name}}</td>
@@ -27,15 +27,10 @@
         <td>{{$item->image}}</td>
         <td>{{$item->religion}}</td>
         <td>{{$item->gender}}</td>
-        <td>
-          <a href='#'class="btn btn-primary">Edit</a>
-          <a href='#'class="btn btn-success">Add</a>
-          <a href='#'class="btn btn-danger">Delete</a>
-        </td>
+        <td>{{$item->status}}</td>
       </tr>
 @endforeach
     </tbody>
   </table>
 </a>
-{{ $orphansdata->links() }}
 @endsection

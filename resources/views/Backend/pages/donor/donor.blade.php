@@ -1,33 +1,37 @@
 @extends("Backend.master")
 @section('content')
+<h2>Donors Information</h2>
+<a href="{{url('/donor/form')}}">
+<button type="button" class="btn btn-dark">Add Donor</button>
 <table class="table table-striped table-dark">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>
+    <thead>
+      <tr>
+        <th scope="col">SL</th>
+        <th scope="col">Full Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Address</th>
+        <th scope="col">Date of Birth</th>
+        <th scope="col">Image</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Status</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach($donorsdata as $item)
+      <tr>
+        <th scope="row">{{$item->id}}</th>
+        <td>{{$item->full_name}}</td>
+        <td>{{$item->email}}</td>
+        <td>{{$item->address}}</td>
+        <td>{{$item->date}}</td>
+        <td>{{$item->image}}</td>
+        <td>{{$item->gender}}</td>
+        <td>{{$item->status}}</td>
+
+      </tr>
+@endforeach
+    </tbody>
+  </table>
+</a>
 @endsection

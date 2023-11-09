@@ -26,19 +26,11 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white " href="{{url('/user/list')}}">
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">table_view</i>
-            </div>
-            <span class="nav-link-text ms-1">User List</span>
-          </a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link text-white " href="{{url('/orphans/list')}}">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">table_view</i>
             </div>
-            <span class="nav-link-text ms-1">Orphans</span>
+            <span class="nav-link-text ms-1">Orphan</span>
           </a>
         </li>
         <li class="nav-item">
@@ -46,7 +38,7 @@
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">table_view</i>
             </div>
-            <span class="nav-link-text ms-1">Staffs</span>
+            <span class="nav-link-text ms-1">Staff</span>
           </a>
         </li>
         <li class="nav-item">
@@ -54,14 +46,14 @@
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">table_view</i>
             </div>
-            <span class="nav-link-text ms-1">Parents</span>
+            <span class="nav-link-text ms-1">Parent</span>
           </a>
         <li class="nav-item">
           <a class="nav-link text-white " href="{{url('/adoptions/list')}}">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">table_view</i>
             </div>
-            <span class="nav-link-text ms-1">Adoptions</span>
+            <span class="nav-link-text ms-1">Adoption</span>
           </a>
         </li>
         <li class="nav-item">
@@ -69,7 +61,7 @@
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">table_view</i>
             </div>
-            <span class="nav-link-text ms-1">Donations</span>
+            <span class="nav-link-text ms-1">Donation</span>
           </a>
         </li>
         <li class="nav-item">
@@ -86,6 +78,22 @@
               <i class="material-icons opacity-10">table_view</i>
             </div>
             <span class="nav-link-text ms-1">Expense</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white " href="{{url('/account/list')}}">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">table_view</i>
+            </div>
+            <span class="nav-link-text ms-1">Account</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white " href="{{url('/report/list')}}">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">table_view</i>
+            </div>
+            <span class="nav-link-text ms-1">Report</span>
           </a>
         </li>
       </ul>

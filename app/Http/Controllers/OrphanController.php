@@ -2,14 +2,49 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Orphan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+
 
 class OrphanController extends Controller
 {
-    public function list(){
-        return view("Backend.pages.orphans.orphan");
+    public function list() 
+    { 
+
+        $orphansdata=Orphan::paginate(3);
+        return view("Backend.pages.orphans.orphan",compact('orphansdata'));
     }
-    public function form(){
+    public function form()
+    {
         return view("Backend.pages.orphans.form");
-}
-}
+    }
+    public function store(Request $fariha)
+
+    {
+        $validate = validator::make($fariha->all(),[
+            'image'=>'required', 
+            'date'=>'required'
+    
+
+        ]);
+
+        if($validate->fails()){
+            return redirect()->back();
+        }
+       // dd($fariha->all());
+       Orphan::create([
+        'orphan_name'=>$fariha->orphan_name,
+        'status'=>$fariha->status,
+        'address'=>$fariha->address,
+        'date'=> $fariha->date,
+        'image'=>$fariha->image,
+       'religion'=>$fariha->religion,
+        'gender'=>$fariha->gender,
+  ]);       
+
+  return redirect()->route('xyz');
+ 
+ }
+ 
+ }
