@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('parents', function (Blueprint $table) {
             $table->id();
             $table->string('full_name');
-            $table->text('email');
+            $table->string('email');
             $table->string('password');
             $table->integer('phone');
             $table->text('address');

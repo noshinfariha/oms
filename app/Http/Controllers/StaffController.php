@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class StaffController extends Controller
 {
     public function list(){
-        $staffdata=Staff::all();
+        $staffdata=Staff::paginate(3);
         return view("Backend.pages.staff.staff",compact('staffdata'));
     }
     public function form(){

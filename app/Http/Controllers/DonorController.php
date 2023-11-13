@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class DonorController extends Controller
 {
     public function list(){
-        $donorsdata=Donor::all();
+        $donorsdata=Donor::paginate(3);
         return view("Backend.pages.donor.donor",compact('donorsdata'));
     }
     public function form(){

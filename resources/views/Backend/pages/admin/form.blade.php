@@ -26,10 +26,6 @@
                     <input type="text" name="last_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your Mail">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Password</label>
-                    <input type="password" name="last_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your Password">
-                </div>
-                <div class="form-group">
                     <label for="exampleInputEmail1">Phone</label>
                     <input type="number" name="last_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your Number">
                 </div>
@@ -48,6 +44,13 @@
                 <input type="radio" name="radio"id="female">
                 <label for="female">Female</label>
                 </div>
+                <div class="form-group">
+                <label for="exampleInputEmail1">Role</label>
+                <select name="role" id="" class="form-control" required>
+                    <option value="Manager">Manager</option>
+                    <option value="Admin">Admin</option>
+                </select>
+            </div>
                 <button type="submit" class="btn btn-primary mt-2">Submit</button>
             </form>
         </div>

@@ -23,7 +23,7 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Adoption id</label>
-                    <input type="text" name="adoption_id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="id">
+                    <input required type="text" name="adoption_id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="id">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Parents id</label>

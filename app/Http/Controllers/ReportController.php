@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Report;
 use Illuminate\Http\Request;
 
 class ReportController extends Controller
 {
     public function list()
     {
-        return view('Backend.pages.report.report'); 
+        $reportsdata=Report();
+        return view("Backend.pages.report.report",compact('reportsdata'));
     }
 }

@@ -23,7 +23,7 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Donation Type</label>
-                    <input type="text" name=" donation_type" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Type">
+                    <input required type="text" name=" donation_type" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Type">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Status</label>

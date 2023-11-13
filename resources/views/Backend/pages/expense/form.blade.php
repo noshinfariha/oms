@@ -19,15 +19,15 @@
                 @csrf
                 <div class="form-group">
                     <label for="exampleInputEmail1">Expense Title</label>
-                    <input type="text" name="title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Title">
+                    <input required type="text" name="expense_title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Title">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Expense Amount</label>
-                    <input type="number" name="amount" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Amount">
+                    <input type="number" name="expense_amount" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Amount">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Expense Description</label>
-                    <textarea name="text_area" class=" form-control" id="" cols="30" rows="10"></textarea>
+                    <textarea name="expense_description" class=" form-control" id="" cols="30" rows="10"></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary mt-2">Submit</button>
             </form>

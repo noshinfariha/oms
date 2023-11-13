@@ -22,23 +22,34 @@ class OrphanController extends Controller
     public function store(Request $fariha)
 
     {
-        $validate = validator::make($fariha->all(),[
-            'image'=>'required', 
-            'date'=>'required'
+        //  $validate = validator::make($fariha->all(),[
+        //     'image'=>'required', 
+        //     'date'=>'required'
     
 
-        ]);
+        //  ]);
 
-        if($validate->fails()){
-            return redirect()->back();
-        }
-       // dd($fariha->all());
+        //  if($validate->fails()){
+        //      return redirect()->back();
+        //  } 
+$fileName = null;
+if ($fariha->hasFile('abc')) 
+{
+  $file = $fariha->file('abc');
+  $fileName = date('Ymdhis') . '.' . $file->getClientOriginalExtension();
+  // $destination = "uploads";
+  // $file->move($destination, $fileName);
+  
+  $file->move("uploads", $fileName);
+
+}
+ // dd($fariha->all());    
        Orphan::create([
         'orphan_name'=>$fariha->orphan_name,
         'status'=>$fariha->status,
         'address'=>$fariha->address,
         'date'=> $fariha->date,
-        'image'=>$fariha->image,
+        'photo'=>$fileName,
        'religion'=>$fariha->religion,
         'gender'=>$fariha->gender,
   ]);       

@@ -24,4 +24,5 @@
     </tbody>
   </table>
 </a>
+{{ $expensedata->links()}}
 @endsection

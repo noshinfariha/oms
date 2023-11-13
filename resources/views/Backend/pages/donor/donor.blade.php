@@ -34,4 +34,5 @@
     </tbody>
   </table>
 </a>
+{{ $donorsdata->links() }}
 @endsection

@@ -24,7 +24,7 @@
         <td>{{$item->orphan_name}}</td>
         <td>{{$item->address}}</td>
         <td>{{$item->date}}</td>
-        <td>{{$item->image}}</td>
+        <td><img class="border border-warning rounded-pill" width="110" height="50" src="{{url('/uploads/' . $item->photo)}}" alt=""></td>
         <td>{{$item->religion}}</td>
         <td>{{$item->gender}}</td>
         <td>

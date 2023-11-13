@@ -14,6 +14,7 @@ use App\Http\Controllers\ExpenseController;
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LogoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,19 +26,15 @@ use App\Http\Controllers\LoginController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route:: get ('/login',[HomeController::class,'fariha']);
-Route:: get ('/',[HomeController::class,'home'])->name("dashboard");
+Route::get('/login/form',[LoginController::class,'login'])->name('login');
+Route::post('/login/store',[LoginController::class,'store'])->name('login.store');
 
+Route::group(['middleware' => 'auth'], function () {
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+ Route:: get ('/login',[HomeController::class,'fariha']);
+ Route:: get ('/',[HomeController::class,'home'])->name("dashboard");
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
- });
+    
 Route::get('/n1',[HomeController::class,'n2']);
 Route::get('/admin/form',[AdminController::class,'form']);
 Route::get('/admin/list',[AdminController::class,'list']);
@@ -52,8 +49,8 @@ Route::get('/staff/form',[StaffController::class,'form']);
 Route::post('/staff/store',[StaffController::class,'store']);
 
 
-Route::get('/parents/form',[abcParentsController::class,'form']); 
-Route::get('/parents/list',[abcParentsController::class,'list']);
+Route::get('/parents/list',[abcParentsController::class,'list'])->name('ppp');
+Route::get('/parents/form',[abcParentsController::class,'form']);
 Route::post('/parents/store',[abcParentsController::class,'store']);
 
 Route::get('/report/list',[ReportController::class,'list']);
@@ -66,11 +63,11 @@ Route::get('/account/form',[AccountController::class,'form']);
 Route::post('/account/store',[AccountController::class,'store']);
 
 
-Route::get('/adoptions/list',[AdoptionController::class,'list']);
+Route::get('/adoptions/list',[AdoptionController::class,'list'])->name('hhh');
 Route::get('/adoptions/form',[AdoptionController::class,'form']); 
 Route::post('/adoptions/store',[AdoptionController::class,'store']);
 
-Route::get('/donations/list',[DonationController::class,'list']);
+Route::get('/donations/list',[DonationController::class,'list'])->name('ddd');
 Route::get('/donations/form',[DonationController::class,'form']); 
 Route::post('/donations/store',[DonationController::class,'store']);
 
@@ -80,9 +77,21 @@ Route::get('/donor/form',[DonorController::class,'form']);
 Route::post('/donor/store',[DonorController::class,'store']);
 
 
-Route::get('/expense/list',[ExpenseController::class,'list']);
+Route::get('/expense/list',[ExpenseController::class,'list'])->name('expense');
 Route::get('/expense/form',[ExpenseController::class,'form']);
-Route::post('/expense/store',[ExpenseController::class,'form']);
+Route::post('/expense/store',[ExpenseController::class,'store']);
 
-Route::get('/login/form',[LoginController::class,'login'])->name('login');
-Route::post('/login/store',[LoginController::class,'store'])->name('login.store');
+Route::get('/logout',[LogoutController::class,'logout'])->name('logout');
+
+
+});
+
+
+
+// Route::middleware('auth')->group(function () {
+//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+//      Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+//  });
+
+

@@ -34,4 +34,5 @@
     </tbody>
   </table>
 </a>
+{{ $staffdata->links() }}
 @endsection

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('status')->default('Active');
             $table->text('address');
             $table->date('date');
-            $table->string('image');
+            $table->string('photo');
             $table->string('religion');
             $table->string('gender');
             $table->timestamps();

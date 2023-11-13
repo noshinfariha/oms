@@ -30,4 +30,5 @@
     </tbody>
   </table>
 </a>
+{{ $fariha->links() }}
 @endsection

@@ -16,7 +16,7 @@ return new class extends Migration
             $table->double('orphan_id');
             $table->double('adoption_id');
             $table->double('parents_id');
-            $table->date('adoption_date');
+            $table->string('adoption_date');
             $table->timestamps();
         });
     }

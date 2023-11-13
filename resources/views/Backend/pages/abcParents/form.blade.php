@@ -31,7 +31,7 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Phone</label>
-                    <input type="text" name="phone" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Number">
+                    <input type="string" name="phone" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Number">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Address</label>

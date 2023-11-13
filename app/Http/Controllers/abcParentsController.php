@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\abcParents;
 use App\Models\Parents;
 use Illuminate\Http\Request;
 
@@ -10,7 +9,7 @@ use Illuminate\Http\Request;
 class abcParentsController extends Controller
 {
     public function list(){
-        $fariha=abcParents::all();
+        $fariha=Parents::paginate(3);
          return view("Backend.pages.abcParents.parent",compact('fariha'));
  
      }
@@ -22,7 +21,7 @@ class abcParentsController extends Controller
      public function store (Request $noshin)
      {
              //dd($noshin ->all());
-             abcParents::create([
+             Parents::create([
              'full_name'=>$noshin->full_name,
              'email'=>$noshin->email,
              'password'=>$noshin->password,

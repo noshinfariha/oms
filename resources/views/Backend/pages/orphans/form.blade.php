@@ -15,7 +15,7 @@
             <h1>
                 Input your Information!
             </h1>
-            <form action="{{url('/orphan/store')}}"method="post">
+            <form action="{{url('/orphan/store')}}"method="post" enctype="multipart/form-data">
                 @csrf 
                 <div class="form-group">
                     <label for="exampleInputEmail1">Orphan Name</label>
@@ -35,7 +35,7 @@
                         
                 <div class="form-group">
                     <label for="exampleInputEmail1">Image</label>
-                    <input  type="file" name="image" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input  type="file" name="abc" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                     @error('image')
                     <div class="alert alert-danger">{{ $message }}</div>
                         @enderror

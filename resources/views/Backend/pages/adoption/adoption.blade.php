@@ -26,4 +26,5 @@
     </tbody>
   </table>
 </a>
+{{ $adoptionsdata->links() }}
 @endsection
