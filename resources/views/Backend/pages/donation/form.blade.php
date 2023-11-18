@@ -26,9 +26,12 @@
                     <input required type="text" name=" donation_type" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Type">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Status</label>
-                    <input type="text" name="status" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Status">
-                </div>
+                <label for="exampleInputEmail1">Payment Option</label>
+                <select name="payment option" id="" class="form-control" required>
+                    <option value="Bkash">Bkash</option>
+                    <option value="Rocket">Rocket</option>
+                </select>
+            </div>
                 <button type="submit" class="btn btn-primary mt-2">Submit</button>
             </form>
         </div>

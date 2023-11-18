@@ -9,7 +9,7 @@
         <th scope="col">SL</th>
         <th scope="col">Donation Amount</th>
         <th scope="col">Donation Type</th>
-        <th scope="col">Status</th> 
+        <th scope="col">Payment Option</th> 
         <th scope="col">Action</th>
       </tr>
     </thead>
@@ -19,7 +19,7 @@
         <th scope="row">{{$item->id}}</th>
         <td>{{$item->donation_amount}}</td>
         <td>{{$item->donation_type}}</td>
-        <td>{{$item->status}}</td>
+        <td>{{$item->payment_option}}</td>
         <td>
         <a href='#'class="btn btn-primary">Edit</a>
           <a href='#'class="btn btn-success">Add</a>

@@ -15,6 +15,8 @@ use App\Http\Controllers\backend\AccountController;
 use App\Http\Controllers\backend\ReportController;
 use App\Http\Controllers\backend\LoginController;
 use App\Http\Controllers\backend\LogoutController;
+use App\Http\Controllers\backend\CentersetupController;
+use App\Http\Controllers\backend\ExpensecategoryController;
 use App\Http\Controllers\frontend\HomeController as FrontendHomeController;
 
 //Frontend
@@ -93,6 +95,16 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/expense/list', [ExpenseController::class, 'list'])->name('expense');
     Route::get('/expense/form', [ExpenseController::class, 'form'])->name('expense.form');
     Route::post('/expense/store', [ExpenseController::class, 'store'])->name('expense.store');
+
+    Route::get('/expensecategory/list', [ExpensecategoryController::class, 'list'])->name('expensecategory');
+    Route::get('/expensecategory/form', [ExpensecategoryController::class, 'form'])->name('expensecategory.form');
+    Route::get('/expensecategory/store', [ExpensecategoryController::class, 'store'])->name('expensecategory.store');
+
+    Route::get('/centersetup/list', [CentersetupController::class, 'list'])->name('centersetup');
+    Route::get('/centersetup/form', [CentersetupController::class, 'form'])->name('centersetup.form');
+    Route::get('/centersetup/store', [CentersetupController::class, 'store'])->name('centersetup.store');
+
+
 
     Route::get('/logout', [LogoutController::class, 'logout'])->name('logout');
 });

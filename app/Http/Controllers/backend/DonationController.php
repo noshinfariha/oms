@@ -33,7 +33,7 @@ class DonationController extends Controller
         Donation::create([
             'donation_amount'=>$noshin-> donation_amount,
             'donation_type'=>$noshin->donation_type,
-             'status'=>$noshin->status,
+             'payment_option'=>$noshin->payment_option,
     
       ]);       
       return redirect()->route('donation');
