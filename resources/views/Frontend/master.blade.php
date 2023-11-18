@@ -125,7 +125,7 @@
 
 		<div class="fh5co-hero">
 			<div class="fh5co-overlay"></div>
-			<div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(images/cover_bg_1.jpg);">
+			<div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url('frontend/images/cover_bg_1.jpg');">
 				<div class="desc animate-box">
 					<h2><strong>Donate</strong> for the <strong>Poor Children</strong></h2>
 					<span>HandCrafted by <a href="http://frehtml5.co/" target="_blank" class="fh5co-site-name">FreeHTML5.co</a></span>
@@ -196,7 +196,7 @@
 						<p><img src="{{url('/frontend/images/cover_bg_1.jpg')}}" alt="Free HTML5 Bootstrap Template" class="img-responsive"></p>
 					</div>
 					<div class="col-md-6 text-center animate-box">
-						<p><img src="{{url('/frontend/')}}/images/cover_bg_2.jpg" alt="Free HTML5 Bootstrap Template" class="img-responsive"></p>
+						<p><img src="{{url('frontend/')}}/images/cover_bg_2.jpg" alt="Free HTML5 Bootstrap Template" class="img-responsive"></p>
 					</div>
 					<div class="col-md-6 text-center animate-box">
 						<p><img src="{{url('/frontend/')}}/images/cover_bg_3.jpg" alt="Free HTML5 Bootstrap Template" class="img-responsive"></p>
@@ -243,7 +243,7 @@
 					<div class="col-md-12">
 						<ul id="fh5co-portfolio-list">
 
-							<li class="two-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/cover_bg_1.jpg); ">
+							<li class="two-third animate-box" data-animate-effect="fadeIn" style="background-image: url(frontend/images/cover_bg_1.jpg); ">
 								<a href="#" class="color-3">
 									<div class="case-studies-summary">
 										<span>Give Love</span>
@@ -252,7 +252,7 @@
 								</a>
 							</li>
 						
-							<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/cover_bg_3.jpg); ">
+							<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(frontend/images/cover_bg_3.jpg); ">
 								<a href="#" class="color-4">
 									<div class="case-studies-summary">
 										<span>Give Love</span>
@@ -261,7 +261,7 @@
 								</a>
 							</li>
 
-							<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/cover_bg_1.jpg); "> 
+							<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(frontend/images/cover_bg_1.jpg); "> 
 								<a href="#" class="color-5">
 									<div class="case-studies-summary">
 										<span>Give Love</span>
@@ -269,7 +269,7 @@
 									</div>
 								</a>
 							</li>
-							<li class="two-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/cover_bg_3.jpg); ">
+							<li class="two-third animate-box" data-animate-effect="fadeIn" style="background-image: url(frontend/images/cover_bg_3.jpg); ">
 								<a href="#" class="color-6">
 									<div class="case-studies-summary">
 										<span>Give Love</span>
