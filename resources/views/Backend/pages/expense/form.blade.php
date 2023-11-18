@@ -15,7 +15,7 @@
             <h1>
                 Input your Information!
             </h1>
-            <form  action="{{url('/expense/store')}}"method="post">
+            <form  action="{{route('expense.store')}}"method="post">
                 @csrf
                 <div class="form-group">
                     <label for="exampleInputEmail1">Expense Title</label>
@@ -27,7 +27,7 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Expense Description</label>
-                    <textarea name="expense_description" class=" form-control" id="" cols="30" rows="10"></textarea>
+                    <textarea class="form-control" name="expense_description" id="" cols="30" rows="10"></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary mt-2">Submit</button>
             </form>

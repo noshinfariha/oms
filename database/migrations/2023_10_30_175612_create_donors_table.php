@@ -21,7 +21,6 @@ return new class extends Migration
             $table->date('date');
             $table->string('image');
             $table->string('gender');
-            $table->string('status');
             $table->timestamps();
         });
     }

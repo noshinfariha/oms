@@ -2,7 +2,7 @@
 @section('content')
 <h2>Orphans Information</h2>
 
-<a href="{{url('/orphan/form')}}">
+<a href="{{route('orphan.form')}}">
   <button type="button" class="btn btn-dark">Add Orphan</button>
   <table class="table table-striped table-dark">
     <thead>

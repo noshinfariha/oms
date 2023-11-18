@@ -1,7 +1,7 @@
 @extends("Backend.master")
 @section('content')
 <h2>Donors Information</h2>
-<a href="{{url('/donor/form')}}">
+<a href="{{route('donor.form')}}">
 <button type="button" class="btn btn-dark">Add Donor</button>
 <table class="table table-striped table-dark">
     <thead>
@@ -14,7 +14,7 @@
         <th scope="col">Date of Birth</th>
         <th scope="col">Image</th>
         <th scope="col">Gender</th>
-        <th scope="col">Status</th>
+        <th scope="col">Action</th>
         </tr>
     </thead>
     <tbody>
@@ -23,13 +23,17 @@
         <th scope="row">{{$item->id}}</th>
         <td>{{$item->full_name}}</td>
         <td>{{$item->email}}</td>
+        <td>{{$item->phone}}</td>
         <td>{{$item->address}}</td>
         <td>{{$item->date}}</td>
-        <td>{{$item->image}}</td>
+        <td><img class="border border-warning rounded-pill" width="110" height="50" src="{{url('/uploads/' . $item->photo)}}" alt=""></td>
         <td>{{$item->gender}}</td>
-        <td>{{$item->status}}</td>
-
-      </tr>
+        <td>
+        <a href='#'class="btn btn-primary">Edit</a>
+          <a href='#'class="btn btn-success">Add</a>
+          <a href='#'class="btn btn-danger">Delete</a>
+        </td>
+       </tr>
 @endforeach
     </tbody>
   </table>

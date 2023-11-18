@@ -1,7 +1,7 @@
 @extends("Backend.master")
 @section('content')
 <h2>Expense Information</h2>
-<a href="{{url('/expense/form')}}">
+<a href="{{route('expense.form')}}">
 <button type="button" class="btn btn-dark">Add Expense</button>
 <table class="table table-striped table-dark">
     <thead>

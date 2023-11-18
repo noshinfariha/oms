@@ -15,7 +15,7 @@
             <h1>
                 Input your Information!
             </h1>
-            <form action="{{url('/parents/store')}}"method="post"> 
+            <form action="{{route('parents.store')}}"method="post" enctype="multipart/form-data"> 
                 @csrf
                 <div class="form-group">
                     <label for="exampleInputEmail1">Full Name</label>
@@ -31,7 +31,7 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Phone</label>
-                    <input type="string" name="phone" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Number">
+                    <input type="number" name="phone" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Number">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Address</label>
@@ -40,10 +40,6 @@
                 <div class="form-group">
                     <label for="exampleInputEmail1">Image</label>
                     <input type="file" name="image" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Status</label>
-                    <input type="text" name="status" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
                 <button type="submit" class="btn btn-primary mt-2">Submit</button>
             </form>

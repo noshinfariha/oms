@@ -15,7 +15,7 @@
             <h1>
                 Input your Information!
             </h1>
-            <form action="{{url('/donations/store')}}"method="post">
+            <form action="{{route('donation.store')}}"method="post">
                 @csrf
                 <div class="form-group">
                     <label for="exampleInputEmail1">Donation Amount</label>

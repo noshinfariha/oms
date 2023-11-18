@@ -1,7 +1,7 @@
 @extends("Backend.master")
 @section('content')
 <h2>Donation Information</h2>
-<a href="{{url('/donations/form')}}">
+<a href="{{route('donation.form')}}">
 <button type="button" class="btn btn-dark"> Add Donation</button>
 <table class="table table-striped table-dark">
     <thead>
@@ -9,7 +9,8 @@
         <th scope="col">SL</th>
         <th scope="col">Donation Amount</th>
         <th scope="col">Donation Type</th>
-        <th scope="col">Status</th>
+        <th scope="col">Status</th> 
+        <th scope="col">Action</th>
       </tr>
     </thead>
     <tbody>
@@ -19,6 +20,11 @@
         <td>{{$item->donation_amount}}</td>
         <td>{{$item->donation_type}}</td>
         <td>{{$item->status}}</td>
+        <td>
+        <a href='#'class="btn btn-primary">Edit</a>
+          <a href='#'class="btn btn-success">Add</a>
+          <a href='#'class="btn btn-danger">Delete</a>
+        </td>
       </tr>
 @endforeach
     </tbody>

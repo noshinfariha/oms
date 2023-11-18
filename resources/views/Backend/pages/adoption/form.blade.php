@@ -15,19 +15,19 @@
             <h1>
                 Input your Information!
             </h1>
-            <form action="{{url('/adoptions/store')}}"method="post">
+            <form action="{{route('adoption.store')}}"method="post">
                 @csrf
                 <div class="form-group">
                     <label for="exampleInputEmail1">Orphan id</label>
-                    <input type="text" name="orphan_id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter First Name">
+                    <input type="number" name="orphan_id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter First Name">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Adoption id</label>
-                    <input required type="text" name="adoption_id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="id">
+                    <input required type="number" name="adoption_id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="id">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Parents id</label>
-                    <input type="text" name="parents_id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
+                    <input type="number" name="parents_id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Adoption date</label>

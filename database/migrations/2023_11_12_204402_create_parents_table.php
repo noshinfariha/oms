@@ -19,7 +19,6 @@ return new class extends Migration
             $table->integer('phone');
             $table->text('address');
             $table->text('image');
-            $table->string('status')->default('Active');
             $table->timestamps();
         });
     }

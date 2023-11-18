@@ -1,7 +1,7 @@
 @extends("Backend.master")
 @section('content')
 <h2>Staff Information</h2>
-<a href="{{url('/staff/form')}}">
+<a href="{{route('staff.form')}}">
 <button type="button" class="btn btn-dark">Add Staff</button>
 <table class="table table-striped table-dark">
     <thead>
@@ -14,7 +14,7 @@
         <th scope="col">Date of Birth</th>
         <th scope="col">Image</th>
         <th scope="col">Gender</th>
-        <th scope="col">Status</th>
+        <th scope="col">Action</th>
         </tr>
     </thead>
     <tbody>
@@ -26,9 +26,13 @@
         <td>{{$item->phone}}</td>
         <td>{{$item->address}}</td>
         <td>{{$item->date}}</td>
-        <td>{{$item->image}}</td>
+        <td><img class="border border-warning rounded-pill" width="110" height="50" src="{{url('/uploads/' . $item->image)}}" alt=""></td>
         <td>{{$item->gender}}</td>
-        <td>{{$item->status}}</td>
+        <td>
+          <a href='#'class="btn btn-primary">Edit</a>
+          <a href='#'class="btn btn-success">Add</a>
+          <a href='#'class="btn btn-danger">Delete</a>
+        </td>
         </tr>
 @endforeach
     </tbody>

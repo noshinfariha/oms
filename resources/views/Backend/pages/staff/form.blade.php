@@ -15,7 +15,7 @@
             <h1>
                 Input your Information!
             </h1>
-            <form action="{{url('/staff/store')}}"method="post"> 
+            <form action="{{route('staff.store')}}"method="post" enctype="multipart/form-data"> 
                 @csrf
                 <div class="form-group">
                     <label for="exampleInputEmail1">Full Name</label>

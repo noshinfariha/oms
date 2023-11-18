@@ -1,7 +1,7 @@
 @extends("Backend.master")
 @section('content')
 <h2>Parents Information</h2>
-<a href="{{url('/parents/form')}}">
+<a href="{{route('parents.form')}}">
 <button type="button" class="btn btn-dark">Add Parent</button>
 <table class="table table-striped table-dark">
     <thead>
@@ -12,7 +12,7 @@
         <th scope="col">Phone</th>
         <th scope="col">Address</th>
         <th scope="col">Image</th>
-        <th scope="col">Status</th>
+        <th scope="col">Action</th>
         </tr>
     </thead>
     <tbody>
@@ -23,8 +23,12 @@
         <td>{{$item->email}}</td>
         <td>{{$item->phone}}</td>
         <td>{{$item->address}}</td>
-        <td>{{$item->image}}</td>
-        <td>{{$item->status}}</td>
+        <td><img class="border border-warning rounded-pill" width="110" height="50" src="{{url('/uploads/' . $item->photo)}}" alt=""></td>
+        <td>
+        <a href='#'class="btn btn-primary">Edit</a>
+          <a href='#'class="btn btn-success">Add</a>
+          <a href='#'class="btn btn-danger">Delete</a>
+        </td>
         </tr>
 @endforeach
     </tbody>

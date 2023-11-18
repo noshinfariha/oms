@@ -15,7 +15,7 @@
             <h1>
                 Input your Information!
             </h1>
-            <form action="{{url('/orphan/store')}}"method="post" enctype="multipart/form-data">
+            <form action="{{route('orphan.store')}}"method="post" enctype="multipart/form-data">
                 @csrf 
                 <div class="form-group">
                     <label for="exampleInputEmail1">Orphan Name</label>
