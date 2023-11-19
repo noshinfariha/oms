@@ -98,7 +98,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/expensecategory/list', [ExpensecategoryController::class, 'list'])->name('expensecategory');
     Route::get('/expensecategory/form', [ExpensecategoryController::class, 'form'])->name('expensecategory.form');
-    Route::get('/expensecategory/store', [ExpensecategoryController::class, 'store'])->name('expensecategory.store');
+    Route::post('/expensecategory/store', [ExpensecategoryController::class, 'store'])->name('expensecategory.store');
 
     Route::get('/centersetup/list', [CentersetupController::class, 'list'])->name('centersetup');
     Route::get('/centersetup/form', [CentersetupController::class, 'form'])->name('centersetup.form');
