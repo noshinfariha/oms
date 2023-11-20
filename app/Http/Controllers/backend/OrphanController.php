@@ -20,6 +20,58 @@ class OrphanController extends Controller
     {
         return view("Backend.pages.orphans.form");
     }
+
+    public function delete($id)
+    {
+        $orphanDelete = Orphan::find($id);
+
+        if($orphanDelete)
+        {
+            $orphanDelete->delete();
+        }
+
+        return redirect()->route('orphan');
+    }
+
+    public function edit($id)
+    {
+        $orphanEdit = Orphan::find($id);
+        return view('Backend.pages.orphans.edit', compact('orphanEdit'));
+    }
+    
+    public function update(Request $request,$id)
+    {
+        $orphanEdit= Orphan::find($id);
+        if($orphanEdit)
+        {
+
+          $fileName=$orphanEdit->image;
+          if($request->hasFile('image'))
+          {
+              $file=$request->file('image');
+              $fileName=date('Ymdhis').'.'.$file->getClientOriginalExtension();
+
+              $file->storeAs('/uploads',$fileName);
+
+          }
+          $orphanEdit->update([
+            'orphan_name'=>$request->orphan_name,
+            'address'=>$request->address,
+            'date'=>$request->date,
+            // 'image'=>$request->image,
+            'religion'=>$request->religion,
+            'status'=>$request->status,
+            'photo'=>$fileName
+      ]);
+      return redirect()->route('orphan');
+    
+    }  
+        
+    }
+
+
+
+
     public function store(Request $fariha)
 
     {

@@ -15,6 +15,30 @@ class StaffController extends Controller
     public function form(){
         return view("Backend.pages.staff.form");
     }
+
+    // public function delete($id)
+    // {
+    //     $staffDelete = Staff::find($id);
+
+    //     if($staffDelete)
+    //     {
+    //         $staffDelete->delete();
+    //     }
+
+    //     return redirect()->route('staff');
+    // }
+
+    public function staffdelete($id)
+    {
+        $staffDelete = Staff::find($id);
+
+        if($staffDelete)
+        {
+            $staffDelete->delete();
+        }
+
+        return redirect()->route('orphan');
+    }
         public function store(Request $noshin){
 
             $fileName = null;

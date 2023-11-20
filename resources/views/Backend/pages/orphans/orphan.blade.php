@@ -7,9 +7,8 @@
   <table class="table table-striped table-dark">
     <thead>
       <tr>
-        <th scope="col">SL</th>
         <th scope="col">Orphan Name</th>
-        <th scope="col">Address</th>
+        <th scope="col">ID</th>
         <th scope="col">Date of Birth</th>
         <th scope="col">Image</th>
         <th scope="col">Religion</th>
@@ -18,22 +17,22 @@
       </tr>
     </thead>
     <tbody>
-@foreach($orphansdata as $item)
+      @foreach($orphansdata as $item)
       <tr>
-        <th scope="row">{{$item->id}}</th>
         <td>{{$item->orphan_name}}</td>
-        <td>{{$item->address}}</td>
+        <td>{{$item->id}}</td>
         <td>{{$item->date}}</td>
         <td><img class="border border-warning rounded-pill" width="110" height="50" src="{{url('/uploads/' . $item->photo)}}" alt=""></td>
         <td>{{$item->religion}}</td>
         <td>{{$item->gender}}</td>
         <td>
-          <a href='#'class="btn btn-primary">Edit</a>
-          <a href='#'class="btn btn-success">Add</a>
-          <a href='#'class="btn btn-danger">Delete</a>
+          <a href='#' class="btn btn-primary">View</a>
+          <a href="{{route('orphan.edit',$item->id)}}" class="btn btn-danger">Edit</a>
+          <a href="{{route('orphan.delete',$item->id)}}" class="btn btn-success">Delete</a>
+
         </td>
       </tr>
-@endforeach
+      @endforeach
     </tbody>
   </table>
 </a>

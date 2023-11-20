@@ -21,9 +21,9 @@
         <td>{{$item->donation_type}}</td>
         <td>{{$item->payment_option}}</td>
         <td>
-        <a href='#'class="btn btn-primary">Edit</a>
-          <a href='#'class="btn btn-success">Add</a>
-          <a href='#'class="btn btn-danger">Delete</a>
+        <a href='#'class="btn btn-primary">View</a>
+          <a href='#'class="btn btn-success">Delete</a>
+          <a href='#'class="btn btn-danger">Edit</a>
         </td>
       </tr>
 @endforeach

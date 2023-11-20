@@ -58,51 +58,67 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/orphans/list', [OrphanController::class, 'list'])->name('orphan');
     Route::get('/orphan/form', [OrphanController::class, 'form'])->name('orphan.form');
     Route::post('/orphan/store', [OrphanController::class, 'store'])->name('orphan.store');
+    Route::get('orphan/delete/{id}', [OrphanController::class,'delete'])->name('orphan.delete');
+    Route::get('orphan/edit/{id}', [OrphanController::class,'edit'])->name('orphan.edit');
+    Route::put('orphan/update/{id}', [OrphanController::class,'update'])->name('orphan.update');
 
     Route::get('/staffs/list', [StaffController::class, 'list'])->name('staff');
     Route::get('/staff/form', [StaffController::class, 'form'])->name('staff.form');
     Route::post('/staff/store', [StaffController::class, 'store'])->name('staff.store');
-
+    Route::get('staff/delete/{id}', [StaffController::class, 'delete'])->name('staff.delete');
 
     Route::get('/parents/list', [abcParentsController::class, 'list'])->name('parents');
     Route::get('/parents/form', [abcParentsController::class, 'form'])->name('parents.form');
     Route::post('/parents/store', [abcParentsController::class, 'store'])->name('parents.store');
+   Route::get('parents/delete/{id}', [abcParentsController::class,'delete'])->name('parents.delete');
+
 
     Route::get('/report/list', [ReportController::class, 'list'])->name('report');
     Route::get('/report/form', [ReportController::class, 'form'])->name('report.form');
     Route::post('/report/store', [ReportController::class, 'store'])->name('report.store');
+    Route::get('report/delete/{id}', [ReportController::class, 'delete'])->name('report.delete');
 
 
     Route::get('/account/list', [AccountController::class, 'list'])->name('account');
     Route::get('/account/form', [AccountController::class, 'form'])->name('account.form');
     Route::post('/account/store', [AccountController::class, 'store'])->name('account.store');
-
+    Route::get('/delete/{id}', [AccountController::class,'delete'])->name('account.delete');
 
     Route::get('/adoptions/list', [AdoptionController::class, 'list'])->name('adoption');
     Route::get('/adoptions/form', [AdoptionController::class, 'form'])->name('adoption.form');
     Route::post('/adoptions/store', [AdoptionController::class, 'store'])->name('adoption.store');
+    Route::get('/delete/{id}', [AdoptionController::class, 'delete'])->name('adoption.delete');
+
 
     Route::get('/donations/list', [DonationController::class, 'list'])->name('donation');
     Route::get('/donations/form', [DonationController::class, 'form'])->name('donation.form');
     Route::post('/donations/store', [DonationController::class, 'store'])->name('donation.store');
+    Route::get('/delete/{id}', [DonationController::class, 'delete'])->name('donation.delete');
 
 
     Route::get('/donor/list', [DonorController::class, 'list'])->name('donor');
     Route::get('/donor/form', [DonorController::class, 'form'])->name('donor.form');
     Route::post('/donor/store', [DonorController::class, 'store'])->name('donor.store');
+    Route::get('/delete/{id}', [DonorController::class, 'delete'])->name('donor.delete');
 
 
-    Route::get('/expense/list', [ExpenseController::class, 'list'])->name('expense');
+  Route::get('/expense/list', [ExpenseController::class, 'list'])->name('expense');
     Route::get('/expense/form', [ExpenseController::class, 'form'])->name('expense.form');
     Route::post('/expense/store', [ExpenseController::class, 'store'])->name('expense.store');
+    Route::get('/delete/{id}', [ExpenseController::class, 'delete'])->name('expense.delete');
+
 
     Route::get('/expensecategory/list', [ExpensecategoryController::class, 'list'])->name('expensecategory');
     Route::get('/expensecategory/form', [ExpensecategoryController::class, 'form'])->name('expensecategory.form');
     Route::post('/expensecategory/store', [ExpensecategoryController::class, 'store'])->name('expensecategory.store');
+    Route::get('/delete/{id}', [ExpensecategoryController::class, 'delete'])->name('expensecategory.delete');
+
 
     Route::get('/centersetup/list', [CentersetupController::class, 'list'])->name('centersetup');
     Route::get('/centersetup/form', [CentersetupController::class, 'form'])->name('centersetup.form');
     Route::get('/centersetup/store', [CentersetupController::class, 'store'])->name('centersetup.store');
+    Route::get('/delete/{id}', [CentersetupController::class, 'delete'])->name('centersetup.delete');
+
 
 
 

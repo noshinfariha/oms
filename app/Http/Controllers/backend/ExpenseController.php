@@ -17,6 +17,19 @@ class ExpenseController extends Controller
     public function form(){
         return view('Backend.pages.expense.form'); 
 }
+
+public function delete($id)
+    {
+        $expenseDelete = Expense::find($id);
+
+        if($expenseDelete)
+        {
+            $expenseDelete->delete();
+        }
+
+        return redirect()->route('expense');
+    }
+
 public function store (Request $noshin){
       
     $validate=validator::make($noshin->all(),[

@@ -18,6 +18,15 @@ public function form(){
     return view("Backend.pages.adoption.form");
 
 } 
+
+public function delete($id)
+{
+    $adoption_Delete = Adoption::find($id);
+    if($adoption_Delete)
+    {-
+        $adoption_Delete->delete();
+    }
+}
 public function store (Request $noshin){
 
        $validate=validator::make($noshin->all(),[

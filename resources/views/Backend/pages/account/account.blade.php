@@ -14,7 +14,7 @@
         <th scope="col">Image</th>
         <th scope="col">Religion</th>
         <th scope="col">Gender</th>
-        <th scope="col">Status</th>
+        <th scope="col">Action</th>
       </tr>
     </thead>
     <tbody>
@@ -27,7 +27,11 @@
         <td>{{$item->image}}</td>
         <td>{{$item->religion}}</td>
         <td>{{$item->gender}}</td>
-        <td>{{$item->status}}</td>
+        <td>
+        <a href='#'class="btn btn-primary">View</a>
+          <a href='#'class="btn btn-success">Delete</a>
+          <a href='#'class="btn btn-danger">Edit</a>
+        </td>
       </tr>
 @endforeach
     </tbody>

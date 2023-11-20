@@ -15,19 +15,20 @@
             <h1>
                 Input your Information!
             </h1>
-            <form action="{{route('orphan.store')}}"method="post" enctype="multipart/form-data">
+            <form action="{{route('orphan.update', $orphanEdit->id)}}"method="post" enctype="multipart/form-data">
                 @csrf 
+                @method('put')
                 <div class="form-group">
                     <label for="exampleInputEmail1">Orphan Name</label>
-                    <input type="text" name="orphan_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter First Name">
+                    <input value="{{$orphanEdit->orphan_name}}" type="text" name="orphan_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter First Name">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Address</label>
-                    <input type="text" name="address" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Address">
+                    <input  value="{{$orphanEdit->address}}" type="text" name="address" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Address">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Date of Birth</label>
-                    <input required type="date" name="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Date of Birth">
+                    <input  value="{{$orphanEdit->date}}" required type="date" name="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Date of Birth">
                     @error('date')
                     <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
@@ -35,14 +36,14 @@
                         
                 <div class="form-group">
                     <label for="exampleInputEmail1">Image</label>
-                    <input  type="file" name="image" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input  value="{{$orphanEdit->abc}}"  type="file" name="image" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                     @error('image')
                     <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Religion</label>
-                    <input type="text" name="religion" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Religion">
+                    <input  value="{{$orphanEdit->religion}}" type="text" name="religion" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Religion">
                 </div>
                 <div class="form-group
                 <label for="exampleInputEmail1">Gender</label><br>
@@ -53,7 +54,7 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Status</label>
-                    <input type="text" name="status" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Status">
+                    <input  value="{{$orphanEdit->status}}" type="text" name="status" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Status">
                 </div>
                 <button type="submit" class="btn btn-primary mt-2">Submit</button>
             </form>

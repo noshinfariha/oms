@@ -27,9 +27,9 @@
         <td>{{$item->amount}}</td>
         <td>{{$item->invoice_number}}</td>
           <td>
-          <a href='#'class="btn btn-primary">Edit</a>
-          <a href='#'class="btn btn-success">Add</a>
-          <a href='#'class="btn btn-danger">Delete</a>
+          <a href='#'class="btn btn-primary">View</a>
+          <a href='#'class="btn btn-success">Delete</a>
+          <a href='#'class="btn btn-danger">Edit</a>
         </td>
       </tr>
 @endforeach
