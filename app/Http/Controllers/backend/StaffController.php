@@ -16,17 +16,17 @@ class StaffController extends Controller
         return view("Backend.pages.staff.form");
     }
 
-    // public function delete($id)
-    // {
-    //     $staffDelete = Staff::find($id);
+    public function delete($id)
+    {
+        $staffDelete = Staff::find($id);
 
-    //     if($staffDelete)
-    //     {
-    //         $staffDelete->delete();
-    //     }
+        if($staffDelete)
+        {
+            $staffDelete->delete();
+        }
 
-    //     return redirect()->route('staff');
-    // }
+        return redirect()->route('staff');
+    }
 
     public function staffdelete($id)
     {

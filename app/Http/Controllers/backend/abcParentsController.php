@@ -18,6 +18,18 @@ class abcParentsController extends Controller
      {
          return view("Backend.pages.abcParents.form");
      }
+
+     public function delete($id)
+    {
+        $parentDelete = Parents::find($id);
+
+        if($parentDelete)
+        {
+            $parentDelete->delete();
+        }
+
+        return redirect()->route('parents');
+    }
  
      public function store (Request $noshin)
      {

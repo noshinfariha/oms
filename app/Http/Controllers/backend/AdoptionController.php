@@ -20,13 +20,15 @@ public function form(){
 } 
 
 public function delete($id)
-{
-    $adoption_Delete = Adoption::find($id);
-    if($adoption_Delete)
-    {-
-        $adoption_Delete->delete();
+    {
+        $adoptionDelete = Adoption::find($id);
+
+        if ($adoptionDelete) {
+            $adoptionDelete->delete();
+        }
+
+        return redirect()->route('adoption');
     }
-}
 public function store (Request $noshin){
 
        $validate=validator::make($noshin->all(),[

@@ -22,7 +22,7 @@
         <td>{{$item->orphan_name}}</td>
         <td>{{$item->id}}</td>
         <td>{{$item->date}}</td>
-        <td><img class="border border-warning rounded-pill" width="110" height="50" src="{{url('/uploads/' . $item->photo)}}" alt=""></td>
+        <td><img class="border border-warning rounded-pill" width="110" height="50" src="{{url('/uploads/' . $item->image)}}" alt=""></td>
         <td>{{$item->religion}}</td>
         <td>{{$item->gender}}</td>
         <td>

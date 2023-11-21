@@ -30,7 +30,7 @@
         <td>{{$item->gender}}</td>
         <td>
           <a href='#'class="btn btn-primary">View</a>
-          <a href="{{route('staff.delete', $item->id)}" class="btn btn-success">Delete</a>
+          <a href="{{route('staff.delete', $item->id)}}" class="btn btn-success">Delete</a>
            <a href='#'class="btn btn-danger">Edit</a>
         </td>
         </tr>

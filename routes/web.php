@@ -18,11 +18,18 @@ use App\Http\Controllers\backend\LogoutController;
 use App\Http\Controllers\backend\CentersetupController;
 use App\Http\Controllers\backend\ExpensecategoryController;
 use App\Http\Controllers\frontend\HomeController as FrontendHomeController;
+use App\Http\Controllers\frontend\User\UserController;
+use App\Http\Controllers\frontend\UserController as frontendUserController;
+
 
 //Frontend
 Route::get('/',[FrontendHomeController::class,'frontendhome'])->name('frontend');
+ 
+Route::get('/registartion',[FrontendHomeController::class,'registration'])->name('user.registration');
+Route::get('user/login',[FrontendHomeController::class,'userLogin'])->name('user.login');
 
-     
+
+Route::post('store/registration',[frontendUserController::class,'store'])->name('User.store');
 
 
 
@@ -87,7 +94,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/adoptions/list', [AdoptionController::class, 'list'])->name('adoption');
     Route::get('/adoptions/form', [AdoptionController::class, 'form'])->name('adoption.form');
     Route::post('/adoptions/store', [AdoptionController::class, 'store'])->name('adoption.store');
-    Route::get('/delete/{id}', [AdoptionController::class, 'delete'])->name('adoption.delete');
+    Route::get('adoptions/delete/{id}', [AdoptionController::class, 'delete'])->name('adoption.delete');
 
 
     Route::get('/donations/list', [DonationController::class, 'list'])->name('donation');
