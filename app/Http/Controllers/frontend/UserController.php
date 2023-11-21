@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\frontend\User;
+namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Validator;
 class UserController extends Controller
 
 {
-  
+
     public function store(Request $request)
     {
         User::create([
@@ -21,49 +21,37 @@ class UserController extends Controller
         ]);
         return redirect()->back();
     }
+
+
+
+
+    // Login Section
+    public function login()
+    {
+        return view('Frontend.Login.login');
+    }
+
+    public function userlogin(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'email' => 'required',
+            'password' => 'required',
+        ]);
+
+        if ($validator->fails()){
+            return redirect()->back()->withErrors($validator);
+        }
+        $credentials = $request->except('_token');
+
+        if (auth()->attempt($credentials)){
+            return redirect()->route('frontend');
+        }
+        return redirect()->back();
+    }
+
+    public function logout()
+    {
+        auth()->logout();
+        return redirect()->route('frontend');
+    }
 }
-    
-
-//     //Login Part
-// {
-//     public function login()
-//     {
-//         return view('Frontend.Partials.login');
-//     }
-
-//     public function doLogin(Request $request)
-//     {
-
-       
-//         $val = Validator::make($request->all(), [
-//             'email' => 'required',
-//             'password' => 'required',
-//         ]);
-
-//         if($val->fails())
-//         {
-//            // notify()->error($val->getMessageBag());
-//             return redirect()->back();
-//         }
-
-//         $credentials=$request->except('_token');
-//         // dd($credentials);
-
-//         if(auth()->attempt($credentials))
-//         {
-//            // notify()->success('Login Success.');
-//             return redirect()->route('master');
-//         }
-
-//        // notify()->error('Invalid Credentials.');
-//             return redirect()->back();
-//     }
-// {
-//     public function logout()
-//     {
-//         auth()->logout();
-//         //notify()->success('Logout Success.');    
-//         return redirect()->route('master');
-//     }
-// }
-// }

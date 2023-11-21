@@ -79,7 +79,6 @@
 					<span><a class="btn btn-primary btn-lg" href="#">Donate Now</a></span>
 				</div>
 			</div>
-
 		</div>
 		<!-- end:header-top -->
 		<div id="fh5co-features">

@@ -14,8 +14,5 @@ class HomeController extends Controller
     {
         return view('Frontend.Partial.registration');
     }
-    public function userLogin()
-    {
-        return view('Frontend.Login.login');
-    }
+    
 }

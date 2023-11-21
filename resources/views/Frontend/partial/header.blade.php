@@ -48,12 +48,19 @@
 							<li><a href="about.html">About</a></li>
 							<li><a href="blog.html">Blog</a></li>
 							<li><a href="contact.html">Contact</a></li>
+							@guest
                             <li style="margin-left: 10px;">
                                 <a href="{{route('user.registration')}}" class="btn btn-primary btn-lg active  ml-5" role="button" aria-pressed="true">Registration </a>
                             </li>
                             <li style="margin-left: 10px;" >
-                                <a href="{{route('user.login')}}" class="btn btn-primary btn-lg active  ml-5" role="button" aria-pressed="true">Login</a>
+                                <a href="{{route('Login_User')}}" class="btn btn-primary btn-lg active  ml-5" role="button" aria-pressed="true">Login</a>
                             </li>
+							@endguest
+							@auth
+                            <li style="margin-left: 10px;" >
+                                <a href="{{route('User_Logout')}}" class="btn btn-primary btn-lg active  ml-5" role="button" aria-pressed="true">Logout</a>
+                            </li>
+							@endauth
 						</ul>
 					</nav>
 				</div>

@@ -18,7 +18,6 @@ use App\Http\Controllers\backend\LogoutController;
 use App\Http\Controllers\backend\CentersetupController;
 use App\Http\Controllers\backend\ExpensecategoryController;
 use App\Http\Controllers\frontend\HomeController as FrontendHomeController;
-use App\Http\Controllers\frontend\User\UserController;
 use App\Http\Controllers\frontend\UserController as frontendUserController;
 
 
@@ -26,7 +25,10 @@ use App\Http\Controllers\frontend\UserController as frontendUserController;
 Route::get('/',[FrontendHomeController::class,'frontendhome'])->name('frontend');
  
 Route::get('/registartion',[FrontendHomeController::class,'registration'])->name('user.registration');
-Route::get('user/login',[FrontendHomeController::class,'userLogin'])->name('user.login');
+
+Route::get('/user/login', [frontendUserController::class, 'login'])->name('Login_User');
+Route::post('/user/login', [frontendUserController::class, 'userlogin'])->name('User_Login');
+Route::get('/logout', [frontendUserController::class, 'logout'])->name('User_Logout');
 
 
 Route::post('store/registration',[frontendUserController::class,'store'])->name('User.store');

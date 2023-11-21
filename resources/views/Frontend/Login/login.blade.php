@@ -8,7 +8,7 @@
 
 </head>
 <body>
-    <form action="{{route('login.store')}}" method="post"> 
+    <form action="{{route('User_Login')}}" method="post"> 
         @csrf 
 <section class="vh-100 gradient-custom">
   <div class="container py-5 h-100">
