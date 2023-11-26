@@ -13,4 +13,22 @@ class ReportController extends Controller
         $reportsdata=Report::all();
         return view("Backend.pages.report.report",compact('reportsdata'));
     }
+
+public function form()
+{
+    return view("Backend.pages.report.form");
+}
+
+public function store(Request $fariha)
+{
+  // dd($fariha->all());
+   Report::create([
+    'orphan_name' => $fariha->orphan_name,
+        'status' => $fariha->status,
+        'age' => $fariha->age,
+        'image' => $fariha->image,
+        'gender' => $fariha->radio,
+]);       
+return redirect()->route('report');
+}
 }

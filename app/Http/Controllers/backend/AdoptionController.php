@@ -4,18 +4,21 @@ namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Adoption;
+use App\Models\Orphan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
 class AdoptionController extends Controller
 {
 public function list(){
-    $adoptionsdata=Adoption::paginate(3);
+    
+    $adoptionsdata=Adoption::with('orphans')->paginate(3);//relation
     return view("Backend.pages.adoption.adoption",compact('adoptionsdata'));
 
 }
 public function form(){
-    return view("Backend.pages.adoption.form");
+    $orphans = Orphan::all();
+    return view("Backend.pages.adoption.form",compact('orphans'));//to take data from model
 
 } 
 

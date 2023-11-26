@@ -6,7 +6,6 @@
 <table class="table table-striped table-dark">
     <thead>
       <tr>
-        <th scope="col">SL</th>
         <th scope="col">Donation Amount</th>
         <th scope="col">Donation Type</th>
         <th scope="col">Payment Option</th> 
@@ -16,13 +15,13 @@
     <tbody>
 @foreach($donationsdata as $item)
       <tr>
-        <th scope="row">{{$item->id}}</th>
         <td>{{$item->donation_amount}}</td>
         <td>{{$item->donation_type}}</td>
         <td>{{$item->payment_option}}</td>
         <td>
         <a href='#'class="btn btn-primary">View</a>
-          <a href='#'class="btn btn-success">Delete</a>
+        <a href="{{route('donation.delete', $item->id)}}" class="btn btn-success">Delete</a>
+
           <a href='#'class="btn btn-danger">Edit</a>
         </td>
       </tr>

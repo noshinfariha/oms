@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('reports', function (Blueprint $table) {
             $table->id();
+            $table->string('orphan_name');
+            $table->string('status')->default('Active');
+            $table->integer('age');
+            $table->string('image')->nullable();
+            $table->string('gender');
             $table->timestamps();
         });
     }

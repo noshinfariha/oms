@@ -26,10 +26,6 @@
                     <input type="text" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Mail">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Password</label>
-                    <input type="password" name="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Password">
-                </div>
-                <div class="form-group">
                     <label for="exampleInputEmail1">Phone</label>
                     <input type="text" name="phone" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Number">
                 </div>
@@ -38,24 +34,11 @@
                     <input type="text" name="address" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Address">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Date of Birth</label>
-                    <input type="date" name="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Date of Birth">
-                </div>
-                <div class="form-group">
                     <label for="exampleInputEmail1">Image</label>
                     <input type="file" name="image" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
-                <div class="form-group
-                <label for="exampleInputEmail1">Gender</label><br>
-                <input type="radio" name="radio"id="male">
-                <label for="male">Male</label><br>
-                <input type="radio" name="radio"id="female">
-                <label for="female">Female</label>
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Status</label>
-                    <input type="text" name="status" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                </div>
+               
+                
                 <button type="submit" class="btn btn-primary mt-2">Submit</button>
             </form>
         </div>

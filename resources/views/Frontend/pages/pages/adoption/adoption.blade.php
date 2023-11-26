@@ -18,7 +18,7 @@
 @foreach($adoptionsdata as $item)
       <tr>
         <th scope="row">{{$item->id}}</th> 
-        <td>{{$item->orphan_id}}</td>
+        <td>{{$item->orphans->orphan_name}}</td>
         <td>{{$item->adoption_id}}</td>
         <td>{{$item->parents_id}}</td>
         <td>{{$item->adoption_date}}</td>

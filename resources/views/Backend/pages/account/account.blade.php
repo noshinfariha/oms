@@ -1,32 +1,28 @@
 @extends("Backend.master")
 @section('content')
-<h2>Orphans Information</h2>
+<h2>Accounts Information</h2>
 
-<a href="{{url('/account/form')}}">
+<a href="{{route('account.form')}}">
   <button type="button" class="btn btn-dark">Account info</button>
   <table class="table table-striped table-dark">
     <thead>
       <tr>
-        <th scope="col">SL</th>
         <th scope="col">Orphan Name</th>
-        <th scope="col">Address</th>
-        <th scope="col">Date of Birth</th>
+        <th scope="col">Age</th>
         <th scope="col">Image</th>
-        <th scope="col">Religion</th>
         <th scope="col">Gender</th>
+        <th scope="col">Status</th>
         <th scope="col">Action</th>
       </tr>
     </thead>
     <tbody>
 @foreach($accountsdata as $item)
       <tr>
-        <th scope="row">{{$item->id}}</th>
         <td>{{$item->orphan_name}}</td>
-        <td>{{$item->address}}</td>
-        <td>{{$item->date}}</td>
+        <td>{{$item->age}}</td>
         <td>{{$item->image}}</td>
-        <td>{{$item->religion}}</td>
         <td>{{$item->gender}}</td>
+        <td>{{$item->status}}</td>
         <td>
         <a href='#'class="btn btn-primary">View</a>
           <a href='#'class="btn btn-success">Delete</a>

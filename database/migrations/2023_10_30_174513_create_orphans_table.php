@@ -15,10 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('orphan_name');
             $table->string('status')->default('Active');
-            $table->text('address');
-            $table->date('date');
-            $table->string('image');
-            $table->string('religion');
+            $table->integer('age');
+            $table->string('image')->nullable();
             $table->string('gender');
             $table->timestamps();
         });

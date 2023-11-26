@@ -9,4 +9,7 @@ class Adoption extends Model
 {
     use HasFactory;
     protected $guarded = [];
+public function orphans(){
+    return $this->belongsTo(Orphan::class);
+}
 }

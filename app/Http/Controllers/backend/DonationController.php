@@ -17,6 +17,15 @@ class DonationController extends Controller
     public function form(){
         return view("Backend.pages.donation.form");
     }
+
+    public function delete($id)
+    {
+        $donationDelete = Donation::find($id);
+
+        if ($donationDelete) {
+            $donationDelete->delete();
+        }
+    }
     public function store (Request $noshin){
 
         $validate=validator::make($noshin->all(),[

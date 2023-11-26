@@ -14,7 +14,11 @@ return new class extends Migration
         Schema::create('accounts', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            
+            $table->string('orphan_name');
+            $table->string('status')->default('Active');
+            $table->integer('age');
+            $table->string('image')->nullable();
+            $table->string('gender');
         });
     }
 

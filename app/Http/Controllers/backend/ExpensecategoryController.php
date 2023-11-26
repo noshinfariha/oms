@@ -5,6 +5,7 @@ namespace App\Http\Controllers\backend;
 use App\Http\Controllers\Controller;
 use App\Models\Expensecategory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class ExpensecategoryController extends Controller
 {
@@ -19,24 +20,33 @@ public function form()
     {
         return view("Backend.pages.expensecategory.form");
     }
+
+    public function delete($id)
+    {
+    $expensecategoryDelete = Expensecategory::find($id);
+        
+    if ($expensecategoryDelete) {
+        $expensecategoryDelete->delete();
+    }
+    
+    return redirect()->route('expensecategory');
+    }
     public function store(Request $fariha)
 
     {
-        //  $validate = validator::make($fariha->all(),[
-        //     'image'=>'required', 
-        //     'date'=>'required'
+         $validate = validator::make($fariha->all(),[ 
+            'payment method'=>'payment method'
     
 
-        //  ]);
+         ]);
 
-        //  if($validate->fails()){
-        //      return redirect()->back();
-        //  } 
+         if($validate->fails()){
+             return redirect()->back();
+         } 
 
 
  // dd($fariha->all());    
        Expensecategory::create([
-        'date'=>$fariha->date,
         'category'=>$fariha->category,
         'description'=>$fariha->description,
         'payment_method'=> $fariha->payment_method,

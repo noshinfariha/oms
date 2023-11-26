@@ -15,13 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('full_name');
             $table->string('email');
-            $table->string('password');
             $table->string('phone');
             $table->string('address');
-            $table->date('date');
-            $table->string('image');
-            $table->string('gender');
-            $table->string('status');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

@@ -15,27 +15,19 @@
             <h1>
                 Input your Information!
             </h1>
-            <form action="{{url('/orphan/store')}}"method="post">
+            <form action="{{route('report.store')}}"method="post">
                 @csrf 
                 <div class="form-group">
                     <label for="exampleInputEmail1">Orphan Name</label>
                     <input type="text" name="orphan_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter First Name">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Address</label>
-                    <input type="text" name="address" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Address">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Date of Birth</label>
-                    <input type="date" name="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Date of Birth">
+                    <label for="exampleInputEmail1">Age</label>
+                    <input type="number" name="age" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Date of Birth">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Image</label>
                     <input type="file" name="image" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Religion</label>
-                    <input type="text" name="religion" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Religion">
                 </div>
                 <div class="form-group
                 <label for="exampleInputEmail1">Gender</label><br>

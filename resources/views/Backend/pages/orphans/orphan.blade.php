@@ -9,10 +9,10 @@
       <tr>
         <th scope="col">Orphan Name</th>
         <th scope="col">ID</th>
-        <th scope="col">Date of Birth</th>
-        <th scope="col">Image</th>
-        <th scope="col">Religion</th>
+        <th scope="col">Age</th>
         <th scope="col">Gender</th>
+        <th scope="col">Status</th>
+        <th scope="col">Image</th>
         <th scope="col">Action</th>
       </tr>
     </thead>
@@ -21,11 +21,11 @@
       <tr>
         <td>{{$item->orphan_name}}</td>
         <td>{{$item->id}}</td>
-        <td>{{$item->date}}</td>
-        <td><img class="border border-warning rounded-pill" width="110" height="50" src="{{url('/uploads/' . $item->image)}}" alt=""></td>
-        <td>{{$item->religion}}</td>
+        <td>{{$item->age}}</td>
         <td>{{$item->gender}}</td>
-        <td>
+        <td>{{$item->status}}</td>
+ <td><img class="border border-warning rounded-pill" width="110" height="50" src="{{url('/uploads/' . $item->image)}}" alt=""></td>
+         <td>
           <a href='#' class="btn btn-primary">View</a>
           <a href="{{route('orphan.edit',$item->id)}}" class="btn btn-danger">Edit</a>
           <a href="{{route('orphan.delete',$item->id)}}" class="btn btn-success">Delete</a>

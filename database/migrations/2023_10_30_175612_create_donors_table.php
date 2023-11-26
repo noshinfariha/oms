@@ -14,12 +14,9 @@ return new class extends Migration
         Schema::create('donors', function (Blueprint $table) {
             $table->id();
             $table->string('full_name');
-            $table->string('email');
-            $table->string('password');
             $table->string('phone');
             $table->string('address');
-            $table->date('date');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->string('gender');
             $table->timestamps();
         });

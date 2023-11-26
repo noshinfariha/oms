@@ -6,7 +6,6 @@
 <table class="table table-striped table-dark">
     <thead>
       <tr>
-        <th scope="col">SL</th>
         <th scope="col">Orphan ID</th>
         <th scope="col">Adoption ID</th>
         <th scope="col">Parents ID</th>
@@ -17,7 +16,6 @@
     <tbody>
 @foreach($adoptionsdata as $item)
       <tr>
-        <th scope="row">{{$item->id}}</th> 
         <td>{{$item->orphan_id}}</td>
         <td>{{$item->adoption_id}}</td>
         <td>{{$item->parents_id}}</td>

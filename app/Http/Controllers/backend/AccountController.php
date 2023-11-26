@@ -16,21 +16,19 @@ class AccountController extends Controller
     }
     public function form()
     {
-        return view("Backend.pages.orphans.form");
+        return view("Backend.pages.account.form");
     }
-    public function store(Request $fariha)
+
+ public function store(Request $fariha)
     {
-       // dd($fariha->all());
+      // dd($fariha->all());
        Account::create([
-        'orphan_name'=>$fariha->orphan_name,
-        'status'=>$fariha->status,
-        'address'=>$fariha->address,
-        'date'=> $fariha->date,
-        'image'=>$fariha->image,
-       'religion'=>$fariha->religion,
-        'gender'=>$fariha->radio,
-        'action'=>$fariha->action,
+        'orphan_name' => $fariha->orphan_name,
+            'status' => $fariha->status,
+            'age' => $fariha->age,
+            'image' => $fariha->image,
+            'gender' => $fariha->radio,
   ]);       
-       return redirect(url('/account/list'));
-    }
+  return redirect()->route('account');
+}
 }

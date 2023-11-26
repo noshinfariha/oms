@@ -5,8 +5,7 @@
 <button type="button" class="btn btn-dark">Add Parent</button>
 <table class="table table-striped table-dark">
     <thead>
-      <tr>
-        <th scope="col">SL</th>     
+      <tr>   
         <th scope="col">Full Name</th>
         <th scope="col">Email</th>
         <th scope="col">Phone</th>
@@ -18,7 +17,6 @@
     <tbody>
 @foreach($fariha as $item)
       <tr>
-        <th scope="row">{{$item->id}}</th>
         <td>{{$item->full_name}}</td>
         <td>{{$item->email}}</td>
         <td>{{$item->phone}}</td>

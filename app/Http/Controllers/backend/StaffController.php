@@ -56,13 +56,9 @@ if ($noshin->hasFile('image'))
             Staff::create([
                 'full_name'=>$noshin->fullname,
                 'email'=>$noshin->email,
-                'password'=>$noshin->password,
                 'phone'=> $noshin->phone,
                 'address'=>$noshin->address,
-               'date'=>$noshin->date,
-               'image'=>$fileName,
-              'gender'=>$noshin->radio,
-              'status'=>$noshin->status,
+               'image'=>$fileName
 
           ]);       
                return redirect(route('staff'));

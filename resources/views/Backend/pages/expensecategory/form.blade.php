@@ -18,13 +18,6 @@
             <form action="{{route('expensecategory.store')}}"method="post" enctype="multipart/form-data">
                 @csrf 
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Date</label>
-                    <input required type="date" name="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter First Name">
-                    <!-- @error('date')
-                    <div class="alert alert-danger">{{ $message }}</div>
-                        @enderror -->
-                </div>
-                <div class="form-group">
                     <label for="exampleInputEmail1">Category</label>
                     <input required type="text" name="category" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Address">
                 </div>

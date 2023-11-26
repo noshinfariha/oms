@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Validator;
 
 
 class OrphanController extends Controller
+
 {
     public function list()
     {
@@ -43,17 +44,7 @@ class OrphanController extends Controller
         $orphanEdit = Orphan::find($id);
         if ($orphanEdit) {
 
-            // $fileName = $orphanEdit->image;
-            // //   dd($fileName);
-            // if ($request->hasFile('image')) {
-            //     $file = $request->file('image');
-            //     $fileName = date('Ymdhis') . '.' . $file->getClientOriginalExtension();
-
-            //     $file->move('/uploads', $fileName);
-            // }
-
-
-            $fileName=$orphanEdit->image;
+              $fileName=$orphanEdit->image;
             if($request->hasFile('image'))
             {
                 $file=$request->file('image');
@@ -65,11 +56,10 @@ class OrphanController extends Controller
 
             $orphanEdit->update([
                 'orphan_name' => $request->orphan_name,
-                'address' => $request->address,
-                'date' => $request->date,
-                'religion' => $request->religion,
+                'age' => $request->age,
                 'status' => $request->status,
-                'image' => $fileName
+                'image' => $fileName,
+                'gender'=>$request->gender
             ]);
             return redirect()->route('orphan');
         }
@@ -79,38 +69,39 @@ class OrphanController extends Controller
 
 
     public function store(Request $fariha)
-
+{
     {
-        //  $validate = validator::make($fariha->all(),[
-        //     'image'=>'required', 
-        //     'date'=>'required'
+         $validate = validator::make($fariha->all(),[
+            'image'=>'required', 
+            'date'=>'required'
 
 
-        //  ]);
+         ]);
 
         //  if($validate->fails()){
         //      return redirect()->back();
-        //  } 
+         } 
+    {
         $fileName = null;
         if ($fariha->hasFile('image')) {
             $file = $fariha->file('image');
             $fileName = date('Ymdhis') . '.' . $file->getClientOriginalExtension();
             // $destination = "uploads";
             // $file->move($destination, $fileName);
-
+        }
             $file->move("uploads", $fileName);
         }
         // dd($fariha->all());    
         Orphan::create([
             'orphan_name' => $fariha->orphan_name,
             'status' => $fariha->status,
-            'address' => $fariha->address,
-            'date' => $fariha->date,
+            'age' => $fariha->age,
             'image' => $fileName,
-            'religion' => $fariha->religion,
             'gender' => $fariha->gender,
         ]);
 
         return redirect()->route('orphan');
+    
+
     }
 }
