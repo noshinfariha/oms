@@ -13,10 +13,12 @@ return new class extends Migration
     {
         Schema::create('donations', function (Blueprint $table) {
             $table->id();
-            $table->string('donation_amount');
-            $table->string('donation_type');
-            $table->string('payment_option');
-            $table->timestamps();
+            $table->integer('amount');
+            $table->string('payment_method');
+            $table->string('receiver_account');
+            $table->string('transaction_id');
+            $table->string('receipt');
+              $table->timestamps();
         });
     }
 

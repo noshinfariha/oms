@@ -22,8 +22,8 @@
         <td>{{$item->adoption_date}}</td>
         <td>
         <a href='#'class="btn btn-primary">View</a>
-          <a href="{{ route('adoption.delete', $item->id) }}"class="btn btn-success">Delete</a>
           <a href='#'class="btn btn-danger">Edit</a>
+          <a href="{{ route('adoption.delete', $item->id) }}"class="btn btn-success">Delete</a>
         </td>
       </tr>
 @endforeach

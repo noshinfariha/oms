@@ -29,7 +29,7 @@ class DonationController extends Controller
     public function store (Request $noshin){
 
         $validate=validator::make($noshin->all(),[
-            'donation_type'=>'required', 
+            'payment_method'=>'required', 
             
     
 
@@ -40,10 +40,12 @@ class DonationController extends Controller
          } 
        // dd($noshin ->all());
         Donation::create([
-            'donation_amount'=>$noshin-> donation_amount,
-            'donation_type'=>$noshin->donation_type,
-             'payment_option'=>$noshin->payment_option,
-    
+            'amount'=>$noshin->amount,
+            'payment_method'=>$noshin->payment_method,
+             'receiver_account'=>$noshin->receiver_account,
+             'transaction_id'=>$noshin->transaction_id,
+             'receipt'=>$noshin->receipt,
+             
       ]);       
       return redirect()->route('frontend');
     

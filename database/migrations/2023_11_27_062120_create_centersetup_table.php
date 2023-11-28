@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('task_id');
             $table->text('module');
             $table->string('task');
-            $table->string('start_date');
-            $table->string('end_date');
+            $table->date('start_date');
+            $table->date('end_date');
             $table->string('notes');
             $table->timestamps();
         });

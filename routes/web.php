@@ -154,7 +154,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/centersetup/list', [CentersetupController::class, 'list'])->name('centersetup');
     Route::get('/centersetup/form', [CentersetupController::class, 'form'])->name('centersetup.form');
-    Route::get('/centersetup/store', [CentersetupController::class, 'store'])->name('centersetup.store');
+    Route::post('/centersetup/store', [CentersetupController::class, 'store'])->name('centersetup.store');
     Route::get('centersetup/delete/{id}', [CentersetupController::class, 'delete'])->name('centersetup.delete');
     Route::get('centersetup/edit/{id}', [CentersetupController::class,'edit'])->name('centersetup.edit');
     Route::put('centersetup/update/{id}', [CentersetupController::class,'update'])->name('centersetup.update');

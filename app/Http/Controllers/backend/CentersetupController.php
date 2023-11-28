@@ -35,7 +35,7 @@ public function form()
 
     {
          $validate = validator::make($fariha->all(),[ 
-            'module'=>'module'
+            'module'=>'required'
     
 
          ]);
