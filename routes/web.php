@@ -26,13 +26,18 @@ use App\Models\Expensecategory;
 Route::get('/',[FrontendHomeController::class,'frontendhome'])->name('frontend');
  
 Route::get('/registartion',[FrontendHomeController::class,'registration'])->name('user.registration');
+Route::post('/registration/store',[frontendUserController::class,'store'])->name('User.store');
+
 
 Route::get('/user/login', [frontendUserController::class, 'login'])->name('Login_User');
 Route::post('/user/login', [frontendUserController::class, 'userlogin'])->name('User_Login');
 Route::get('/logout', [frontendUserController::class, 'logout'])->name('User_Logout');
 
 
-Route::post('store/registration',[frontendUserController::class,'store'])->name('User.store');
+// donation route 
+Route::get('/donations/form', [DonationController::class, 'form'])->name('donation.form');
+
+
 
 
 
@@ -115,11 +120,10 @@ Route::group(['middleware' => 'auth'], function () {
 
 
     Route::get('/donations/list', [DonationController::class, 'list'])->name('donation');
-    Route::get('/donations/form', [DonationController::class, 'form'])->name('donation.form');
     Route::post('/donations/store', [DonationController::class, 'store'])->name('donation.store');
     Route::get('donations/delete/{id}', [DonationController::class, 'delete'])->name('donation.delete');
-    Route::get('donations/edit/{id}', [DonationController::class,'edit'])->name('orphan.edit');
-    Route::put('donations/update/{id}', [DonationController::class,'update'])->name('orphan.update');
+    Route::get('donations/edit/{id}', [DonationController::class,'edit'])->name('donation.edit');
+    Route::put('donations/update/{id}', [DonationController::class,'update'])->name('donation.update');
 
 
 

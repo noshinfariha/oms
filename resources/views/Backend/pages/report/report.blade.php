@@ -1,6 +1,6 @@
 @extends("Backend.master")
 @section('content')
-<h2>Orphans Information</h2>
+<h2>Report</h2>
 
 <a href="{{route('report.form')}}">
   <button type="button" class="btn btn-dark">report info</button>

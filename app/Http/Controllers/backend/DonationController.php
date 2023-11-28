@@ -45,7 +45,7 @@ class DonationController extends Controller
              'payment_option'=>$noshin->payment_option,
     
       ]);       
-      return redirect()->route('donation');
+      return redirect()->route('frontend');
     
 
 }

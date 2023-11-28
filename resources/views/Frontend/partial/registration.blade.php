@@ -167,13 +167,14 @@
                 <div class="register-wrapper">
                     <div class="register-block">
                         <h3 class="register-title">Create an account</h3>
-                        <form action="">
+                        <form action="{{route('User.store')}}" method="post">
+                            @csrf
                             <label for="#">Name</label>
-                            <input type="email" placeholder="Enter your Name" />
+                            <input type="text" name="name" placeholder="Enter your Name" />
                             <label for="#">Email</label>
-                            <input type="email" placeholder="Enter your email" />
+                            <input type="email" name="email" placeholder="Enter your email" />
                             <label for="#">Password</label>
-                            <input type="password" placeholder="Enter your password" />
+                            <input type="password" name="password" placeholder="Enter your password" />
                             <input type="submit" value="Create my account" />
                         </form>
                     </div>

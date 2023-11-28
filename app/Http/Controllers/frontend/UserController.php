@@ -19,7 +19,7 @@ class UserController extends Controller
             'role' => 'customer',
             'password' => bcrypt($request->password),
         ]);
-        return redirect()->back();
+        return redirect()->route('frontend');
     }
 
 
