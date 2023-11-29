@@ -120,6 +120,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 
     Route::get('/donations/list', [DonationController::class, 'list'])->name('donation');
+    Route::get('/donations/form', [DonationController::class, 'form'])->name('donation.form');
     Route::post('/donations/store', [DonationController::class, 'store'])->name('donation.store');
     Route::get('donations/delete/{id}', [DonationController::class, 'delete'])->name('donation.delete');
     Route::get('donations/edit/{id}', [DonationController::class,'edit'])->name('donation.edit');

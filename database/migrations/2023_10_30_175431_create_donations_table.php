@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('payment_method');
             $table->string('receiver_account');
             $table->string('transaction_id');
-            $table->string('receipt');
+            $table->string('receipt')->nullable();
               $table->timestamps();
         });
     }

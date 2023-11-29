@@ -5,6 +5,7 @@ namespace App\Http\Controllers\backend;
 use App\Http\Controllers\Controller;
 use App\Models\Staff;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class StaffController extends Controller
 {
@@ -41,15 +42,27 @@ class StaffController extends Controller
     }
         public function store(Request $noshin){
 
-            $fileName = null;
-if ($noshin->hasFile('image')) 
+            {
+                $validate = validator::make($noshin->all(),[
+                   'email'=>'required', 
+                   
+       
+       
+                ]);
+       
+                if($validate->fails()){
+                    return redirect()->back();
+                } 
+
+        $fileName = null;
+      if ($noshin->hasFile('image')) 
 {
-  $file = $noshin->file('image');
-  $fileName = date('Ymdhis') . '.' . $file->getClientOriginalExtension();
-  // $destination = "uploads";
-  // $file->move($destination, $fileName);
+      $file = $noshin->file('image');
+       $fileName = date('Ymdhis') . '.' . $file->getClientOriginalExtension();
+        // $destination = "uploads";
+       // $file->move($destination, $fileName);
   
-  $file->move("uploads", $fileName);
+        $file->move("uploads", $fileName);
 
 }
             //dd($noshin ->all());
@@ -64,4 +77,5 @@ if ($noshin->hasFile('image'))
                return redirect(route('staff'));
     }
 
+}
 }

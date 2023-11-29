@@ -17,10 +17,10 @@
             </h1>
             <form action="{{route('adoption.store')}}"method="post">
                 @csrf
-                <!-- <div class="form-group">
+                <div class="form-group">
                     <label for="exampleInputEmail1">Orphan id</label>
                     <input type="number" name="orphan_id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter First Name">
-                </div> -->
+                </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Adoption id</label>
                     <input required type="number" name="adoption_id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="id">
@@ -36,14 +36,14 @@
 
 
 
-                <div class="form-group">
+                <!-- <div class="form-group">
                 <label class="mt-2">Orphan ID</label>
                 <select class="form-control" name="orphan_id" required>
                     @foreach($orphans as $orphan)
                         <option value="{{$orphan->id}}">{{$orphan->id}}</option>
                     @endforeach
                 </select>
-            </div>
+            </div> -->
                 <button type="submit" class="btn btn-primary mt-2">Submit</button>
             </form>
         </div>

@@ -26,10 +26,6 @@
                     <input type="text" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Mail">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Password</label>
-                    <input type="password" name="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Password">
-                </div>
-                <div class="form-group">
                     <label for="exampleInputEmail1">Phone</label>
                     <input type="number" name="phone" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Number">
                 </div>

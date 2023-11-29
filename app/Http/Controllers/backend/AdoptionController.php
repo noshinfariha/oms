@@ -32,6 +32,37 @@ public function delete($id)
 
         return redirect()->route('adoption');
     }
+
+    public function edit($id)
+    {
+        $adoptionEdit = Adoption::find($id);
+        return view('Backend.pages.adoption.edit', compact('adoptionEdit'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $adoptionEdit = Adoption::find($id);
+        if ($adoptionEdit) {
+
+              $fileName=$adoptionEdit->image;
+            if($request->hasFile('image'))
+            {
+                $file=$request->file('image');
+                $fileName=date('Ymdhis').'.'.$file->getClientOriginalExtension();               
+                $file->move("uploads",$fileName);
+      
+            }
+
+
+            $adoptionEdit->update([
+                'orphan_id' => $request->orphan_id,
+                'adoption_id' => $request->adoption_id,
+                'parents_id' => $request->parents_id,
+                'adoption_date'=>$request->adoption_date 
+            ]);
+            return redirect()->route('adoption');
+        }
+    }
 public function store (Request $noshin){
 
        $validate=validator::make($noshin->all(),[

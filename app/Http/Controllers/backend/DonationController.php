@@ -26,6 +26,39 @@ class DonationController extends Controller
             $donationDelete->delete();
         }
     }
+
+    public function edit($id)
+    {
+        $donationEdit = Donation::find($id);
+        return view('Backend.pages.donation.edit', compact('donationEdit'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $donationEdit = Donation::find($id);
+        if ($donationEdit) {
+
+              $fileName=$donationEdit->image;
+            if($request->hasFile('image'))
+            {
+                $file=$request->file('image');
+                $fileName=date('Ymdhis').'.'.$file->getClientOriginalExtension();               
+                $file->move("uploads",$fileName);
+      
+            }
+
+
+            $donationEdit->update([
+                'amount' => $request->amount,
+                'payment_method' => $request->payment_method,
+                'receiver_account' => $request->receiver_account,
+                'transaction_id'=>$request->transaction_id, 
+                'receipt'=>$request->receipt,        
+       
+             ]);
+            return redirect()->route('donation');
+        }
+    }
     public function store (Request $noshin){
 
         $validate=validator::make($noshin->all(),[

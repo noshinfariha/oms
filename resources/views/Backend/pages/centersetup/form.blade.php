@@ -33,20 +33,6 @@
                     <label for="exampleInputEmail1">Status</label>
                     <input type="text" name="status" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter date">
                  </div>
-
-              <div class="form-group">
-                    <label for="exampleInputEmail1">Start Date</label>
-                    <input type="date" name="start_date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter date">
-                   </div>
-
-                   <div class="form-group">
-                    <label for="exampleInputEmail1">End Date</label>
-                    <input type="date" name="end_date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter date">
-                   </div>
-                   <div class="form-group">
-                    <label for="exampleInputEmail1">Notes</label>
-                    <input type="text" name="notes" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter date">
-                   </div>
                
                 <button type="submit" class="btn btn-primary mt-2">Submit</button>
             </form>

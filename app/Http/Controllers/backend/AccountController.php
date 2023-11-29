@@ -19,6 +19,51 @@ class AccountController extends Controller
         return view("Backend.pages.account.form");
     }
 
+    
+    public function delete($id)
+    {
+        $accountDelete = Account::find($id);
+
+        if ($accountDelete) {
+            $accountDelete->delete();
+        }
+
+        return redirect()->route('account');
+    }
+
+    public function edit($id)
+    {
+        $accountEdit = Account::find($id);
+        return view('Backend.pages.account.edit', compact('accountEdit'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $accountEdit = Account::find($id);
+        if ($accountEdit) {
+
+              $fileName=$accountEdit->image;
+            if($request->hasFile('image'))
+            {
+                $file=$request->file('image');
+                $fileName=date('Ymdhis').'.'.$file->getClientOriginalExtension();               
+                $file->move("uploads",$fileName);
+      
+            }
+
+
+            $accountEdit->update([
+                'orphan_name' => $request->orphan_name,
+                'age' => $request->age,
+                'status' => $request->status,
+                'image' => $fileName,
+                'gender'=>$request->radio 
+            ]);
+            return redirect()->route('account');
+        }
+    }
+
+
  public function store(Request $fariha)
     {
       // dd($fariha->all());

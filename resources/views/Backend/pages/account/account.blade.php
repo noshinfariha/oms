@@ -25,8 +25,8 @@
         <td>{{$item->status}}</td>
         <td>
         <a href='#'class="btn btn-primary">View</a>
-          <a href='#'class="btn btn-danger">Edit</a>
-          <a href='#'class="btn btn-success">Delete</a>
+        <a href="{{route('account.edit',$item->id)}}" class="btn btn-danger">Edit</a>
+        <a href="{{route('account.delete', $item->id)}}" class="btn btn-success">Delete</a>
         </td>
       </tr>
 @endforeach

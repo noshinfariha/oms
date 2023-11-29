@@ -66,20 +66,18 @@ class OrphanController extends Controller
     }
 
 
-
-
     public function store(Request $fariha)
 {
     {
          $validate = validator::make($fariha->all(),[
-            'image'=>'required', 
-            'date'=>'required'
+            'status'=>'required', 
+            
 
 
          ]);
 
-        //  if($validate->fails()){
-        //      return redirect()->back();
+        // if($validate->fails()){
+            // return redirect()->back();
          } 
     {
         $fileName = null;
@@ -91,7 +89,7 @@ class OrphanController extends Controller
         }
             $file->move("uploads", $fileName);
         }
-        // dd($fariha->all());    
+       // dd($fariha->all());    
         Orphan::create([
             'orphan_name' => $fariha->orphan_name,
             'status' => $fariha->status,

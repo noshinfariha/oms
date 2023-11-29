@@ -23,7 +23,7 @@
         <td>{{$item->receipt}}</td>
         <td>
         <a href='#'class="btn btn-primary">View</a>
-          <a href='#'class="btn btn-danger">Edit</a>
+        <a href="{{route('donation.delete', $item->id)}}" class="btn btn-danger">Edit</a>
           <a href="{{route('donation.delete', $item->id)}}" class="btn btn-success">Delete</a>
         </td>
       </tr>
