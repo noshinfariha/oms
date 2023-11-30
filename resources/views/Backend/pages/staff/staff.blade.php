@@ -10,7 +10,6 @@
         <th scope="col">Email</th>
         <th scope="col">Phone</th>
         <th scope="col">Address</th>
-        <th scope="col">Image</th>
         <th scope="col">Action</th>
         </tr>
     </thead>
@@ -21,10 +20,9 @@
         <td>{{$item->email}}</td>
         <td>{{$item->phone}}</td>
         <td>{{$item->address}}</td>
-        <td><img class="border border-warning rounded-pill" width="110" height="50" src="{{url('/uploads/' . $item->image)}}" alt=""></td>
         <td>
           <a href='#'class="btn btn-primary">View</a>
-           <a href='#'class="btn btn-danger">Edit</a>
+          <a href="{{route('staff.edit', $item->id)}}" class="btn btn-danger">Edit</a>
            <a href="{{route('staff.delete', $item->id)}}" class="btn btn-success">Delete</a>
         </td>
         </tr>

@@ -27,15 +27,20 @@
                 
                 </div>
                         
-            <div class="form-group">
-                    <label for="exampleInputEmail1">Payment Method</label>
-                    <input  type="number" name="payment method" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            
-                </div>
                 <div class="form-group">
+                <label for="exampleInputEmail1">Payment Method</label>
+                <select name="payment_method" id="" class="form-control" required>
+                    <option value="Bkash">Bank</option>
+                    <option value="Rocket">Bkash</option>
+                    <option value="Rocket">Rocket</option>
+                 </select>
+            </div>
+   
+            <div class="form-group">
                     <label for="exampleInputEmail1">Amount</label>
                     <input type="number" name="amount" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Religion">
                 </div>
+  
                 <div class="form-group">
                     <label for="exampleInputEmail1">Invoice Number</label>
                     <input type="number" name="invoice number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Status">

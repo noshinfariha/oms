@@ -30,6 +30,34 @@ public function delete($id)
         return redirect()->route('expense');
     }
 
+    public function edit($id)
+    {
+        $expenseEdit = Expense::find($id);
+        return view('Backend.pages.expense.edit', compact('expenseEdit'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $expenseEdit = Expense::find($id);
+        if ($expenseEdit) {
+
+              $fileName=$expenseEdit->image;
+            if($request->hasFile('image'))
+            {
+                $file=$request->file('image');
+                $fileName=date('Ymdhis').'.'.$file->getClientOriginalExtension();               
+                $file->move("uploads",$fileName);
+      
+            }
+            $expenseEdit->update([
+                'expense_title' => $request->expense_title,
+                'expense_amount' => $request->expense_amount,
+                'expense_description' => $request->expense_description,        
+             ]);
+            return redirect()->route('expense');
+        }
+    }
+
 public function store (Request $noshin){
       
     $validate=validator::make($noshin->all(),[

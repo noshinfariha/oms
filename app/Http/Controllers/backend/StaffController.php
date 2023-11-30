@@ -38,8 +38,41 @@ class StaffController extends Controller
             $staffDelete->delete();
         }
 
-        return redirect()->route('orphan');
+        return redirect()->route('staff');
     }
+
+    public function edit($id)
+{
+    $staffEdit = Staff::find($id);
+    return view('Backend.pages.staff.edit', compact('staffEdit'));
+}
+
+public function update(Request $request, $id)
+{
+    $staffEdit = Staff::find($id);
+    if ($staffEdit) {
+
+          $fileName=$staffEdit->image;
+        if($request->hasFile('image'))
+        {
+            $file=$request->file('image');
+            $fileName=date('Ymdhis').'.'.$file->getClientOriginalExtension();               
+            $file->move("uploads",$fileName);
+  
+        }
+
+
+        $staffEdit->update([
+            'full_name' => $request->full_name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'address' => $request->address,
+            
+        ]);
+        return redirect()->route('staff');
+    }
+}
+
         public function store(Request $noshin){
 
             {
@@ -71,7 +104,7 @@ class StaffController extends Controller
                 'email'=>$noshin->email,
                 'phone'=> $noshin->phone,
                 'address'=>$noshin->address,
-               'image'=>$fileName
+
 
           ]);       
                return redirect(route('staff'));

@@ -7,24 +7,22 @@
     <thead>
       <tr>
         <th scope="col">Full Name</th>
-        <th scope="col">Address</th>
         <th scope="col">Phone</th>
-        <th scope="col">Image</th>
-        <th scope="col">Gender</th>
-        <th scope="col">Action</th>
+        <th scope="col">Email</th>
+        <th scope="col">Address</th>
+         <th scope="col">Action</th>
         </tr>
     </thead>
     <tbody>
 @foreach($donorsdata as $item)
       <tr>
         <td>{{$item->full_name}}</td>
-        <td>{{$item->address}}</td>
         <td>{{$item->phone}}</td>
-        <td><img class="border border-warning rounded-pill" width="110" height="50" src="{{url('/uploads/' . $item->photo)}}" alt=""></td>
-        <td>{{$item->gender}}</td>
+        <td>{{$item->email}}</td>
+        <td>{{$item->address}}</td>
         <td>
         <a href='#'class="btn btn-primary">View</a>
-          <a href='#'class="btn btn-danger">Edit</a>
+        <a href="{{ route('donor.edit', $item->id) }}"class="btn btn-danger">Edit</a>
           <a href="{{ route('donor.delete', $item->id) }}"class="btn btn-success">Delete</a>
         </td>
        </tr>

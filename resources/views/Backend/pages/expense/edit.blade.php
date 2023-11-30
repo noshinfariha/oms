@@ -15,19 +15,20 @@
             <h1>
                 Input your Information!
             </h1>
-            <form  action="{{route('expense.store')}}"method="post">
+            <form action="{{route('expense.update', $expenseEdit->id)}}"method="post" enctype="multipart/form-data"> 
                 @csrf
+                @method('put')
                 <div class="form-group">
                     <label for="exampleInputEmail1">Expense Title</label>
-                    <input required type="text" name="expense_title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Title">
+                    <input value="{{$expenseEdit->expense_title}}" required type="text" name="expense_title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Title">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Expense Amount</label>
-                    <input type="number" name="expense_amount" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Amount">
+                    <input value="{{$expenseEdit->expense_amount}}" required type="number" name="expense_amount" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Amount">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Expense Description</label>
-                    <textarea class="form-control" name="expense_description" id="" cols="30" rows="10"></textarea>
+                    <input value="{{$expenseEdit->full_name}}" required type="text" name="full_name" textarea class ="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Full Name">
                 </div>
                 <button type="submit" class="btn btn-primary mt-2">Submit</button>
             </form>

@@ -15,28 +15,26 @@
             <h1>
                 Input your Information!
             </h1>
-            <form action="{{route('staff.store')}}"method="post" enctype="multipart/form-data"> 
+            <form action="{{route('staff.update', $staffEdit->id)}}"method="post" enctype="multipart/form-data">
                 @csrf
+                @method('put')
                 <div class="form-group">
                     <label for="exampleInputEmail1">Full Name</label>
-                    <input type="text" name="fullname" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter First Name">
+                    <input value="{{$staffEdit->full_name}}" type="text" name="full_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Full Name">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email</label>
-                    <input type="text" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Mail">
+                    <input value="{{$staffEdit->email}}" type="text" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Phone</label>
-                    <input type="text" name="phone" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Number">
+                    <input value="{{$staffEdit->phone}}" type="number" name="phone" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Number">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Address</label>
-                    <input type="text" name="address" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Address">
+                    <input value="{{$staffEdit->address}}" type="text" name="address" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Address">
                 </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Image</label>
-                    <input type="file" name="image" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                </div>
+
                
                 
                 <button type="submit" class="btn btn-primary mt-2">Submit</button>

@@ -15,19 +15,20 @@
             <h1>
                 Input your Information!
             </h1>
-            <form action="{{route('report.store')}}"method="post">
+            <form action="{{route('report.update', $reportEdit->id)}}"method="post" enctype="multipart/form-data">
                 @csrf 
+                @method('put')
                 <div class="form-group">
                     <label for="exampleInputEmail1">Orphan Name</label>
-                    <input type="text" name="orphan_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter First Name">
+                    <input value="{{$reportEdit->orphan_name}}" type="text" name="orphan_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter First Name">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Age</label>
-                    <input type="number" name="age" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Date of Birth">
+                    <input value="{{$reportEdit->age}}" type="number" name="age" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Age">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Image</label>
-                    <input type="file" name="image" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input value="{{$reportEdit->image}}" type="file" name="image" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
                 <div class="form-group
                 <label for="exampleInputEmail1">Gender</label><br>
@@ -38,7 +39,7 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Status</label>
-                    <input type="text" name="status" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Status">
+                    <input value="{{$reportEdit->status}}" type="text" name="status" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Status">
                 </div>
                 <button type="submit" class="btn btn-primary mt-2">Submit</button>
             </form>

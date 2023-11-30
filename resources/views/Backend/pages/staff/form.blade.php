@@ -33,13 +33,8 @@
                     <label for="exampleInputEmail1">Address</label>
                     <input type="text" name="address" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Address">
                 </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Image</label>
-                    <input type="file" name="image" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                </div>
                
-                
-                <button type="submit" class="btn btn-primary mt-2">Submit</button>
+                 <button type="submit" class="btn btn-primary mt-2">Submit</button>
             </form>
         </div>
     </main >

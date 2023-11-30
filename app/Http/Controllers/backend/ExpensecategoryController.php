@@ -31,6 +31,37 @@ public function form()
     
     return redirect()->route('expensecategory');
     }
+
+    public function edit($id)
+    {
+        $expensecategoryEdit =Expensecategory::find($id);
+        return view('Backend.pages.expensecategory.edit', compact('expensecategoryEdit'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $expensecategoryEdit = Expensecategory::find($id);
+        if ($expensecategoryEdit) {
+
+              $fileName=$expensecategoryEdit->image;
+            if($request->hasFile('image'))
+            {
+                $file=$request->file('image');
+                $fileName=date('Ymdhis').'.'.$file->getClientOriginalExtension();               
+                $file->move("uploads",$fileName);
+      
+            }
+            $expensecategoryEdit->update([
+                'category' => $request->category,
+                'description' => $request->description,
+                'payment_method' => $request->payment_method,    
+                'amount' => $request->amount,    
+                'invoice_number' => $request->invoice_number,    
+
+             ]);
+            return redirect()->route('expensecategory');
+        }
+    }
     public function store(Request $fariha)
 
     {

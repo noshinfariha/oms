@@ -15,30 +15,33 @@
             <h1>
                 Input your Information!
             </h1>
-            <form action="{{route('expensecategory.store')}}"method="post" enctype="multipart/form-data">
+            <form action="{{route('expensecategory.update', $expensecategoryEdit->id)}}"method="post" enctype="multipart/form-data"> 
                 @csrf 
+                @method('put')
                 <div class="form-group">
                     <label for="exampleInputEmail1">Category</label>
-                    <input required type="text" name="category" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Address">
+                    <input value="{{$expensecategoryEdit->category}}" required type="text" name="category" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Category">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Description</label>
-                    <input type="text" name="description" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Date of Birth">
-                
-                </div>
-                        
-            <div class="form-group">
-                    <label for="exampleInputEmail1">Payment Method</label>
-                    <input  type="number" name="payment method" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            
-                </div>
+                    <input value="{{$expensecategoryEdit->description}}" required type="text" name="description" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Description">
+                 </div>
+                    
+                 <div class="form-group">
+                <label for="exampleInputEmail1">Payment Method</label>
+                <select name="payment_method" id="" class="form-control" required>
+                    <option value="Bkash">Bank</option>
+                    <option value="Rocket">Bkash</option>
+                    <option value="Rocket">Rocket</option>
+                 </select>
+            </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Amount</label>
-                    <input type="number" name="amount" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Religion">
+                    <input value="{{$expensecategoryEdit->amount}}" required type="text" name="amount" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Amount">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Invoice Number</label>
-                    <input type="number" name="invoice number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Status">
+                    <input value="{{$expensecategoryEdit->invoice_number}}" required type="number" name="invoice_number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter invoice">
                 </div>
                 <button type="submit" class="btn btn-primary mt-2">Submit</button>
             </form>
