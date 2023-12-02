@@ -1,8 +1,8 @@
 @extends("Backend.master")
 @section('content')
 <h2>Donors Information</h2>
-<a href="{{route('donor.form')}}">
-<button type="button" class="btn btn-dark">Add Donor</button>
+<a href="{{route('donor.form')}}" type="button" class="btn btn-dark">Add Donor</a>
+
 <table class="table table-striped table-dark">
     <thead>
       <tr>
@@ -29,6 +29,6 @@
 @endforeach
     </tbody>
   </table>
-</a>
+
 {{ $donorsdata->links() }}
 @endsection

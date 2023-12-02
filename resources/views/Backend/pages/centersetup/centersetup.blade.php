@@ -1,8 +1,8 @@
 @extends("Backend.master")
 @section('content')
 <h2>Center Setup Information</h2>
-<a href="{{route('centersetup.form')}}">
-<button type="button" class="btn btn-dark">Add setup</button>
+<a href="{{route('centersetup.form')}}" type="button" class="btn btn-dark">Add Centersetup</a>
+
 <table class="table table-striped table-dark">
     <thead>
       <tr>
@@ -29,6 +29,6 @@
 @endforeach
     </tbody>
   </table>
-</a>
+
 {{ $centersetupdata->links() }}
 @endsection

@@ -2,8 +2,8 @@
 @section('content')
 <h2>Report</h2>
 
-<a href="{{route('report.form')}}">
-  <button type="button" class="btn btn-dark">report info</button>
+<a href="{{route('report.form')}}" type="button" class="btn btn-dark">Add Report</a>
+
   <table class="table table-striped table-dark">
     <thead>
       <tr>
@@ -32,5 +32,5 @@
 @endforeach
     </tbody>
   </table>
-</a>
+
 @endsection

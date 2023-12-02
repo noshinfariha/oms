@@ -2,8 +2,8 @@
 @section('content')
 <h2>Accounts Information</h2>
 
-<a href="{{route('account.form')}}">
-  <button type="button" class="btn btn-dark">Account info</button>
+<a href="{{route('account.form')}}" type="button" class="btn btn-dark"> Account info</a>
+
   <table class="table table-striped table-dark">
     <thead>
       <tr>
@@ -32,5 +32,5 @@
 @endforeach
     </tbody>
   </table>
-</a>
+
 @endsection

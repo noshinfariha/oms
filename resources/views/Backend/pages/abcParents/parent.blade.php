@@ -1,8 +1,9 @@
 @extends("Backend.master")
 @section('content')
 <h2>Parents Information</h2>
-<a href="{{route('parents.form')}}">
-<button type="button" class="btn btn-dark">Add Parent</button>
+
+<a href="{{route('parents.form')}}" type="button" class="btn btn-dark">Add Parent</a>
+
 <table class="table table-striped table-dark">
     <thead>
       <tr>   
@@ -32,6 +33,6 @@
 @endforeach
     </tbody>
   </table>
-</a>
+
 {{ $fariha->links() }}
 @endsection

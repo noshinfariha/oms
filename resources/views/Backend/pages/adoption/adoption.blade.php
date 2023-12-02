@@ -1,8 +1,8 @@
 @extends("Backend.master")
 @section('content')
 <h2>Adoption Information</h2>
-<a href="{{route('adoption.form')}}">
-<button type="button" class="btn btn-dark">Add Adoption</button>
+<a href="{{route('adoption.form')}}" type="button" class="btn btn-dark">Add Adoption</a>
+
 <table class="table table-striped table-dark">
     <thead>
       <tr>
@@ -29,6 +29,6 @@
 @endforeach
     </tbody>
   </table>
-</a>
+
 {{ $adoptionsdata->links() }}
 @endsection

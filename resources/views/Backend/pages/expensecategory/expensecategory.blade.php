@@ -2,8 +2,8 @@
 @section('content')
 <h2>Expense Category</h2>
 
-<a href="{{route('expensecategory.form')}}">
-  <button type="button" class="btn btn-dark">Add Category</button>
+<a href="{{route('expensecategory.form')}}" type="button" class="btn btn-dark">Add Expensecategoty</a>
+
   <table class="table table-striped table-dark">
     <thead>
       <tr>
@@ -34,6 +34,6 @@
 @endforeach
     </tbody>
   </table>
-</a>
+
 {{ $expensecategory->links() }}
 @endsection

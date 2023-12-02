@@ -30,7 +30,7 @@
 							<li>
 								<a href="#" class="fh5co-sub-ddown">Get Involved</a>
 								<ul class="fh5co-sub-menu">
-									<li><a href="#">Donate</a></li>
+									<li><a href="{{route('donation.form')}}">Donate</a></li>
 									<li><a href="#">Fundraise</a></li>
 									<li><a href="#">Campaign</a></li>
 									<li><a href="#">Philantrophy</a></li>
@@ -46,7 +46,7 @@
 								</ul>
 							</li>
 							<li><a href="about.html">About</a></li>
-							<li><a href="blog.html">Blog</a></li>
+							<li><a href="{{route('forntend.orphon.list')}}">Orphan</a></li>
 							<li><a href="contact.html">Contact</a></li>
 							@guest
                             <li style="margin-left: 10px;">

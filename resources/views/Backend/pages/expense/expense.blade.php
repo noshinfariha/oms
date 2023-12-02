@@ -1,8 +1,8 @@
 @extends("Backend.master")
 @section('content')
 <h2>Expense Information</h2>
-<a href="{{route('expense.form')}}">
-<button type="button" class="btn btn-dark">Add Expense</button>
+<a href="{{route('expense.form')}}" type="button" class="btn btn-dark">Add Expense</a>
+
 <table class="table table-striped table-dark">
     <thead>
       <tr>
@@ -26,6 +26,6 @@
 @endforeach
     </tbody>
   </table>
-</a>
+
 {{ $expensedata->links()}}
 @endsection

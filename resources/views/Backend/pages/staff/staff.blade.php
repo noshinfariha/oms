@@ -1,8 +1,8 @@
 @extends("Backend.master")
 @section('content')
 <h2>Staff Information</h2>
-<a href="{{route('staff.form')}}">
-<button type="button" class="btn btn-dark">Add Staff</button>
+
+<a href="{{route('staff.form')}}" type="button" class="btn btn-dark">Add Staff</a>
 <table class="table table-striped table-dark">
     <thead>
       <tr>
@@ -29,6 +29,5 @@
 @endforeach
     </tbody>
   </table>
-</a>
 {{ $staffdata->links() }}
 @endsection
