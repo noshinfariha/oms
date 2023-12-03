@@ -35,12 +35,14 @@ public function delete($id)
 
     public function edit($id)
     {
+        
         $adoptionEdit = Adoption::find($id);
         return view('Backend.pages.adoption.edit', compact('adoptionEdit'));
     }
 
     public function update(Request $request, $id)
     {
+    dd($request->all());
         $adoptionEdit = Adoption::find($id);
         if ($adoptionEdit) {
 

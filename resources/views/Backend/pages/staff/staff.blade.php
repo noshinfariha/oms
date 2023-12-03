@@ -21,7 +21,7 @@
         <td>{{$item->phone}}</td>
         <td>{{$item->address}}</td>
         <td>
-          <a href='#'class="btn btn-primary">View</a>
+        <a href="{{route('staff.view',$item->id)}}" class="btn btn-primary">View</a>
           <a href="{{route('staff.edit', $item->id)}}" class="btn btn-danger">Edit</a>
            <a href="{{route('staff.delete', $item->id)}}" class="btn btn-success">Delete</a>
         </td>

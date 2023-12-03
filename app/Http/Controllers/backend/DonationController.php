@@ -25,6 +25,7 @@ class DonationController extends Controller
         if ($donationDelete) {
             $donationDelete->delete();
         }
+        return redirect()->route('donation');
     }
 
     public function edit($id)

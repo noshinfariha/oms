@@ -21,7 +21,7 @@
         <td>{{$item->email}}</td>
         <td>{{$item->address}}</td>
         <td>
-        <a href='#'class="btn btn-primary">View</a>
+        <a href="{{route('donor.view',$item->id)}}" class="btn btn-primary">View</a>
         <a href="{{ route('donor.edit', $item->id) }}"class="btn btn-danger">Edit</a>
           <a href="{{ route('donor.delete', $item->id) }}"class="btn btn-success">Delete</a>
         </td>

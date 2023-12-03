@@ -102,4 +102,11 @@ class OrphanController extends Controller
     
 
     }
+
+    public function view($id){
+
+        $orphansdata = Orphan::find($id);
+        return view('Backend.pages.orphans.view', compact('orphansdata'));
+
+    }
 }

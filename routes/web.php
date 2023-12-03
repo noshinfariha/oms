@@ -87,6 +87,8 @@ Route::group(['prefix' => 'backend'], function () {
       Route::get('orphan/delete/{id}', [OrphanController::class, 'delete'])->name('orphan.delete');
       Route::get('orphan/edit/{id}', [OrphanController::class, 'edit'])->name('orphan.edit');
       Route::put('orphan/update/{id}', [OrphanController::class, 'update'])->name('orphan.update');
+      Route::get('orphan/view/{id}', [OrphanController::class, 'view'])->name('orphan.view');
+      
 
       Route::get('/staffs/list', [StaffController::class, 'list'])->name('staff');
       Route::get('/staff/form', [StaffController::class, 'form'])->name('staff.form');
@@ -94,6 +96,8 @@ Route::group(['prefix' => 'backend'], function () {
       Route::get('staff/delete/{id}', [StaffController::class, 'delete'])->name('staff.delete');
       Route::get('staff/edit/{id}', [StaffController::class, 'edit'])->name('staff.edit');
       Route::put('staff/update/{id}', [StaffController::class, 'update'])->name('staff.update');
+      Route::get('staff/view/{id}', [StaffController::class, 'view'])->name('staff.view');
+
 
 
       Route::get('/parents/list', [abcParentsController::class, 'list'])->name('parents');
@@ -102,6 +106,8 @@ Route::group(['prefix' => 'backend'], function () {
       Route::get('parents/delete/{id}', [abcParentsController::class, 'delete'])->name('parents.delete');
       Route::get('parents/edit/{id}', [abcParentsController::class, 'edit'])->name('parents.edit');
       Route::put('parents/update/{id}', [abcParentsController::class, 'update'])->name('parents.update');
+      Route::get('parents/view/{id}', [abcParentsController::class, 'view'])->name('parents.view');
+
 
 
       Route::get('/report/list', [ReportController::class, 'list'])->name('report');
@@ -110,6 +116,8 @@ Route::group(['prefix' => 'backend'], function () {
       Route::get('report/delete/{id}', [ReportController::class, 'delete'])->name('report.delete');
       Route::get('report/edit/{id}', [ReportController::class, 'edit'])->name('report.edit');
       Route::put('report/update/{id}', [ReportController::class, 'update'])->name('report.update');
+      Route::get('report/view/{id}', [ReportController::class, 'view'])->name('report.view');
+
 
 
 
@@ -119,6 +127,8 @@ Route::group(['prefix' => 'backend'], function () {
       Route::get('/account/{id}', [AccountController::class, 'delete'])->name('account.delete');
       Route::get('account/edit/{id}', [AccountController::class, 'edit'])->name('account.edit');
       Route::put('account/update/{id}', [AccountController::class, 'update'])->name('account.update');
+      Route::get('account/view/{id}', [AccountController::class, 'view'])->name('account.view');
+
 
 
 
@@ -126,8 +136,10 @@ Route::group(['prefix' => 'backend'], function () {
       Route::get('/adoptions/form', [AdoptionController::class, 'form'])->name('adoption.form');
       Route::post('/adoptions/store', [AdoptionController::class, 'store'])->name('adoption.store');
       Route::get('adoptions/delete/{id}', [AdoptionController::class, 'delete'])->name('adoption.delete');
-      Route::get('adoptions/edit/{id}', [AdoptionController::class, 'edit'])->name('adoption.edit');
+      Route::get('/adoptions/edit/{id}', [AdoptionController::class, 'edit'])->name('adoption.edit');
       Route::put('adoptions/update/{id}', [AdoptionController::class, 'update'])->name('adoption.update');
+      Route::get('adoptions/view/{id}', [AdoptionController::class, 'view'])->name('adoption.view');
+
 
 
       Route::get('/donations/list', [DonationController::class, 'list'])->name('donation');
@@ -135,6 +147,8 @@ Route::group(['prefix' => 'backend'], function () {
       Route::get('donations/delete/{id}', [DonationController::class, 'delete'])->name('donation.delete');
       Route::get('donations/edit/{id}', [DonationController::class, 'edit'])->name('donation.edit');
       Route::put('donations/update/{id}', [DonationController::class, 'update'])->name('donation.update');
+      Route::get('donations/view/{id}', [DonationController::class, 'view'])->name('donation.view');
+
 
 
 
@@ -144,6 +158,8 @@ Route::group(['prefix' => 'backend'], function () {
       Route::get('donor/delete/{id}', [DonorController::class, 'delete'])->name('donor.delete');
       Route::get('donor/edit/{id}', [DonorController::class, 'edit'])->name('donor.edit');
       Route::put('donor/update/{id}', [DonorController::class, 'update'])->name('donor.update');
+      Route::get('donor/view/{id}', [DonorController::class, 'view'])->name('donor.view');
+
 
 
 
@@ -153,6 +169,8 @@ Route::group(['prefix' => 'backend'], function () {
       Route::get('expense/delete/{id}', [ExpenseController::class, 'delete'])->name('expense.delete');
       Route::get('expense/edit/{id}', [ExpenseController::class, 'edit'])->name('expense.edit');
       Route::put('expense/update/{id}', [ExpenseController::class, 'update'])->name('expense.update');
+      Route::get('expense/view/{id}', [ExpenseController::class, 'view'])->name('expense.view');
+
 
 
       Route::get('/expensecategory/list', [ExpensecategoryController::class, 'list'])->name('expensecategory');
@@ -161,6 +179,8 @@ Route::group(['prefix' => 'backend'], function () {
       Route::get('expensecategory/delete/{id}', [ExpensecategoryController::class, 'delete'])->name('expensecategory.delete');
       Route::get('expensecategory/edit/{id}', [ExpensecategoryController::class, 'edit'])->name('expensecategory.edit');
       Route::put('expensecategory/update/{id}', [ExpensecategoryController::class, 'update'])->name('expensecategory.update');
+      Route::get('expensecategory/view/{id}', [ExpensecategoryController::class, 'view'])->name('expensecategory.view');
+
 
 
       Route::get('/centersetup/list', [CentersetupController::class, 'list'])->name('centersetup');
@@ -169,6 +189,8 @@ Route::group(['prefix' => 'backend'], function () {
       Route::get('centersetup/delete/{id}', [CentersetupController::class, 'delete'])->name('centersetup.delete');
       Route::get('centersetup/edit/{id}', [CentersetupController::class, 'edit'])->name('centersetup.edit');
       Route::put('centersetup/update/{id}', [CentersetupController::class, 'update'])->name('centersetup.update');
+      Route::get('centersetup/view/{id}', [CentersetupController::class, 'view'])->name('centersetup.view');
+
 
 
 

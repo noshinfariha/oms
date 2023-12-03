@@ -96,7 +96,7 @@ class abcParentsController extends Controller
              'email'=>$fariha->email,
              'phone'=> $fariha->phone,
              'address'=>$fariha->address,
-            'image'=>$fariha->image,
+            'image'=>$fileName,
              
        ]);       
        return redirect(route('parents'));

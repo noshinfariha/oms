@@ -24,7 +24,7 @@
         <td>{{$item->image}}</td>
         <td>{{$item->status}}</td>
         <td>
-          <a href='#'class="btn btn-primary">View</a>
+        <a href="{{route('report.view',$item->id)}}" class="btn btn-primary">View</a>
           <a href="{{route('report.edit',$item->id)}}" class="btn btn-danger">Edit</a>
           <a href="{{route('report.delete',$item->id)}}" class="btn btn-success">Delete</a>
         </td>

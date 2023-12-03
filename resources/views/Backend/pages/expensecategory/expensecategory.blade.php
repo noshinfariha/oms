@@ -25,7 +25,7 @@
         <td>{{$item->amount}}</td>
         <td>{{$item->invoice_number}}</td>
           <td>
-          <a href='#'class="btn btn-primary">View</a>
+          <a href="{{route('expensecategory.view',$item->id)}}" class="btn btn-primary">View</a>
           <a href="{{route('expensecategory.edit', $item->id)}}" class="btn btn-danger">Edit</a>
            <a href="{{route('expensecategory.delete', $item->id)}}" class="btn btn-success">Delete</a>
 

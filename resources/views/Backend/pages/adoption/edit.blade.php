@@ -35,16 +35,6 @@
                     <input value="{{$adoptionEdit->adoption_date}}" type="date" name="adoption_date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Date">
                 </div>
 
-
-
-                <!-- <div class="form-group">
-                <label class="mt-2">Orphan ID</label>
-                <select class="form-control" name="orphan_id" required>
-                    @foreach($orphans as $orphan)
-                        <option value="{{$orphan->id}}">{{$orphan->id}}</option>
-                    @endforeach
-                </select>
-            </div> -->
                 <button type="submit" class="btn btn-primary mt-2">Submit</button>
             </form>
         </div>

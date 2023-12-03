@@ -24,7 +24,7 @@
         <td>{{$item->address}}</td>
         <td><img class="border border-warning rounded-pill" width="110" height="50" src="{{url('/uploads/' . $item->image)}}" alt=""></td>
         <td>
-        <a href='#'class="btn btn-primary">View</a>
+        <a href="{{route('parents.view',$item->id)}}" class="btn btn-primary">View</a>
         <a href="{{route('parents.edit',$item->id)}}" class="btn btn-danger">Edit</a>
          <a href="{{route('parents.delete', $item->id)}}" class="btn btn-success">Delete</a>
 

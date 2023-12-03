@@ -36,14 +36,14 @@
 
 
 
-                <!-- <div class="form-group">
+                <div class="form-group">
                 <label class="mt-2">Orphan ID</label>
                 <select class="form-control" name="orphan_id" required>
                     @foreach($orphans as $orphan)
                         <option value="{{$orphan->id}}">{{$orphan->id}}</option>
                     @endforeach
                 </select>
-            </div> -->
+            </div>
                 <button type="submit" class="btn btn-primary mt-2">Submit</button>
             </form>
         </div>
