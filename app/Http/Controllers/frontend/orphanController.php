@@ -9,7 +9,12 @@ use App\Http\Controllers\Controller;
 class orphanController extends Controller
 {
     public function form(){
-        $orphansdata = Orphan::paginate(3);
+        $orphansdata = Orphan::all();
         return view('Frontend.pages.pages.orphan.orphan', compact('orphansdata'));
+    }
+    
+    public function view($id){
+        $orphansdata = Orphan::find($id);
+        return view('Frontend.pages.pages.orphan.view', compact('orphansdata'));
     }
 }

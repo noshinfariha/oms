@@ -40,6 +40,7 @@ Route::get('/donations/form', [DonationController::class, 'form'])->name('donati
 
 //orphan list list
 Route::get('forntend/orphan/list', [FrontendOrphanController::class, 'form'])->name('forntend.orphon.list');
+Route::get('forntend/orphan/list/{id}', [FrontendOrphanController::class, 'view'])->name('forntend.orphan.view');
 
 
 

@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function frontendhome(){
-        return view('Frontend.master');
+        return view('Frontend.pages.Home.home');
     }
     public function registration()
     {
