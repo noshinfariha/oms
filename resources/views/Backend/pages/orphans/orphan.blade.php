@@ -34,6 +34,6 @@
       </tr>
       @endforeach
     </tbody>
-  </table>id
+  </table>
 {{ $orphansdata->links() }}
 @endsection

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\backend;
 use App\Models\Parents;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Support\Facades\Validator;
 
 
@@ -12,7 +13,11 @@ use Illuminate\Support\Facades\Validator;
 class abcParentsController extends Controller
 {
     public function list(){
-        $fariha=Parents::paginate(3);
+
+
+        // $gh= model::with(rls)->where('role', auth()->user()->id)->get();
+        // $fariha=User::withwhere('role->parents')->get();
+        $fariha= Parents::all();
          return view("Backend.pages.abcParents.parent",compact('fariha'));
  
      }

@@ -28,6 +28,7 @@ Route::get('/', [FrontendHomeController::class, 'frontendhome'])->name('frontend
 
 Route::get('/registartion', [FrontendHomeController::class, 'registration'])->name('user.registration');
 Route::post('/registration/store', [frontendUserController::class, 'store'])->name('User.store');
+//Route::post('/search', [frontendUserController::class, 'search'])->name('User.search');
 
 
 Route::get('/user/login', [frontendUserController::class, 'login'])->name('Login_User');

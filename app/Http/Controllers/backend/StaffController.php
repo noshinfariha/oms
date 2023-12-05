@@ -109,6 +109,11 @@ public function update(Request $request, $id)
           ]);       
                return redirect(route('staff'));
     }
+        }
+    public function view($id){
+
+        $staffdata = Staff::find($id);
+        return view('Backend.pages.staff.view', compact('staffdata'));
 
 }
 }

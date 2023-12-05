@@ -72,7 +72,7 @@
                 font-size: 1rem;
                 background-color: #f2395a;
                 background-size: 100%;
-                
+
                 background-image: linear-gradient(45deg,
                         rgba(255, 255, 255, 0.15) 25%, rgba(0, 0, 0, 0) 25%,
                         rgba(0, 0, 0, 0) 50%,
@@ -173,9 +173,14 @@
                             <input type="text" name="name" placeholder="Enter your Name" />
                             <label for="#">Email</label>
                             <input type="email" name="email" placeholder="Enter your email" />
+                            <label for="#">phone</label>
+                            <input type="number" name="phone" placeholder="Enter your phone" />
+                            <label for="#">address</label>
+                            <input type="text" name="address" placeholder="Enter your address" />
                             <label for="#">Password</label>
                             <input type="password" name="password" placeholder="Enter your password" />
-                            <input type="submit" value="Create my account" />
+                           
+                            <input type="submit" class="mt-5" value="Create my account" />
                         </form>
                     </div>
                 </div>

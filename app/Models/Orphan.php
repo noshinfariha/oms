@@ -9,4 +9,6 @@ class Orphan extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+    
 }

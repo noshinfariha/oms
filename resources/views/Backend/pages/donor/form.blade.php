@@ -31,8 +31,14 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Address</label>
-                    <input type="text" name="address" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Address">
+                    <input type="text" name="role" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Address">
                 </div>
+
+
+                <select class="form-control" name="role" required>                    
+                        <option value="Parent">parent</option>
+                        <option value="Donor">donor</option>                   
+                </select>
 
                 <button type="submit" class="btn btn-primary mt-2">Submit</button>
             </form>

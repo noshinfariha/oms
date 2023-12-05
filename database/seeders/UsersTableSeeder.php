@@ -17,6 +17,9 @@ class UsersTableSeeder extends Seeder
             "name"=> "Noshin",
             "email"=>"noshinfariha4200@gmail.com",
             "password"=>bcrypt("123456"),
+            "address"=>"address",
+            "phone"=>'0194585888',
+            "role"=>"admin"
         ]);
     }
 }
