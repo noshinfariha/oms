@@ -16,9 +16,7 @@ class UserController extends Controller
     public function store(Request $request)
     {
         // dd($request->all());
-
        
-
         User::create([
             'name' => $request->name,
             'phone' => $request->phone,
@@ -27,6 +25,7 @@ class UserController extends Controller
             'role' => 'user',
             'password' => bcrypt($request->password),
         ]);
+        notify()->success('User registration success ');
         return redirect()->route('frontend');
     }
 
@@ -47,11 +46,13 @@ class UserController extends Controller
         ]);
 
         if ($validator->fails()) {
+            notify()->error('somthing is wrong');
             return redirect()->back()->withErrors($validator);
         }
         $credentials = $request->except('_token');
 
         if (auth()->attempt($credentials)) {
+            notify()->success('Welcome to CHILD CARE');
             return redirect()->route('frontend');
         }
         return redirect()->back();
@@ -60,6 +61,7 @@ class UserController extends Controller
     public function logout()
     {
         auth()->logout();
+        notify()->success('user login success');
         return redirect()->route('frontend');
     }
 }

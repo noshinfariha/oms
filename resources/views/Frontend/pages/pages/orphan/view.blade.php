@@ -19,14 +19,15 @@
             <div class="col-md-4 mb-3">
               <div class="card">
                 <div class="card-body">
-                  <div class="d-flex flex-column align-items-center text-center">
-                    <img src="{{url('/uploads/' . $orphansdata->image)}}" alt="Admin" class="rounded-circle" width="150">
-                    <div class="mt-3">
+                  <div class="d-flex flex-column align-items-center ">
+                    <img src="{{url('/uploads/' . $orphansdata->image)}}" alt="Admin" class="rounded-circle" width="150" ml-5>
+                    <div class="mt-3 ">
                       <h4>{{$orphansdata->orphan_name}}</h4>
                       <p class="text-secondary mb-1">Full Stack Developer</p>
                       <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
-                      <button class="btn btn-primary">Follow</button>
-                      <button class="btn btn-outline-primary">Message</button>
+                      <a href="{{route('forntend.adopt')}}" class="btn btn-primary">Adopt Now</a>
+
+                    
                     </div>
                   </div>
                 </div>

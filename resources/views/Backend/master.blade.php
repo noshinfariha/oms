@@ -16,6 +16,7 @@
 <html lang="en">
 
 <head>
+@notifyCss
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="apple-touch-icon" sizes="76x76" href="https://demos.creative-tim.com/material-dashboard/assets/img/apple-icon.png">
@@ -23,6 +24,7 @@
   <title>
     Material Dashboard 2 by Creative Tim
   </title>
+ 
 
 
   <link rel="canonical" href="https://www.creative-tim.com/product/material-dashboard" />
@@ -146,7 +148,7 @@
       </div>
     </div>
   </div>
-
+  
   <script src="https://demos.creative-tim.com/material-dashboard/assets/js/core/popper.min.js"></script>
   <script src="https://demos.creative-tim.com/material-dashboard/assets/js/core/bootstrap.min.js"></script>
   <script src="https://demos.creative-tim.com/material-dashboard/assets/js/plugins/perfect-scrollbar.min.js"></script>
@@ -413,6 +415,8 @@
 
   <script src="https://demos.creative-tim.com/material-dashboard/assets/js/material-dashboard.min.js?v=3.1.0"></script>
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8b253dfea2ab4077af8c6f58422dfbfd1689876627854" integrity="sha512-bjgnUKX4azu3dLTVtie9u6TKqgx29RBwfj3QXYt5EKfWM/9hPSAI/4qcV5NACjwAo8UtTeWefx6Zq5PHcMm7Tg==" data-cf-beacon='{"rayId":"81594893de9e78bd","token":"1b7cbb72744b40c580f8633c6b62637e","version":"2023.8.0","si":100}' crossorigin="anonymous"></script>
+  <x-notify::notify />
+  @notifyJs
 </body>
 
 </html>

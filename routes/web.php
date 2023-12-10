@@ -38,16 +38,18 @@ Route::get('/logout', [frontendUserController::class, 'logout'])->name('User_Log
 
 // donation route 
 Route::get('/donations/form', [DonationController::class, 'form'])->name('donation.form');
+      Route::post('/donations/store', [DonationController::class, 'store'])->name('donation.store');
+
 
 //orphan list list
 Route::get('forntend/orphan/list', [FrontendOrphanController::class, 'form'])->name('forntend.orphon.list');
 Route::get('forntend/orphan/list/{id}', [FrontendOrphanController::class, 'view'])->name('forntend.orphan.view');
 
+//Adopt now 
 
 
-
-
-
+Route::get('forntend/adopt', [AdoptionController::class, 'view'])->name('forntend.adopt');
+Route::post('/adoptions/store', [AdoptionController::class, 'store'])->name('adoption.store');
 
 
 
@@ -135,7 +137,6 @@ Route::group(['prefix' => 'backend'], function () {
 
       Route::get('/adoptions/list', [AdoptionController::class, 'list'])->name('adoption');
       Route::get('/adoptions/form', [AdoptionController::class, 'form'])->name('adoption.form');
-      Route::post('/adoptions/store', [AdoptionController::class, 'store'])->name('adoption.store');
       Route::get('adoptions/delete/{id}', [AdoptionController::class, 'delete'])->name('adoption.delete');
       Route::get('/adoptions/edit/{id}', [AdoptionController::class, 'edit'])->name('adoption.edit');
       Route::put('adoptions/update/{id}', [AdoptionController::class, 'update'])->name('adoption.update');
@@ -144,7 +145,6 @@ Route::group(['prefix' => 'backend'], function () {
 
 
       Route::get('/donations/list', [DonationController::class, 'list'])->name('donation');
-      Route::post('/donations/store', [DonationController::class, 'store'])->name('donation.store');
       Route::get('donations/delete/{id}', [DonationController::class, 'delete'])->name('donation.delete');
       Route::get('donations/edit/{id}', [DonationController::class, 'edit'])->name('donation.edit');
       Route::put('donations/update/{id}', [DonationController::class, 'update'])->name('donation.update');

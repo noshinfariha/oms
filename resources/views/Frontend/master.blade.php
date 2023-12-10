@@ -6,6 +6,7 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 	<head>
+
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Charity &mdash; 100% Free Fully Responsive HTML5 Template by FREEHTML5.co</title>
@@ -13,21 +14,12 @@
 	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
 	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
 	<meta name="author" content="FREEHTML5.CO"/>
-
-  <!-- 
-	//////////////////////////////////////////////////////
-
-	FREE HTML5 TEMPLATE 
-	DESIGNED & DEVELOPED by FREEHTML5.CO
-		
-	Website: 		http://freehtml5.co/
-	Email: 			info@freehtml5.co
-	Twitter: 		http://twitter.com/fh5co
-	Facebook: 		https://www.facebook.com/fh5co
-
-	//////////////////////////////////////////////////////
-	 -->
-
+	@notifyCss
+	<style>
+		.notify{
+			z-index: 1000000;
+		}
+	</style>
   	<!-- Facebook and Twitter integration -->
 	<meta property="og:title" content=""/>
 	<meta property="og:image" content=""/>
@@ -47,6 +39,7 @@
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="{{url('/frontend/')}}/css/animate.css">
 	<!-- Icomoon Icon Fonts-->
+
 	<link rel="stylesheet" href="{{url('/frontend/')}}/css/icomoon.css">
 	<!-- Bootstrap  -->
 	<link rel="stylesheet" href="{{url('/frontend/')}}/css/bootstrap.css">
@@ -54,7 +47,8 @@
 	<link rel="stylesheet" href="{{url('/frontend/')}}/css/superfish.css">
 
 	<link rel="stylesheet" href="{{url('/frontend/')}}/css/style.css">
-
+	
+	
 
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
@@ -65,6 +59,8 @@
 
 	</head>
 	<body>
+	
+
 		
 		@include('Frontend.partial.header')
 		
@@ -104,6 +100,7 @@
 	<!-- jQuery -->
 
 
+	
 	<script src="{{url('/frontend/')}}/js/jquery.min.js"></script>
 	<!-- jQuery Easing -->
 	<script src="{{url('/frontend/')}}/js/jquery.easing.1.3.js"></script>
@@ -121,7 +118,9 @@
 	
 	<!-- Main JS -->
 	<script src="{{url('/frontend/')}}/js/main.js"></script>
-
+	
+	<x-notify::notify />
+	@notifyJs
 	</body>
 </html>
 

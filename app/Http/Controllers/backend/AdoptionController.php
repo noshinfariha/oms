@@ -16,7 +16,7 @@ public function list(){
     return view("Backend.pages.adoption.adoption",compact('adoptionsdata'));
 
 }
-public function form(){
+public function view(){
     $orphans = Orphan::all();
     return view("Backend.pages.adoption.form",compact('orphans'));//to take data from model
 
@@ -67,9 +67,15 @@ public function delete($id)
     }
 public function store (Request $noshin){
 
+//   dd($noshin ->all());
+
        $validate=validator::make($noshin->all(),[
-             'adoption_id'=>'required', 
-            
+             'applicant_name'=>'required', 
+             'phone'=>'required', 
+             'address'=>'required', 
+             'date_of_birth'=>'required', 
+             'occupation'=>'required', 
+             'source_income'=>'required'            
          ]);
 
           if($validate->fails()){
@@ -77,17 +83,21 @@ public function store (Request $noshin){
         } 
   // dd($noshin ->all());
     Adoption::create([
-        'orphan_id'=>$noshin->orphan_id,
-        'adoption_id'=>$noshin->adoption_id,
-        'parents_id'=>$noshin->parents_id,
-        'adoption_date'=> $noshin->adoption_date,
+        'applicant_name'=>$noshin->applicant_name,
+        'phone'=>$noshin->phone,
+        'address'=>$noshin->address,
+        'date_of_birth'=> $noshin->date_of_birth,
+        'occupation'=> $noshin->occupation,
+        'source_income'=> $noshin->source_income,
+        'marital_status'=> $noshin->marital_status,
+        'reasons_child'=> $noshin->reasons_child,
     
   ]);       
-  return redirect()->route('adoption');
+  return redirect()->route('forntend.orphon.list');
 
 
-} 
+}
+
 }  
-
 
 
