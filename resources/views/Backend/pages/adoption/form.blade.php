@@ -64,7 +64,7 @@
             </div>
             <div class="form-group">
                     <label for="exampleInputEmail1">Reasons for adopting a child</label>
-                    <textarea class="form-control" name="reasons_child" id="" cols="30" rows="10"></textarea>
+                    <textarea class="form-control" name="reasons_child" id="exampleInputEmail1" cols="30" rows="10"></textarea>
 
                 </div>
                

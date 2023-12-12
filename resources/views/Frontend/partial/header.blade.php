@@ -1,14 +1,22 @@
 <div id="fh5co-wrapper">
-		<div id="fh5co-page">
+	<div id="fh5co-page">
 		<div class="header-top">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-6 col-sm-6 text-left fh5co-link">
+					<div class="col-md-3 col-sm-6 text-left fh5co-link">
 						<a href="#">FAQ</a>
 						<a href="#">Forum</a>
 						<a href="#">Contact</a>
 					</div>
-					<div class="col-md-6 col-sm-6 text-right fh5co-social">
+					<div class="col-md-6 col-sm-6 fh5co-link">
+						<form action="{{route('User.search')}}" method="get">
+							<div class="row">
+								<input type="text" class="col-md-9" placeholder="Search..." name="search">
+								<button type="submit" class="btn btn-sm btn-success">Search</button>
+							</div>
+						</form>
+					</div>
+					<div class="col-md-3 col-sm-6 text-right fh5co-social">
 						<a href="#" class="grow"><i class="icon-facebook2"></i></a>
 						<a href="#" class="grow"><i class="icon-twitter2"></i></a>
 						<a href="#" class="grow"><i class="icon-instagram2"></i></a>
@@ -16,6 +24,7 @@
 				</div>
 			</div>
 		</div>
+
 		<header id="fh5co-header-section" class="sticky-banner">
 			<div class="container">
 				<div class="nav-header">
@@ -39,33 +48,35 @@
 							</li>
 							<li>
 								<a href="#" class="fh5co-sub-ddown">Projects</a>
-								 <ul class="fh5co-sub-menu">
-								 	<li><a href="#">Water World</a></li>
-								 	<li><a href="#">Cloth Giving</a></li>
-								 	<li><a href="#">Medical Mission</a></li>
+								<ul class="fh5co-sub-menu">
+									<li><a href="#">Water World</a></li>
+									<li><a href="#">Cloth Giving</a></li>
+									<li><a href="#">Medical Mission</a></li>
 								</ul>
 							</li>
 							<li><a href="about.html">About</a></li>
 							<li><a href="{{route('forntend.orphon.list')}}">Orphan</a></li>
 							<li><a href="contact.html">Contact</a></li>
 							@guest
-                            <li style="margin-left: 10px;">
-                                <a href="{{route('user.registration')}}" class="btn btn-primary btn-lg active  ml-5" role="button" aria-pressed="true">Registration </a>
-                            </li>
-                            <li style="margin-left: 10px;" >
-                                <a href="{{route('Login_User')}}" class="btn btn-primary btn-lg active  ml-5" role="button" aria-pressed="true">Login</a>
-                            </li>
+							<li style="margin-left: 10px;">
+								<a href="{{route('user.registration')}}" class="btn btn-primary btn-lg active  ml-5" role="button" aria-pressed="true">Registration </a>
+							</li>
+							<li style="margin-left: 10px;">
+								<a href="{{route('Login_User')}}" class="btn btn-primary btn-lg active  ml-5" role="button" aria-pressed="true">Login</a>
+							</li>
 							@endguest
-							
+
 							@auth
-                            <li style="margin-left: 10px;" >
-                                <a href="{{route('User_Logout')}}" class="btn btn-primary btn-lg active  ml-5" role="button" aria-pressed="true">Logout</a>
-                            </li>
+							<li style="margin-left: 10px;">
+								<a href="{{route('User_Logout')}}" class="btn btn-primary btn-lg active  ml-5" role="button" aria-pressed="true">Logout</a>
+							</li>
 							@endauth
-							
-                    
+
+
 						</ul>
 					</nav>
 				</div>
 			</div>
 		</header>
+	</div>
+</div>

@@ -20,6 +20,7 @@ use App\Http\Controllers\backend\ExpensecategoryController;
 use App\Http\Controllers\frontend\HomeController as FrontendHomeController;
 use App\Http\Controllers\frontend\orphanController as FrontendOrphanController;
 use App\Http\Controllers\frontend\UserController as frontendUserController;
+use App\Http\Controllers\SslCommerzPaymentController;
 use App\Models\Expense;
 use App\Models\Expensecategory;
 
@@ -28,7 +29,7 @@ Route::get('/', [FrontendHomeController::class, 'frontendhome'])->name('frontend
 
 Route::get('/registartion', [FrontendHomeController::class, 'registration'])->name('user.registration');
 Route::post('/registration/store', [frontendUserController::class, 'store'])->name('User.store');
-//Route::post('/search', [frontendUserController::class, 'search'])->name('User.search');
+Route::get('/search', [frontendUserController::class, 'search'])->name('User.search');
 
 
 Route::get('/user/login', [frontendUserController::class, 'login'])->name('Login_User');
@@ -38,7 +39,7 @@ Route::get('/logout', [frontendUserController::class, 'logout'])->name('User_Log
 
 // donation route 
 Route::get('/donations/form', [DonationController::class, 'form'])->name('donation.form');
-      Route::post('/donations/store', [DonationController::class, 'store'])->name('donation.store');
+Route::post('/donations/store', [DonationController::class, 'store'])->name('donation.store');
 
 
 //orphan list list
@@ -53,7 +54,19 @@ Route::post('/adoptions/store', [AdoptionController::class, 'store'])->name('ado
 
 
 
+// SSLCOMMERZ Start
+Route::get('/example1', [SslCommerzPaymentController::class, 'exampleEasyCheckout']);
+Route::get('/example2', [SslCommerzPaymentController::class, 'exampleHostedCheckout']);
 
+Route::post('/pay', [SslCommerzPaymentController::class, 'index']);
+Route::post('/pay-via-ajax', [SslCommerzPaymentController::class, 'payViaAjax']);
+
+Route::post('/success', [SslCommerzPaymentController::class, 'success']);
+Route::post('/fail', [SslCommerzPaymentController::class, 'fail']);
+Route::post('/cancel', [SslCommerzPaymentController::class, 'cancel']);
+
+Route::post('/ipn', [SslCommerzPaymentController::class, 'ipn']);
+//SSLCOMMERZ END
 
 
 
@@ -65,16 +78,17 @@ Route::post('/adoptions/store', [AdoptionController::class, 'store'])->name('ado
 Route::group(['prefix' => 'backend'], function () {
 
 
-  
 
-  
+
+
   Route::get('/login/form', [LoginController::class, 'login'])->name('login');
   Route::post('/login/store', [LoginController::class, 'store'])->name('login.store');
-  
+
   Route::group(['middleware' => 'auth'], function () {
+    Route::group(['middleware' => 'CheckAdmin'], function () {
       Route::get('/', [HomeController::class, 'home'])->name("dashboard");
 
-     
+
 
       Route::get('/login', [HomeController::class, 'fariha']);
 
@@ -91,7 +105,7 @@ Route::group(['prefix' => 'backend'], function () {
       Route::get('orphan/edit/{id}', [OrphanController::class, 'edit'])->name('orphan.edit');
       Route::put('orphan/update/{id}', [OrphanController::class, 'update'])->name('orphan.update');
       Route::get('orphan/view/{id}', [OrphanController::class, 'view'])->name('orphan.view');
-      
+
 
       Route::get('/staffs/list', [StaffController::class, 'list'])->name('staff');
       Route::get('/staff/form', [StaffController::class, 'form'])->name('staff.form');
@@ -197,7 +211,7 @@ Route::group(['prefix' => 'backend'], function () {
 
 
       Route::get('/logout', [LogoutController::class, 'logout'])->name('logout');
-
+    });
   });
 });
 

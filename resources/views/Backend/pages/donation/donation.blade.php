@@ -1,7 +1,6 @@
 @extends("Backend.master")
 @section('content')
 <h2>Donation Information</h2>
-<a href="{{route('donation.form')}}" type="button" class="btn btn-dark">Add Donation</a>
 <table class="table table-striped table-dark">
     
     <thead>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Donor;
+use App\Models\Orphan;
 use App\Models\Parents;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -27,6 +28,20 @@ class UserController extends Controller
         ]);
         notify()->success('User registration success ');
         return redirect()->route('frontend');
+    }
+    // search
+    public function search(Request $request)
+    {
+        // dd(request()->all())
+
+        if($request->search)
+        {
+            $orphans=Orphan::where('name','LIKE','%'.$request->search.'%')->get();
+        }else{
+            $orphans=Orphan::all();
+        }
+
+        return view("Frontend.pages.orphan.orphan",compact('orphans'));
     }
 
 

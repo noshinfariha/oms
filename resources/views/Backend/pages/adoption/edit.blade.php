@@ -19,21 +19,53 @@
                 @csrf
                 @method('put')
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Orphan id</label>
-                    <input value="{{$adoptionEdit->orphan_id}}" type="number" name="orphan_id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter ID">
+                    <label for="exampleInputEmail1">Applicant Name</label>
+                    <input value="{{$adoptionEdit->applicant_name}}" type="text" name="applicant_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Adoption id</label>
-                    <input value="{{$adoptionEdit->adoption_id}}" type="number" name="adoption_id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter ID">
+                    <label for="exampleInputEmail1">Phone</label>
+                    <input value="{{$adoptionEdit->phone}}" type="number" name="phone" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Number">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Parents id</label>
-                    <input value="{{$adoptionEdit->parents_id}}" type="number" name="parents_id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter ID">
+                    <label for="exampleInputEmail1">Address</label>
+                    <input value="{{$adoptionEdit->address}}" type="text" name="address" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Address">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Adoption date</label>
-                    <input value="{{$adoptionEdit->adoption_date}}" type="date" name="adoption_date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Date">
+                    <label for="exampleInputEmail1">Date of Birth</label>
+                    <input value="{{$adoptionEdit->date_of_birth}}" type="date" name="date_of_birth" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Date">
                 </div>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Occupation</label>
+                    <input value="{{$adoptionEdit->occupation}}" type="text" name="occupation" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Occupation">
+                </div>
+                <div class="form-group">
+                <label class="mt-2">Source of Income</label>
+                <select class="form-control" name="source_income" required>
+                        <option value="Earnings">Earnings</option>
+                        <option value="Public service">Public service</option>
+                        <option value="Retirement / passion">Retirement / passion</option>
+                        <option value="single">Social Security</option>
+                        <option value="single">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="mt-2">Marital Status</label>
+                <select class="form-control" name="marital_status" required>
+                        <option value="single">Single</option>
+                        <option value="single">Married</option>
+                        <option value="single">Divorced</option>
+                        <option value="single">Widowed</option>
+                        <option value="single">Separated</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                    <label for="exampleInputEmail1">Reasons for adopting a child</label>
+                    <textarea class="form-control" name="reasons_child" id="exampleInputEmail1" cols="30" rows="10"></textarea>
+
+                </div>
+               
 
                 <button type="submit" class="btn btn-primary mt-2">Submit</button>
             </form>
