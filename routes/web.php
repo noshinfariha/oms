@@ -26,6 +26,8 @@ use App\Models\Expensecategory;
 
 //Frontend
 Route::get('/', [FrontendHomeController::class, 'frontendhome'])->name('frontend');
+Route::get('/user/profile', [frontendUserController::class, 'userprofile'])->name('user.profile');
+
 
 Route::get('/registartion', [FrontendHomeController::class, 'registration'])->name('user.registration');
 Route::post('/registration/store', [frontendUserController::class, 'store'])->name('User.store');
@@ -96,7 +98,9 @@ Route::group(['prefix' => 'backend'], function () {
 
       Route::get('/admin/form', [AdminController::class, 'form'])->name('admin');
       Route::get('/admin/list', [AdminController::class, 'list'])->name('admin.list');
-
+      
+      
+      Route::get('/admin/profile', [AdminController::class, 'adminprofile'])->name('admin.profile');
 
       Route::get('/orphans/list', [OrphanController::class, 'list'])->name('orphan');
       Route::get('/orphan/form', [OrphanController::class, 'form'])->name('orphan.form');

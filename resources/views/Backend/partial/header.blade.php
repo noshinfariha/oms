@@ -93,10 +93,7 @@
               </ul>
             </li>
             <li class="nav-item d-flex align-items-center">
-            <a href=""><i class="fa fa-user me-sm-1"></i></a> | 
-              <a  href="{{route('logout')}}" class="nav-link text-body font-weight-bold px-0">
-                <span class="d-sm-inline d-none"> Sign Out</span>
-              </a>
+            <a href="{{route('admin.profile')}}"><i class="fa fa-user me-sm-1"></i>{{auth()->user()->name}}</a>
             </li>
           </ul>
         </div>

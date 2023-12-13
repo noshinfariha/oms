@@ -16,4 +16,8 @@ class AdminController extends Controller
         return view('Backend.pages.admin.form');
     }
     
+
+    public function adminprofile(){
+        return view('Backend.pages.admin.profile');
+    }
 }

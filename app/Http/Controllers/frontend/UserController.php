@@ -79,4 +79,8 @@ class UserController extends Controller
         notify()->success('user login success');
         return redirect()->route('frontend');
     }
+
+    public function userprofile(){
+        return view('Frontend.pages.pages.Profile.profile');
+    }
 }

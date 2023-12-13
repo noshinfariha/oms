@@ -68,7 +68,7 @@
 
 							@auth
 							<li style="margin-left: 10px;">
-								<a href="{{route('User_Logout')}}" class="btn btn-primary btn-lg active  ml-5" role="button" aria-pressed="true">Logout</a>
+								<a href="{{route('user.profile')}}" class="btn btn-primary btn-lg active  ml-5" role="button" aria-pressed="true">Profile</a>
 							</li>
 							@endauth
 
