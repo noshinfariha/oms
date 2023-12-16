@@ -45,14 +45,18 @@ Route::post('/donations/store', [DonationController::class, 'store'])->name('don
 
 
 //orphan list list
-Route::get('forntend/orphan/list', [FrontendOrphanController::class, 'form'])->name('forntend.orphon.list');
-Route::get('forntend/orphan/list/{id}', [FrontendOrphanController::class, 'view'])->name('forntend.orphan.view');
+Route::get('/forntend/orphan/list', [FrontendOrphanController::class, 'form'])->name('forntend.orphon.list');
+Route::get('/forntend/orphan/list/{id}', [FrontendOrphanController::class, 'view'])->name('forntend.orphan.view');
 
 //Adopt now 
 
 
-Route::get('forntend/adopt', [AdoptionController::class, 'view'])->name('forntend.adopt');
+Route::get('/forntend/adopt/{id}', [AdoptionController::class, 'view'])->name('forntend.adopt');
 Route::post('/adoptions/store', [AdoptionController::class, 'store'])->name('adoption.store');
+
+//Adoption Update
+
+Route::post('/adoptions/update', [AdoptionController::class, 'update'])->name('adoption.update');
 
 
 
@@ -205,10 +209,11 @@ Route::group(['prefix' => 'backend'], function () {
       Route::get('/centersetup/list', [CentersetupController::class, 'list'])->name('centersetup');
       Route::get('/centersetup/form', [CentersetupController::class, 'form'])->name('centersetup.form');
       Route::post('/centersetup/store', [CentersetupController::class, 'store'])->name('centersetup.store');
-      Route::get('centersetup/delete/{id}', [CentersetupController::class, 'delete'])->name('centersetup.delete');
-      Route::get('centersetup/edit/{id}', [CentersetupController::class, 'edit'])->name('centersetup.edit');
-      Route::put('centersetup/update/{id}', [CentersetupController::class, 'update'])->name('centersetup.update');
-      Route::get('centersetup/view/{id}', [CentersetupController::class, 'view'])->name('centersetup.view');
+      Route::get('/centersetup/delete/{id}', [CentersetupController::class, 'delete'])->name('centersetup.delete');
+      Route::get('/centersetup/edit/{id}', [CentersetupController::class, 'edit'])->name('centersetup.edit');
+      Route::put('/centersetup/update/{id}', [CentersetupController::class, 'update'])->name('centersetup.update');
+      Route::get('/centersetup/view/{id}', [CentersetupController::class, 'view'])->name('centersetup.view');
+
 
 
 

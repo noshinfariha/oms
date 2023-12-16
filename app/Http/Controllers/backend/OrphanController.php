@@ -67,7 +67,7 @@ class OrphanController extends Controller
 
 
     public function store(Request $fariha)
-{
+{ //dd($fariha->all());
     {
          $validate = validator::make($fariha->all(),[
             'status'=>'required', 

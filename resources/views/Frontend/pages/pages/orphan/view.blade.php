@@ -25,7 +25,7 @@
                       <h4>{{$orphansdata->orphan_name}}</h4>
                       <p class="text-secondary mb-1">Full Stack Developer</p>
                       <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
-                      <a href="{{route('forntend.adopt')}}" class="btn btn-primary">Adopt Now</a>
+                      <a href="{{route('forntend.adopt', $orphansdata->id)}}" class="btn btn-primary">Adopt Now</a>
 
                     
                     </div>
@@ -38,7 +38,7 @@
                 <div class="card-body">
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Full Name</h6>
+                      <h5 class="mb-0">Full Name</h5>
                     </div>
                     <div class="col-sm-9 text-secondary">
                     {{$orphansdata->orphan_name}}
@@ -47,7 +47,7 @@
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Age</h6>
+                      <h5 class="mb-0">Age</h5>
                     </div>
                     <div class="col-sm-9 text-secondary">
                     {{$orphansdata->age}}
@@ -56,7 +56,7 @@
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Status</h6>
+                      <h5 class="mb-0">Status</h5>
                     </div>
                     <div class="col-sm-9 text-secondary">
                     {{$orphansdata->status}}
@@ -65,7 +65,7 @@
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Gender</h6>
+                      <h5 class="mb-0">Gender</h5>
                     </div>
                     <div class="col-sm-9 text-secondary">
                     {{$orphansdata->gender}}
@@ -74,7 +74,7 @@
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Address</h6>
+                      <h5 class="mb-0">Address</h5>
                     </div>
                     <div class="col-sm-9 text-secondary">
                       Bay Area, San Francisco, CA

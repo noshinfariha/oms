@@ -5,6 +5,7 @@
 <table class="table table-striped table-dark">
     <thead>
       <tr>
+        <th scope="col">Id</th>
         <th scope="col">Applicant Name</th>
         <th scope="col">Phone</th>
         <th scope="col">Address</th>
@@ -19,6 +20,7 @@
     <tbody>
 @foreach($adoptionsdata as $item)
       <tr>
+        <td>{{$item->id}}</td>
         <td>{{$item->applicant_name}}</td>
         <td>{{$item->phone}}</td>
         <td>{{$item->address}}</td>

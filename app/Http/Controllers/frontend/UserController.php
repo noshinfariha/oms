@@ -81,6 +81,8 @@ class UserController extends Controller
     }
 
     public function userprofile(){
-        return view('Frontend.pages.pages.Profile.profile');
+        $orphansdatas = Orphan::all();
+
+        return view('Frontend.pages.pages.Profile.profile',compact('orphansdatas'));
     }
 }
