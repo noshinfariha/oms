@@ -51,8 +51,7 @@ public function delete($id)
             }
             $expenseEdit->update([
                 'expense_title' => $request->expense_title,
-                'expense_amount' => $request->expense_amount,
-                'expense_description' => $request->expense_description,        
+                'expense_amount' => $request->expense_amount,      
              ]);
             return redirect()->route('expense');
         }
@@ -71,8 +70,7 @@ public function store (Request $noshin){
     // dd($noshin ->all());
     Expense::create([
         'expense_title'=>$noshin->expense_title,
-        'expense_amount'=>$noshin->expense_amount,
-        'expense_description'=>$noshin->expense_description,
+        'expense_amount'=>$noshin->expense_amount
        
   ]);       
   return redirect()->route('expense');

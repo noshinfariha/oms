@@ -3,7 +3,7 @@
 	<div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url('frontend/images/cover_bg_1.jpg');">
 		<div class="desc animate-box">
 			<h2><strong>Donate</strong> for the <strong>Poor Children</strong></h2>
-			<span>HandCrafted by <a href="http://frehtml5.co/" target="_blank" class="fh5co-site-name">FreeHTML5.co</a></span>
+			<!-- <span>HandCrafted by <a href="http://frehtml5.co/" target="_blank" class="fh5co-site-name">FreeHTML5.co</a></span> -->
 			<span><a class="btn btn-primary btn-lg" href="{{route('donation.form')}}">Donate Now</a></span>
 		</div>
 	</div>
@@ -167,7 +167,7 @@
 
 
 
-<div id="fh5co-content-section" class="fh5co-section-gray">
+<!-- <div id="fh5co-content-section" class="fh5co-section-gray">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
@@ -213,10 +213,10 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div> -->
 <!-- fh5co-content-section -->
 
-<div id="fh5co-services-section">
+<!-- <div id="fh5co-services-section">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
@@ -271,12 +271,12 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div> -->
 
 <!-- END What we do -->
 
 
-<div id="fh5co-blog-section" class="fh5co-section-gray">
+<!-- <div id="fh5co-blog-section" class="fh5co-section-gray">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
@@ -340,5 +340,5 @@
 		</div>
 
 	</div>
-</div>
+</div> -->
 <!-- fh5co-blog-section -->

@@ -14,7 +14,7 @@
                     <div class="d-flex justify-content-between align-items-center mb-3">
                         <h4 class="text-right">Profile</h4>
                     </div>
-                    <div class="row mt-2">
+                    <div class="row mt-2 ">
                         <div class="col-md-12">
                             <div class="row">
                                 <span class="font-weight-bold">{{auth()->user()->name}}</span><br>
@@ -50,45 +50,59 @@
                         </div>
 
                     </div>
-                    <br><br> 
-                    <div class="container border border-warning">
-                        <table class="table table-striped table-dark ">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Orphan Name</th>
-                                    <th scope="col">Age</th>
-                                    <th scope="col">Gender</th>
-                                    <th scope="col">Status</th>
-                                    <th scope="col">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach($orphansdatas as $orphansdata)
-                                <tr>
-                                    <td>{{$orphansdata->orphan_name}}</td>
-                                    <td>sdfghj</td>
-                                    <td>sdfghj</td>
-                                    <td>sdfghj</td>
-                                    
-                                    <td>
-                                        <a href="#" class="btn btn-danger">Cancel Adoption</a>
-                                        <a href="{{route('adoption.store')}}" class="btn btn-success">Update</a>
-
-                                    </td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-                    <br><br> 
-                    <div class="mt-5 text-center"><a href="{{route('User_Logout')}}" class="btn btn-primary profile-button" type="button">Logout</a></div>
                     <br><br>
+
+
                 </div>
+
             </div>
             <br><br>
 
         </div>
     </div>
+
+</div>
+
+<div class="mL-5 border border-warning">
+    <table class="table table-striped table-dark ">
+        <thead>
+            <tr>
+                <th scope="col">Orphan Id</th>
+                <th scope="col">Applicant Name</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Address</th>
+                <th scope="col">Occupation</th>
+                <th scope="col">Source of Income</th>
+                <th scope="col">Marital Status</th>
+                <th scope="col">GD Number</th>
+                <th scope="col">GD Form</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($adoptions as $adoption)
+            <tr>
+                <td>{{$adoption->orphan_id}}</td>
+                <td>{{$adoption->applicant_name}}</td>
+                <td>{{$adoption->phone}}</td>
+                <td>{{$adoption->address}}</td>
+                <td>{{$adoption->occupation}}</td>
+                <td>{{$adoption->source_income}}</td>
+                <td>{{$adoption->marital_status}}</td>
+                <td>{{$adoption->gd_number}}</td>
+                <td>{{$adoption->gd_form}}</td>
+
+                <td>
+                    <a href="#" class="btn btn-danger">Cancel Adoption</a>
+                    <a href="{{route('adoption.store')}}" class="btn btn-success">Update</a>
+
+                </td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+    <br><br>
+    <div class="mt-5 text-center"><a href="{{route('User_Logout')}}" class="btn btn-primary profile-button" type="button">Logout</a></div>
+    <br><br>
 </div>
 </div>
 </div>

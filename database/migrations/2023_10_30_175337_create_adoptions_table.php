@@ -13,15 +13,16 @@ return new class extends Migration
     {
         Schema::create('adoptions', function (Blueprint $table) {
             $table->id();
+            $table->string('orphan_id');
             $table->string('applicant_name');
             $table->string('phone');
             $table->string('address');
-            $table->date('date_of_birth');
             $table->string('occupation');
             $table->string('source_income');
             $table->string('marital_status');
-            $table->string('reasons_child');
-            $table->timestamps();
+            $table->string('gd_number');
+            $table->string('gd_form');
+             $table->timestamps();
         });
     }
 

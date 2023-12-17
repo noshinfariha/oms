@@ -1,4 +1,4 @@
-<div id="fh5co-wrapper">
+<div id="fh5co-wrapper mt-5">
 	<div id="fh5co-page">
 		<div class="header-top">
 			<div class="container">
@@ -37,7 +37,7 @@
 								<a href="index.html">Home</a>
 							</li>
 							<li>
-								<a href="#" class="fh5co-sub-ddown">Get Involved</a>
+								<a href="#" class="fh5co-sub-ddown sf-with-ul">Get Involved</a>
 								<ul class="fh5co-sub-menu">
 									<li><a href="{{route('donation.form')}}">Donate</a></li>
 									<li><a href="#">Fundraise</a></li>
@@ -47,14 +47,14 @@
 								</ul>
 							</li>
 							<li>
-								<a href="#" class="fh5co-sub-ddown">Projects</a>
+								<a href="#" class="fh5co-sub-ddown sf-with-ul">Projects</a>
 								<ul class="fh5co-sub-menu">
 									<li><a href="#">Water World</a></li>
 									<li><a href="#">Cloth Giving</a></li>
 									<li><a href="#">Medical Mission</a></li>
 								</ul>
 							</li>
-							<li><a href="about.html">About</a></li>
+							<li><a href="donor.html">Donor</a></li>
 							<li><a href="{{route('forntend.orphon.list')}}">Orphan</a></li>
 							<li><a href="contact.html">Contact</a></li>
 							@guest
@@ -71,8 +71,6 @@
 								<a href="{{route('user.profile')}}" class="btn btn-primary btn-lg active  ml-5" role="button" aria-pressed="true">Profile</a>
 							</li>
 							@endauth
-
-
 						</ul>
 					</nav>
 				</div>

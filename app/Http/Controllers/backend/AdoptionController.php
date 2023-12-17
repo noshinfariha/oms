@@ -19,8 +19,8 @@ class AdoptionController extends Controller
     public function view($id)
     {
         $orphans = Orphan::find($id);
-        // dd($orphans );
-        return view("Backend.pages.adoption.form", compact('orphans')); //to take data from model
+        //   dd($orphans );
+        return view("Backend.pages.adoption.form", compact('orphans','id')); //to take data from model
 
     }
 
@@ -57,10 +57,15 @@ class AdoptionController extends Controller
 
 
             $adoptionEdit->update([
-                'orphan_id' => $request->orphan_id,
-                'adoption_id' => $request->adoption_id,
-                'parents_id' => $request->parents_id,
-                'adoption_date' => $request->adoption_date
+            'orphan_id' => $request->orphan_id,
+            'applicant_name' => $request->applicant_name,
+            'phone' => $request->phone,
+            'address' => $request->address,
+            'occupation' => $request->occupation,
+            'source_income' => $request->source_income,
+            'marital_status' => $request->marital_status,
+            'gd_number' => $request->gd_number,
+            'gd_form' => $request->gd_form,
             ]);
             return redirect()->route('adoption');
         }
@@ -71,12 +76,7 @@ class AdoptionController extends Controller
         //   dd($noshin ->all());
 
         $validate = validator::make($noshin->all(), [
-            'applicant_name' => 'required',
-            'phone' => 'required',
-            'address' => 'required',
-            'date_of_birth' => 'required',
-            'occupation' => 'required',
-            'source_income' => 'required'
+            'gd_number' => 'required',
         ]);
 
         if ($validate->fails()) {
@@ -84,16 +84,17 @@ class AdoptionController extends Controller
         }
         // dd($noshin ->all());
         Adoption::create([
+            'orphan_id' => $noshin->orphan_id,
             'applicant_name' => $noshin->applicant_name,
             'phone' => $noshin->phone,
             'address' => $noshin->address,
-            'date_of_birth' => $noshin->date_of_birth,
             'occupation' => $noshin->occupation,
             'source_income' => $noshin->source_income,
             'marital_status' => $noshin->marital_status,
-            'reasons_child' => $noshin->reasons_child,
+            'gd_number' => $noshin->gd_number,
+            'gd_form' => $noshin->gd_form,
 
-        ]);
+             ]);
         return redirect()->route('forntend.orphon.list');
     }
     public function asdfgupdate(){

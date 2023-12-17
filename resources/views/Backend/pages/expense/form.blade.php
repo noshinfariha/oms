@@ -25,10 +25,6 @@
                     <label for="exampleInputEmail1">Expense Amount</label>
                     <input type="number" name="expense_amount" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Amount">
                 </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Expense Description</label>
-                    <textarea class="form-control" name="expense_description" id="" cols="30" rows="10"></textarea>
-                </div>
                 <button type="submit" class="btn btn-primary mt-2">Submit</button>
             </form>
         </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Adoption;
 use App\Models\Donor;
 use App\Models\Orphan;
 use App\Models\Parents;
@@ -81,8 +82,9 @@ class UserController extends Controller
     }
 
     public function userprofile(){
-        $orphansdatas = Orphan::all();
 
-        return view('Frontend.pages.pages.Profile.profile',compact('orphansdatas'));
+        $adoptions = Adoption::all();
+
+        return view('Frontend.pages.pages.Profile.profile',compact('adoptions'));
     }
 }

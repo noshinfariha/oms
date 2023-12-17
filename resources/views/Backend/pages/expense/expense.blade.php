@@ -8,7 +8,6 @@
       <tr>
         <th scope="col">Expense Title</th>
         <th scope="col">Expense Amount</th>
-        <th scope="col">Expense Description</th>
         <th scope="col">Action</th>
     </thead>
     <tbody>
@@ -16,7 +15,6 @@
       <tr>
         <td>{{$item->expense_title}}</td>
         <td>{{$item->expense_amount}}</td>
-        <td>{{$item->expense_description}}</td>
         <td>
         <a href="{{route('expense.view',$item->id)}}" class="btn btn-primary">View</a>
         <a href="{{route('expense.edit',$item->id)}}" class="btn btn-danger">Edit</a>

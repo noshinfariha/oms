@@ -15,8 +15,15 @@
             <h1>
                 Input your Information!
             </h1>
-            <form action="{{route('adoption.store')}}"method="post">
+            <form action="{{route('adoption.store')}}" method="post">
                 @csrf
+
+               Name: <p> {{$orphans->orphan_name}}</p>
+               Image: <p> <img src="{{url('/uploads/' . $orphans->image)}}" alt="Admin" class="rounded-circle" width="150" ml-5></p>
+                <div class="form-group">
+                 
+                    <input type="hidden" value="{{$orphans->id}}" name="orphan_id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter ID">
+                </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Applicant Name</label>
                     <input type="text" name="applicant_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter First Name">
@@ -30,48 +37,42 @@
                     <input type="text" name="address" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Date of Birth</label>
-                    <input type="date" name="date_of_birth" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter date">
-                </div>
-                <div class="form-group">
                     <label for="exampleInputEmail1">Occupation</label>
                     <input type="text" name="occupation" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter date">
                 </div>
-                
-              
-
-
-
                 <div class="form-group">
-                <label class="mt-2">Source of Income</label>
-                <select class="form-control" name="source_income" required>
+                    <label class="mt-2">Source of Income</label>
+                    <select class="form-control" name="source_income" required>
                         <option value="Earnings">Earnings</option>
                         <option value="Public service">Public service</option>
                         <option value="Retirement / passion">Retirement / passion</option>
                         <option value="single">Social Security</option>
                         <option value="single">Other</option>
-                </select>
-            </div>
+                    </select>
+                </div>
                 <div class="form-group">
-                <label class="mt-2">Marital Status</label>
-                <select class="form-control" name="marital_status" required>
+                    <label class="mt-2">Marital Status</label>
+                    <select class="form-control" name="marital_status" required>
                         <option value="single">Single</option>
                         <option value="single">Married</option>
                         <option value="single">Divorced</option>
                         <option value="single">Widowed</option>
                         <option value="single">Separated</option>
-                </select>
-            </div>
-            <div class="form-group">
-                    <label for="exampleInputEmail1">Reasons for adopting a child</label>
-                    <textarea class="form-control" name="reasons_child" id="exampleInputEmail1" cols="30" rows="10"></textarea>
-
+                    </select>
                 </div>
-               
+                <div class="form-group">
+                    <label for="exampleInputEmail1">GD Number</label>
+                    <input type="number" name="gd_number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter GD Number">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">GD Form</label>
+                    <input type="file" name="gd_form" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter GD Number">
+                </div>
+
                 <button type="submit" class="btn btn-primary mt-2">Submit</button>
             </form>
         </div>
-    </main >
+    </main>
 </body>
 
 </html>

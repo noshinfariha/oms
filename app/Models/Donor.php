@@ -9,4 +9,8 @@ class Donor extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+    
 }
+
+
