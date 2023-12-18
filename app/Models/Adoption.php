@@ -2,14 +2,18 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Orphan;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Adoption extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+
 public function orphans(){
-    return $this->belongsTo(Orphan::class);
+    return $this->belongsTo(Orphan::class, 'orphan_id', 'id');
 }
+
 }

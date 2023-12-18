@@ -82,6 +82,15 @@ class AdoptionController extends Controller
         if ($validate->fails()) {
             return redirect()->back();
         }
+
+
+        $fileName = null;
+        if ($noshin->hasFile('gd_form')) {
+            $file = $noshin->file('gd_form');
+            $fileName = date('Ymdhis') . '.' . $file->getClientOriginalExtension();
+            $file->move("uploads", $fileName);
+        }
+        
         // dd($noshin ->all());
         Adoption::create([
             'orphan_id' => $noshin->orphan_id,
@@ -92,7 +101,7 @@ class AdoptionController extends Controller
             'source_income' => $noshin->source_income,
             'marital_status' => $noshin->marital_status,
             'gd_number' => $noshin->gd_number,
-            'gd_form' => $noshin->gd_form,
+            'gd_form' => $fileName,
 
              ]);
         return redirect()->route('forntend.orphon.list');

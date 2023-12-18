@@ -76,12 +76,14 @@
                 <th scope="col">Marital Status</th>
                 <th scope="col">GD Number</th>
                 <th scope="col">GD Form</th>
+                <th scope="col">Action</th>
+                
             </tr>
         </thead>
         <tbody>
             @foreach($adoptions as $adoption)
             <tr>
-                <td>{{$adoption->orphan_id}}</td>
+                <td>{{$adoption->orphans->orphan_name}}</td>
                 <td>{{$adoption->applicant_name}}</td>
                 <td>{{$adoption->phone}}</td>
                 <td>{{$adoption->address}}</td>
@@ -89,7 +91,8 @@
                 <td>{{$adoption->source_income}}</td>
                 <td>{{$adoption->marital_status}}</td>
                 <td>{{$adoption->gd_number}}</td>
-                <td>{{$adoption->gd_form}}</td>
+                <td> <a href="{{url('/uploads/' . $adoption->gd_form)}}"  target="blank" class="btn btn-success">View</a></td>
+                <!-- <td>{{$adoption->gd_form}}</td> -->
 
                 <td>
                     <a href="#" class="btn btn-danger">Cancel Adoption</a>

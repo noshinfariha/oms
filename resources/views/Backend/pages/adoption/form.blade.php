@@ -15,7 +15,7 @@
             <h1>
                 Input your Information!
             </h1>
-            <form action="{{route('adoption.store')}}" method="post">
+            <form action="{{route('adoption.store')}}" method="post" enctype="multipart/form-data">
                 @csrf
 
                Name: <p> {{$orphans->orphan_name}}</p>
