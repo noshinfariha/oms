@@ -16,8 +16,10 @@ return new class extends Migration
             $table->integer('amount');
             $table->string('payment_method');
             $table->string('receiver_account');
-            $table->string('transaction_id');
+            $table->string('transaction_id')->unique();
             $table->string('receipt')->nullable();
+            $table->string('status')->nullable();
+          
               $table->timestamps();
         });
     }

@@ -10,7 +10,12 @@ use Illuminate\Support\Facades\Validator;
 
 class OrphanController extends Controller
 
-{
+{ public function print()
+    {
+
+        $orphansdata = Orphan::paginate(3);
+        return view("Backend.pages.orphans.print", compact('orphansdata'));
+    }
     public function list()
     {
 

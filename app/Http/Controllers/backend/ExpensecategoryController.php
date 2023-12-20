@@ -52,13 +52,10 @@ public function form()
       
             }
             $expensecategoryEdit->update([
-                'category' => $request->category,
-                'description' => $request->description,
-                'payment_method' => $request->payment_method,    
-                'amount' => $request->amount,    
-                'invoice_number' => $request->invoice_number,    
-
-             ]);
+                'id' => $request->id,
+                'name' => $request->name,
+                'status' => $request->status,  
+              ]);
             return redirect()->route('expensecategory');
         }
     }
@@ -66,7 +63,7 @@ public function form()
 
     {
          $validate = validator::make($fariha->all(),[ 
-            'payment method'=>'payment method'
+           // 'payment method'=>'payment method'
     
 
          ]);
@@ -78,11 +75,10 @@ public function form()
 
  // dd($fariha->all());    
        Expensecategory::create([
-        'category'=>$fariha->category,
-        'description'=>$fariha->description,
-        'payment_method'=> $fariha->payment_method,
-       'amount'=>$fariha->amount,
-        'invoice_number'=>$fariha->invoice_number,
+        'id'=>$fariha->id,
+        'name'=>$fariha->name,
+        'status'=> $fariha->status,
+      
   ]);       
 
   return redirect()->route('expensecategory');

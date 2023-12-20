@@ -67,7 +67,7 @@
     <table class="table table-striped table-dark ">
         <thead>
             <tr>
-                <th scope="col">Orphan Id</th>
+                <th scope="col">Orphan Name</th>
                 <th scope="col">Applicant Name</th>
                 <th scope="col">Phone</th>
                 <th scope="col">Address</th>

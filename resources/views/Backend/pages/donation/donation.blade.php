@@ -10,7 +10,8 @@
         <th scope="col">Receiver Account</th> 
         <th scope="col">Transaction ID</th> 
         <th scope="col">Receipt</th> 
-        <th scope="col">Action</th>
+         <th scope="col">Status</th> 
+          <th scope="col">Action</th>
       </tr>
     </thead>
     <tbody>
@@ -21,6 +22,7 @@
         <td>{{$item->receiver_account}}</td>
         <td>{{$item->transaction_id}}</td>
         <td>{{$item->receipt}}</td>
+        <td>{{$item->status}}</td>
         <td>
         <a href="{{route('donation.view',$item->id)}}" class="btn btn-primary">View</a>
         <a href="{{route('donation.edit', $item->id)}}" class="btn btn-danger">Edit</a>

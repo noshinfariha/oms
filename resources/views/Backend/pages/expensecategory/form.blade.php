@@ -18,33 +18,21 @@
             <form action="{{route('expensecategory.store')}}"method="post" enctype="multipart/form-data">
                 @csrf 
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Category</label>
-                    <input required type="text" name="category" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Address">
+                    <label for="exampleInputEmail1">ID</label>
+                    <input required type="number" name="id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter ID">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Description</label>
-                    <input type="text" name="description" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Date of Birth">
+                    <label for="exampleInputEmail1">Name</label>
+                    <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name">
                 
                 </div>
-                        
-                <div class="form-group">
-                <label for="exampleInputEmail1">Payment Method</label>
-                <select name="payment_method" id="" class="form-control" required>
-                    <option value="Bkash">Bank</option>
-                    <option value="Rocket">Bkash</option>
-                    <option value="Rocket">Rocket</option>
-                 </select>
-            </div>
    
             <div class="form-group">
-                    <label for="exampleInputEmail1">Amount</label>
-                    <input type="number" name="amount" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Religion">
+                    <label for="exampleInputEmail1">Status</label>
+                    <input type="text" name="status" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Status">
                 </div>
   
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Invoice Number</label>
-                    <input type="number" name="invoice number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Status">
-                </div>
+               
                 <button type="submit" class="btn btn-primary mt-2">Submit</button>
             </form>
         </div>

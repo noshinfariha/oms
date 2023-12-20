@@ -84,7 +84,7 @@ class UserController extends Controller
     public function userprofile(){
 
         $adoptions = Adoption::with('orphans')->get();
-        // dd($adoptions->toarray());
+    //    dd($adoptions->toarray());
 
         return view('Frontend.pages.pages.Profile.profile',compact('adoptions'));
     }

@@ -19,18 +19,34 @@
                 @csrf
                 @method('put')
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Expense Title</label>
-                    <input value="{{$expenseEdit->expense_title}}" required type="text" name="expense_title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Title">
+                    <label for="exampleInputEmail1">ID</label>
+                    <input value="{{$expenseEdit->id}}" required type="number" name="id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter ID">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Expense Amount</label>
-                    <input value="{{$expenseEdit->expense_amount}}" required type="number" name="expense_amount" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Amount">
+                    <label for="exampleInputEmail1">Title</label>
+                    <input value="{{$expenseEdit->title}}" required type="number" name="expense_amount" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Title">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Expense Description</label>
-                    <input value="{{$expenseEdit->full_name}}" required type="text" name="full_name" textarea class ="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Full Name">
+                    <label for="exampleInputEmail1">Category ID</label>
+                    <input value="{{$expenseEdit->category_id}}" required type="number" name="category_id" textarea class ="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Category ID">
                 </div>
-                <button type="submit" class="btn btn-primary mt-2">Submit</button>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Expense By</label>
+                    <input value="{{$expenseEdit->expense_by}}" required type="text" name="expense_by" textarea class ="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Expense By">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Description</label>
+                    <input value="{{$expenseEdit->description}}" required type="text" name="description" textarea class ="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Description">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Amount</label>
+                    <input value="{{$expenseEdit->amount}}" required type="number" name="amount" textarea class ="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Amount">
+                </div>
+
+               <button type="submit" class="btn btn-primary mt-2">Submit</button>
             </form>
         </div>
     </main >

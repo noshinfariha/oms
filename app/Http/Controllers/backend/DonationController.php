@@ -57,6 +57,7 @@ class DonationController extends Controller
                 'receiver_account' => $request->receiver_account,
                 'transaction_id' => $request->transaction_id,
                 'receipt' => $request->receipt,
+                'status' => $request->status,
 
             ]);
             return redirect()->route('donation');
@@ -64,26 +65,27 @@ class DonationController extends Controller
     }
     public function store(Request $noshin)
     {
-
+        // dd($noshin->all());
         $validate = validator::make($noshin->all(), [
             'payment_method' => 'required',
-
-
-
         ]);
 
         if ($validate->fails()) {
             return redirect()->back();
         }
-        //dd($noshin ->all());
+        //store payment data
         $donation = Donation::create([
             'amount' => $noshin->amount,
+
             'payment_method' => $noshin->payment_method,
             'receiver_account' => $noshin->receiver_account,
             'transaction_id' => $noshin->transaction_id,
             'receipt' => $noshin->receipt,
-
+            'status'=> 'pending',
         ]);
+
+        //payment
+        // dd($donation->toarray());
         $this->payment($donation);
         return redirect()->route('frontend');
     }
@@ -93,7 +95,7 @@ class DonationController extends Controller
         $post_data = array();
         $post_data['total_amount'] = $payment->amount; # You cant not pay less than 10
         $post_data['currency'] = "BDT";
-        $post_data['tran_id'] = uniqid(); // tran_id must be unique
+        $post_data['tran_id'] = $payment->transaction_id; // tran_id must be unique
 
         # CUSTOMER INFORMATION
         $post_data['cus_name'] = 'Customer Name';

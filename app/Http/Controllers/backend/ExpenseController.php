@@ -50,8 +50,14 @@ public function delete($id)
       
             }
             $expenseEdit->update([
-                'expense_title' => $request->expense_title,
-                'expense_amount' => $request->expense_amount,      
+                'id' => $request->id,
+                'title' => $request->title,  
+                'category_id' => $request->category_id,
+                'expense_by' => $request->expense_by,
+                'description' => $request->description,
+                'amount' => $request->amount,
+                'date' => $request->date,
+
              ]);
             return redirect()->route('expense');
         }
@@ -69,8 +75,13 @@ public function store (Request $noshin){
      } 
     // dd($noshin ->all());
     Expense::create([
-        'expense_title'=>$noshin->expense_title,
-        'expense_amount'=>$noshin->expense_amount
+                'id' => $noshin->id,
+                 'title' => $noshin->title,  
+                'category_id' => $noshin->category_id,
+                'expense_by' => $noshin->expense_by,
+                'description' => $noshin->description,
+                'amount' => $noshin->amount,
+                'date' => $noshin->date,
        
   ]);       
   return redirect()->route('expense');

@@ -18,12 +18,36 @@
             <form  action="{{route('expense.store')}}"method="post">
                 @csrf
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Expense Title</label>
-                    <input required type="text" name="expense_title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Title">
+                    <label for="exampleInputEmail1">ID</label>
+                    <input required type="number" name="id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter ID">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Expense Amount</label>
-                    <input type="number" name="expense_amount" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Amount">
+                    <label for="exampleInputEmail1">Title</label>
+                    <input type="text" name="title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Title">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Category ID</label>
+                    <input type="number" name="category_id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Category ID">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Expense By</label>
+                    <input type="text" name="expense_by" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Expense By">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Description</label>
+                    <input type="text" name="description" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Description">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Amount</label>
+                    <input type="number" name="amount" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Amount">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Date</label>
+                    <input type="date" name="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Date">
                 </div>
                 <button type="submit" class="btn btn-primary mt-2">Submit</button>
             </form>

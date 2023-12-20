@@ -19,29 +19,16 @@
                 @csrf 
                 @method('put')
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Category</label>
-                    <input value="{{$expensecategoryEdit->category}}" required type="text" name="category" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Category">
+                    <label for="exampleInputEmail1">ID</label>
+                    <input value="{{$expensecategoryEdit->id}}" required type="number" name="id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter ID">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Description</label>
-                    <input value="{{$expensecategoryEdit->description}}" required type="text" name="description" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Description">
+                    <label for="exampleInputEmail1">Name</label>
+                    <input value="{{$expensecategoryEdit->name}}" required type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Description">
                  </div>
-                    
-                 <div class="form-group">
-                <label for="exampleInputEmail1">Payment Method</label>
-                <select name="payment_method" id="" class="form-control" required>
-                    <option value="Bkash">Bank</option>
-                    <option value="Rocket">Bkash</option>
-                    <option value="Rocket">Rocket</option>
-                 </select>
-            </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Amount</label>
-                    <input value="{{$expensecategoryEdit->amount}}" required type="text" name="amount" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Amount">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Invoice Number</label>
-                    <input value="{{$expensecategoryEdit->invoice_number}}" required type="number" name="invoice_number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter invoice">
+                    <label for="exampleInputEmail1">Status</label>
+                    <input value="{{$expensecategoryEdit->status}}" required type="text" name="status" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter status">
                 </div>
                 <button type="submit" class="btn btn-primary mt-2">Submit</button>
             </form>

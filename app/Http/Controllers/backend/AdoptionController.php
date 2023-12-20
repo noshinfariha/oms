@@ -73,6 +73,8 @@ class AdoptionController extends Controller
     public function store(Request $noshin)
     {
 
+
+
         //   dd($noshin ->all());
 
         $validate = validator::make($noshin->all(), [

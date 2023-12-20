@@ -7,23 +7,18 @@
   <table class="table table-striped table-dark">
     <thead>
       <tr>
-        <th scope="col">Category</th>
-        <th scope="col">Description</th>
-        <th scope="col">Payment Method</th>
-        <th scope="col">Amount</th>
-        <th scope="col">Invoice Number</th>
-        <th scope="col">Action</th>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Status</th>
       </tr>
     </thead>
     <tbody>
 @foreach($expensecategory as $item)
       <tr>
         <!-- <th scope="row">{{$item->id}}</th> -->
-        <td>{{$item->category}}</td>
-        <td>{{$item->description}}</td>
-        <td>{{$item->payment_method}}</td>
-        <td>{{$item->amount}}</td>
-        <td>{{$item->invoice_number}}</td>
+        <td>{{$item->id}}</td>
+        <td>{{$item->name}}</td>
+        <td>{{$item->status}}</td>
           <td>
           <a href="{{route('expensecategory.view',$item->id)}}" class="btn btn-primary">View</a>
           <a href="{{route('expensecategory.edit', $item->id)}}" class="btn btn-danger">Edit</a>

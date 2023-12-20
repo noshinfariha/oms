@@ -5,7 +5,7 @@
 <table class="table table-striped table-dark">
     <thead>
       <tr>
-        <th scope="col">Orphan Id</th>
+        <th scope="col">Orphan Name</th>
         <th scope="col">Applicant Name</th>
         <th scope="col">Phone</th>
         <th scope="col">Address</th> 
@@ -15,13 +15,13 @@
         <th scope="col">GD number</th>
         <th scope="col">GD Form</th>
          <th scope="col">Action</th>        
-     </tr>
+     </tr>  
     </thead>
     <tbody>
 @foreach($adoptionsdata as $item)
       <tr>
     
-        <td>{{$item->orphan_id}}</td>
+        <td>{{$item->orphans->orphan_name}}</td>
         <td>{{$item->applicant_name}}</td>
         <td>{{$item->phone}}</td>
         <td>{{$item->address}}</td>
@@ -32,9 +32,8 @@
         <td>{{$item->gd_form}}</td>
 
        <td>
-        <a href="{{route('adoption.view',$item->id)}}" class="btn btn-primary">View</a>
-       <a href="{{route('adoption.edit',$item->id)}}" class="btn btn-danger">Edit</a>
-          <a href="{{route('adoption.delete', $item->id) }}"class="btn btn-success">Delete</a>
+        <a href="{{route('adoption.view',$item->id)}}" class="btn btn-primary">Accept</a>
+          <a href="{{route('adoption.delete', $item->id) }}"class="btn btn-success">Reject</a>
         </td>
       </tr>
 @endforeach

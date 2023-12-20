@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\backend\DashboardController;
 use App\Http\Controllers\backend\HomeController;
 use App\Http\Controllers\backend\AdminController;
 use App\Http\Controllers\backend\OrphanController;
@@ -17,12 +18,14 @@ use App\Http\Controllers\backend\LoginController;
 use App\Http\Controllers\backend\LogoutController;
 use App\Http\Controllers\backend\CentersetupController;
 use App\Http\Controllers\backend\ExpensecategoryController;
+use App\Http\Controllers\DashboardController as ControllersDashboardController;
 use App\Http\Controllers\frontend\HomeController as FrontendHomeController;
 use App\Http\Controllers\frontend\orphanController as FrontendOrphanController;
 use App\Http\Controllers\frontend\UserController as frontendUserController;
 use App\Http\Controllers\SslCommerzPaymentController;
 use App\Models\Expense;
 use App\Models\Expensecategory;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 //Frontend
 Route::get('/', [FrontendHomeController::class, 'frontendhome'])->name('frontend');
@@ -97,14 +100,17 @@ Route::group(['prefix' => 'backend'], function () {
 
 
       Route::get('/login', [HomeController::class, 'fariha']);
-
+      // Route::get('/dashboard',[ControllersDashboardController::class, 'board'])->name('dashboard');
 
 
       Route::get('/admin/form', [AdminController::class, 'form'])->name('admin');
       Route::get('/admin/list', [AdminController::class, 'list'])->name('admin.list');
-      
-      
+
+
       Route::get('/admin/profile', [AdminController::class, 'adminprofile'])->name('admin.profile');
+
+      Route::get('/orphans/print', [OrphanController::class, 'print'])->name('orphan.print');
+
 
       Route::get('/orphans/list', [OrphanController::class, 'list'])->name('orphan');
       Route::get('/orphan/form', [OrphanController::class, 'form'])->name('orphan.form');
