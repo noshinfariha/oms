@@ -38,9 +38,9 @@
 							</li>
 			  
 			  
-			  <li>
-								<a href="http://127.0.0.1:8000/user/profile#" class="fh5co-sub-ddown sf-with-ul">Get Involved</a>
-								<ul class="fh5co-sub-menu" style="display: none;">
+			  				<li>
+								<a href="http://127.0.0.1:8000/user/profile#" class="fh5co-sub-ddown sf-with-ul mouse1">Get Involved</a>
+								<ul class="fh5co-sub-menu dropdown-content1" style="display: none;">
 									<li><a href="http://127.0.0.1:8000/donations/form">Donate</a></li>
 									<li><a href="http://127.0.0.1:8000/user/profile#">Fundraise</a></li>
 									<li><a href="http://127.0.0.1:8000/user/profile#">Campaign</a></li>
@@ -49,13 +49,13 @@
 								</ul>
 							</li>
 
-			  <li class=""><a href="https://www.free-css.com/free-css-templates" class="fh5co-sub-ddown sf-with-ul">Projects</a>
-                <ul class="fh5co-sub-menu" style="display: none;">
-                  <li><a href="https://www.free-css.com/free-css-templates">Water World</a></li>
-                  <li><a href="https://www.free-css.com/free-css-templates">Cloth Giving</a></li>
-                  <li><a href="https://www.free-css.com/free-css-templates">Medical Mission</a></li>
-                </ul>
-              </li>
+							<li class=""><a href="http://127.0.0.1:8000/user/profile#" class="fh5co-sub-ddown sf-with-ul mouse2">Projects</a>
+								<ul class="fh5co-sub-menu dropdown-content2" style="display: none;">
+								<li><a href="https://www.free-css.com/free-css-templates">Water World</a></li>
+								<li><a href="https://www.free-css.com/free-css-templates">Cloth Giving</a></li>
+								<li><a href="https://www.free-css.com/free-css-templates">Medical Mission</a></li>
+								</ul>
+							</li>
 							<li><a href="donor.html">Donor</a></li>
 							<li><a href="{{route('forntend.orphon.list')}}">Orphan</a></li>
 							<li><a href="contact.html">Contact</a></li>
@@ -80,3 +80,47 @@
 		</header>
 	</div>
 </div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> 
+<script>
+$('.mouse1').mouseenter(function () {
+       $('.dropdown-content1').show();
+     }
+ )
+$('.mouse1').mouseleave(function () {
+       $('.dropdown-content1').hide();
+     }
+ )
+
+ $('.dropdown-content1').mouseenter(function () {
+       $('.dropdown-content1').show();
+     }
+ )
+$('.dropdown-content1').mouseleave(function () {
+       $('.dropdown-content1').hide();
+     }
+ )
+ 
+</script>
+
+<script>
+$('.mouse2').mouseenter(function () {
+       $('.dropdown-content2').show();
+     }
+ )
+$('.mouse2').mouseleave(function () {
+       $('.dropdown-content2').hide();
+     }
+ )
+
+ $('.dropdown-content2').mouseenter(function () {
+       $('.dropdown-content2').show();
+     }
+ )
+$('.dropdown-content2').mouseleave(function () {
+       $('.dropdown-content2').hide();
+     }
+ )
+ 
+
+
+</script>

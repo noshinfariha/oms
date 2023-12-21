@@ -12,6 +12,11 @@ use App\Library\SslCommerz\SslCommerzNotification;
 
 class DonationController extends Controller
 {
+    public function print()
+    {
+        $donationsdata = Donation::paginate(3);
+        return view("Backend.pages.donation.print", compact('donationsdata'));
+    }
     public function list()
     {
         $donationsdata = Donation::paginate(3);

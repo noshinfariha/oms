@@ -10,6 +10,10 @@ use Illuminate\Support\Facades\Validator;
 
 class ExpenseController extends Controller
 {
+    public function print(){
+        $expensedata=Expense::paginate(3);
+        return view('Backend.pages.expense.print',compact('expensedata'));
+    }
     public function list(){
         $expensedata=Expense::paginate(3);
         return view('Backend.pages.expense.expense',compact('expensedata'));

@@ -2,8 +2,7 @@
 @section('content')
 <h2>Report</h2>
 
-<a href="{{route('report.form')}}" type="button" class="btn btn-dark">Add Report</a>
-<a href="{{route('report.print')}}" type="button" class="btn btn-dark">Print</a>
+
 
   <table class="table table-striped table-dark">
     <thead>
@@ -31,7 +30,9 @@
         </td>
       </tr>
 @endforeach
-    </tbody>
-  </table>
-
-@endsection
+<button onclick="printlist()">Print List</button>
+    <script>
+    function printlist() {
+        window.print();
+    }
+    </script>

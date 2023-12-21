@@ -1,8 +1,7 @@
 @extends("Backend.master")
 @section('content')
 <h2>Expense Information</h2>
-<a href="{{route('expense.form')}}" type="button" class="btn btn-dark">Add Expense</a>
-<a href="{{route('expense.print')}}" type="button" class="btn btn-primary">Print</a>
+
 
 <table class="table table-striped table-dark">
     <thead>
@@ -34,6 +33,12 @@
 @endforeach
     </tbody>
   </table>
+  <button onclick="printlist()">Print List</button>
+    <script>
+    function printlist() {
+        window.print();
+    }
+    </script>
 
 {{ $expensedata->links()}}
 @endsection

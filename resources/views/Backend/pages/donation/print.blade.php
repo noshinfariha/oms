@@ -2,9 +2,6 @@
 @section('content')
 <h2>Donation Information</h2>
 <table class="table table-striped table-dark">
-
-<a href="{{route('donation.print')}}" type="button" class="btn btn-dark">Print</a>
-
     
     <thead>
       <tr>
@@ -33,6 +30,12 @@
         </td>
       </tr>
 @endforeach
+<button onclick="printlist()">Print List</button>
+    <script>
+    function printlist() {
+        window.print();
+    }
+    </script>
     </tbody>
   </table>
 

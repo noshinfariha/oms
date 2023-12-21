@@ -10,6 +10,12 @@ use Illuminate\Support\Facades\Validator;
 
 class AdoptionController extends Controller
 {
+    public function print()
+    {
+
+        $adoptionsdata = Adoption::with('orphans')->paginate(3); //relation
+        return view("Backend.pages.adoption.print", compact('adoptionsdata'));
+    }
     public function list()
     {
 

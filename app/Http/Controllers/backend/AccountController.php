@@ -9,6 +9,11 @@ use Illuminate\Http\Request;
 
 class AccountController extends Controller
 {
+    public function print()
+    { 
+        $accountsdata=Account::all();
+        return view("Backend.pages.account.print",compact('accountsdata'));
+    }
     public function list()
     { 
         $accountsdata=Account::all();

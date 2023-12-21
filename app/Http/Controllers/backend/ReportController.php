@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 
 class ReportController extends Controller
 {
+    public function print()
+    {
+        $reportsdata=Report::all();
+        return view("Backend.pages.report.print",compact('reportsdata'));
+    }
     public function list()
     {
         $reportsdata=Report::all();

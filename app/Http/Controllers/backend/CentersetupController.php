@@ -9,6 +9,13 @@ use Illuminate\Support\Facades\Validator;
 
 class CentersetupController extends Controller
 {
+    public function print(){
+
+        $centersetupdata=Centersetup::paginate(3);
+
+     return view("Backend.pages.centersetup.print",compact('centersetupdata'));
+    }
+
     public function list(){
 
         $centersetupdata=Centersetup::paginate(3);

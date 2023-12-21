@@ -11,11 +11,11 @@ class HomeController extends Controller
         return view("master");
     }
     public function home(){
-        return view("Backend.master");
+        return view("Backend.pages.dashboard");
         
     }
     public function n2(){
-        return view("noshin");
+        return view("n2");
     }
 }
 

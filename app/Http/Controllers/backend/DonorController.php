@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 
 class DonorController extends Controller
 {
+    public function print(){
+        $donorsdata=Donor::paginate(3);
+        return view("Backend.pages.donor.print",compact('donorsdata'));
+    }
     public function list(){
         $donorsdata=Donor::paginate(3);
         return view("Backend.pages.donor.donor",compact('donorsdata'));

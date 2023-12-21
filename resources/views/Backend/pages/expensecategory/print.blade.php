@@ -2,10 +2,6 @@
 @section('content')
 <h2>Expense Category</h2>
 
-<a href="{{route('expensecategory.form')}}" type="button" class="btn btn-dark">Add Expensecategoty</a>
-<a href="{{route('expensecategory.print')}}" type="button" class="btn btn-dark">Print</a>
-
-
   <table class="table table-striped table-dark">
     <thead>
       <tr>
@@ -29,6 +25,12 @@
         </td>
       </tr>
 @endforeach
+<button onclick="printlist()">Print List</button>
+    <script>
+    function printlist() {
+        window.print();
+    }
+    </script>
     </tbody>
   </table>
 

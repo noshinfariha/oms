@@ -9,6 +9,12 @@ use Illuminate\Support\Facades\Validator;
 
 class ExpensecategoryController extends Controller
 {
+    public function print(){
+
+        $expensecategory=Expensecategory::paginate(3);
+
+     return view("Backend.pages.expensecategory.print",compact('expensecategory'));
+    }
     public function list(){
 
         $expensecategory=Expensecategory::paginate(3);

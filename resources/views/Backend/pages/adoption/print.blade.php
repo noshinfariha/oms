@@ -2,8 +2,6 @@
 @section('content')
 <h2>Adoption Information</h2>
 
-<a href="{{route('adoption.print')}}" type="button" class="btn btn-primary"> Print</a>
-
 <table class="table table-striped table-dark">
     <thead>
       <tr>
@@ -39,6 +37,13 @@
         </td>
       </tr>
 @endforeach
+
+<button onclick="printlist()">Print List</button>
+    <script>
+    function printlist() {
+        window.print();
+    }
+    </script>
     </tbody>
   </table>
 

@@ -2,9 +2,6 @@
 @section('content')
 <h2>Staff Information</h2>
 
-<a href="{{route('staff.form')}}" type="button" class="btn btn-dark">Add Staff</a>
-<a href="{{route('staff.print')}}" type="button" class="btn btn-dark">Print</a>
-
 <table class="table table-striped table-dark">
     <thead>
       <tr>
@@ -29,6 +26,12 @@
         </td>
         </tr>
 @endforeach
+<button onclick="printlist()">Print List</button>
+    <script>
+    function printlist() {
+        window.print();
+    }
+    </script>
     </tbody>
   </table>
 {{ $staffdata->links() }}

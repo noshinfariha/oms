@@ -109,9 +109,8 @@ Route::group(['prefix' => 'backend'], function () {
 
       Route::get('/admin/profile', [AdminController::class, 'adminprofile'])->name('admin.profile');
 
+
       Route::get('/orphans/print', [OrphanController::class, 'print'])->name('orphan.print');
-
-
       Route::get('/orphans/list', [OrphanController::class, 'list'])->name('orphan');
       Route::get('/orphan/form', [OrphanController::class, 'form'])->name('orphan.form');
       Route::post('/orphan/store', [OrphanController::class, 'store'])->name('orphan.store');
@@ -120,7 +119,8 @@ Route::group(['prefix' => 'backend'], function () {
       Route::put('orphan/update/{id}', [OrphanController::class, 'update'])->name('orphan.update');
       Route::get('orphan/view/{id}', [OrphanController::class, 'view'])->name('orphan.view');
 
-
+      
+      Route::get('/staffs/print', [StaffController::class, 'print'])->name('staff.print');
       Route::get('/staffs/list', [StaffController::class, 'list'])->name('staff');
       Route::get('/staff/form', [StaffController::class, 'form'])->name('staff.form');
       Route::post('/staff/store', [StaffController::class, 'store'])->name('staff.store');
@@ -130,8 +130,8 @@ Route::group(['prefix' => 'backend'], function () {
       Route::get('staff/view/{id}', [StaffController::class, 'view'])->name('staff.view');
 
 
-
-      Route::get('/parents/list', [abcParentsController::class, 'list'])->name('parents');
+      Route::get('/parents/print', [abcParentsController::class, 'print'])->name('parents.print');
+       Route::get('/parents/list', [abcParentsController::class, 'list'])->name('parents');
       Route::get('/parents/form', [abcParentsController::class, 'form'])->name('parents.form');
       Route::post('/parents/store', [abcParentsController::class, 'store'])->name('parents.store');
       Route::get('parents/delete/{id}', [abcParentsController::class, 'delete'])->name('parents.delete');
@@ -140,7 +140,7 @@ Route::group(['prefix' => 'backend'], function () {
       Route::get('parents/view/{id}', [abcParentsController::class, 'view'])->name('parents.view');
 
 
-
+      Route::get('/report/print', [ReportController::class, 'print'])->name('report.print');
       Route::get('/report/list', [ReportController::class, 'list'])->name('report');
       Route::get('/report/form', [ReportController::class, 'form'])->name('report.form');
       Route::post('/report/store', [ReportController::class, 'store'])->name('report.store');
@@ -151,7 +151,7 @@ Route::group(['prefix' => 'backend'], function () {
 
 
 
-
+      Route::get('/account/print', [AccountController::class, 'print'])->name('account.print');
       Route::get('/account/list', [AccountController::class, 'list'])->name('account');
       Route::get('/account/form', [AccountController::class, 'form'])->name('account.form');
       Route::post('/account/store', [AccountController::class, 'store'])->name('account.store');
@@ -162,7 +162,7 @@ Route::group(['prefix' => 'backend'], function () {
 
 
 
-
+      Route::get('/adoptions/print', [AdoptionController::class, 'print'])->name('adoption.print');
       Route::get('/adoptions/list', [AdoptionController::class, 'list'])->name('adoption');
       Route::get('/adoptions/form', [AdoptionController::class, 'form'])->name('adoption.form');
       Route::get('adoptions/delete/{id}', [AdoptionController::class, 'delete'])->name('adoption.delete');
@@ -171,7 +171,7 @@ Route::group(['prefix' => 'backend'], function () {
       Route::get('adoptions/view/{id}', [AdoptionController::class, 'view'])->name('adoption.view');
 
 
-
+      Route::get('/donations/print', [DonationController::class, 'print'])->name('donation.print');
       Route::get('/donations/list', [DonationController::class, 'list'])->name('donation');
       Route::get('donations/delete/{id}', [DonationController::class, 'delete'])->name('donation.delete');
       Route::get('donations/edit/{id}', [DonationController::class, 'edit'])->name('donation.edit');
@@ -180,7 +180,7 @@ Route::group(['prefix' => 'backend'], function () {
 
 
 
-
+      Route::get('/donor/print', [DonorController::class, 'print'])->name('donor.print');
       Route::get('/donor/list', [DonorController::class, 'list'])->name('donor');
       Route::get('/donor/form', [DonorController::class, 'form'])->name('donor.form');
       Route::post('/donor/store', [DonorController::class, 'store'])->name('donor.store');
@@ -191,7 +191,7 @@ Route::group(['prefix' => 'backend'], function () {
 
 
 
-
+      Route::get('/expense/print', [ExpenseController::class, 'print'])->name('expense.print');
       Route::get('/expense/list', [ExpenseController::class, 'list'])->name('expense');
       Route::get('/expense/form', [ExpenseController::class, 'form'])->name('expense.form');
       Route::post('/expense/store', [ExpenseController::class, 'store'])->name('expense.store');
@@ -201,7 +201,7 @@ Route::group(['prefix' => 'backend'], function () {
       Route::get('expense/view/{id}', [ExpenseController::class, 'view'])->name('expense.view');
 
 
-
+      Route::get('/expensecategory/print', [ExpensecategoryController::class, 'print'])->name('expensecategory.print');
       Route::get('/expensecategory/list', [ExpensecategoryController::class, 'list'])->name('expensecategory');
       Route::get('/expensecategory/form', [ExpensecategoryController::class, 'form'])->name('expensecategory.form');
       Route::post('/expensecategory/store', [ExpensecategoryController::class, 'store'])->name('expensecategory.store');
@@ -211,7 +211,7 @@ Route::group(['prefix' => 'backend'], function () {
       Route::get('expensecategory/view/{id}', [ExpensecategoryController::class, 'view'])->name('expensecategory.view');
 
 
-
+      Route::get('/centersetup/print', [CentersetupController::class, 'print'])->name('centersetup.print');
       Route::get('/centersetup/list', [CentersetupController::class, 'list'])->name('centersetup');
       Route::get('/centersetup/form', [CentersetupController::class, 'form'])->name('centersetup.form');
       Route::post('/centersetup/store', [CentersetupController::class, 'store'])->name('centersetup.store');

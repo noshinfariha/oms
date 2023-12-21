@@ -9,6 +9,10 @@ use Illuminate\Support\Facades\Validator;
 
 class StaffController extends Controller
 {
+    public function print(){
+        $staffdata=Staff::paginate(3);
+        return view("Backend.pages.staff.print",compact('staffdata'));
+    }
     public function list(){
         $staffdata=Staff::paginate(3);
         return view("Backend.pages.staff.staff",compact('staffdata'));
