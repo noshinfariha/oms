@@ -86,15 +86,11 @@ Route::post('/ipn', [SslCommerzPaymentController::class, 'ipn']);
 //BACKEND
 Route::group(['prefix' => 'backend'], function () {
 
-
-
-
-
   Route::get('/login/form', [LoginController::class, 'login'])->name('login');
   Route::post('/login/store', [LoginController::class, 'store'])->name('login.store');
 
   Route::group(['middleware' => 'auth'], function () {
-    Route::group(['middleware' => 'CheckAdmin'], function () {
+    Route::group(['middleware' => 'adminLogin'], function () {
       Route::get('/', [HomeController::class, 'home'])->name("dashboard");
 
 
@@ -119,7 +115,7 @@ Route::group(['prefix' => 'backend'], function () {
       Route::put('orphan/update/{id}', [OrphanController::class, 'update'])->name('orphan.update');
       Route::get('orphan/view/{id}', [OrphanController::class, 'view'])->name('orphan.view');
 
-      
+
       Route::get('/staffs/print', [StaffController::class, 'print'])->name('staff.print');
       Route::get('/staffs/list', [StaffController::class, 'list'])->name('staff');
       Route::get('/staff/form', [StaffController::class, 'form'])->name('staff.form');
@@ -131,7 +127,7 @@ Route::group(['prefix' => 'backend'], function () {
 
 
       Route::get('/parents/print', [abcParentsController::class, 'print'])->name('parents.print');
-       Route::get('/parents/list', [abcParentsController::class, 'list'])->name('parents');
+      Route::get('/parents/list', [abcParentsController::class, 'list'])->name('parents');
       Route::get('/parents/form', [abcParentsController::class, 'form'])->name('parents.form');
       Route::post('/parents/store', [abcParentsController::class, 'store'])->name('parents.store');
       Route::get('parents/delete/{id}', [abcParentsController::class, 'delete'])->name('parents.delete');
@@ -169,6 +165,10 @@ Route::group(['prefix' => 'backend'], function () {
       Route::get('/adoptions/edit/{id}', [AdoptionController::class, 'edit'])->name('adoption.edit');
       Route::put('adoptions/update/{id}', [AdoptionController::class, 'update'])->name('adoption.update');
       Route::get('adoptions/view/{id}', [AdoptionController::class, 'view'])->name('adoption.view');
+      Route::get('adoptions/accept/{id}', [AdoptionController::class, 'accept'])->name('adoption.accept');
+      Route::get('adoptions/reject/{id}', [AdoptionController::class, 'reject'])->name('adoption.reject');
+
+
 
 
       Route::get('/donations/print', [DonationController::class, 'print'])->name('donation.print');

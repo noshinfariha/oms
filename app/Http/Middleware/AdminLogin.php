@@ -13,11 +13,11 @@ class AdminLogin
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next)
-    {   if(auth()->user()->role == 'admin'){
-        return $next($request);
-    }
-    return redirect()->route('frontend');
-       
+    public function handle(Request $request, Closure $next):Response
+    {
+        if (auth()->user()->role == 'Admin') {
+            return $next($request);
+        }
+        return redirect()->route('frontend');
     }
 }

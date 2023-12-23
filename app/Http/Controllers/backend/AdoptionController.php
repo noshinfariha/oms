@@ -10,6 +10,19 @@ use Illuminate\Support\Facades\Validator;
 
 class AdoptionController extends Controller
 {
+    public function accept($id)
+    {
+        $adoption = Adoption::find($id);
+        $adoption->update([
+        'status'=>'adopted'
+        ]);
+    }
+    public function reject()
+    {
+
+
+
+    }
     public function print()
     {
 
@@ -50,7 +63,7 @@ class AdoptionController extends Controller
 
     public function update(Request $request, $id)
     {
-        dd($request->all());
+        // dd($request->all());
         $adoptionEdit = Adoption::find($id);
         if ($adoptionEdit) {
 
@@ -114,7 +127,7 @@ class AdoptionController extends Controller
              ]);
         return redirect()->route('forntend.orphon.list');
     }
-    public function asdfgupdate(){
+    public function adoptionupdate(){
         
     
         return view("Backend.pages.adoption.adoption",compact('adoptionsdata'));

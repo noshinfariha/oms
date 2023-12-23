@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use DB;
+use App\Models\Account;
 use App\Models\Donation;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Library\SslCommerz\SslCommerzNotification;
 
 class SslCommerzPaymentController extends Controller
@@ -198,8 +199,10 @@ class SslCommerzPaymentController extends Controller
                     'status' => 'confirm',
                 ]);
 
-                echo "<br >Transaction is successfully Completed";
-                // return redirect()->route('frontend');
+                $acc=Account::first();
+                $acc->increment('amount',  $amount);
+
+                return redirect()->route('frontend');
             }
         } else if ($donation->status == 'Processing' || $donation->status == 'Complete') {
             /*

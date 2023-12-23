@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('expensecategories', function (Blueprint $table) {
             $table->id();
-            $table->string('uid');
+            $table->string('expense_id');
             $table->text('name');
             $table->string('status');
             $table->timestamps();

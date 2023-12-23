@@ -12,8 +12,8 @@
             <div class="col-md-5 border-right m-3">
                 <div class="p-3 py-5">
                     <div class="d-flex justify-content-between align-items-center mb-3">
-                        <h4 class="text-right">Profile</h4>
-                    </div>
+                        <h2 class="text-right">Profile</h2>
+
                     <div class="row mt-2 ">
                         <div class="col-md-12">
                             <div class="row">
@@ -91,12 +91,12 @@
                 <td>{{$adoption->source_income}}</td>
                 <td>{{$adoption->marital_status}}</td>
                 <td>{{$adoption->gd_number}}</td>
-                <td> <a href="{{url('/uploads/' . $adoption->gd_form)}}"  target="blank" class="btn btn-success">View</a></td>
+                <td> <a href="{{url('/uploads/' . $adoption->gd_form)}}"  target="blank" class="btn btn-sm btn-success">View</a></td>
                 <!-- <td>{{$adoption->gd_form}}</td> -->
 
-                <td>
-                    <a href="#" class="btn btn-danger">Cancel Adoption</a>
-                    <a href="{{route('adoption.store')}}" class="btn btn-success">Update</a>
+                <td >
+                    <a href="#" class="btn btn-sm btn-danger">Cancel Adoption</a>
+                    <a href="{{route('adoption.store')}}" class="btn btn-sm btn-success">Update</a>
 
                 </td>
             </tr>

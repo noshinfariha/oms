@@ -58,7 +58,7 @@ public function form()
       
             }
             $expensecategoryEdit->update([
-                'id' => $request->id,
+                'expense_id' => $request->expense_id,
                 'name' => $request->name,
                 'status' => $request->status,  
               ]);
@@ -81,7 +81,7 @@ public function form()
 
  // dd($fariha->all());    
        Expensecategory::create([
-        'id'=>$fariha->id,
+        'expense_id'=>$fariha->expense_id,
         'name'=>$fariha->name,
         'status'=> $fariha->status,
       

@@ -9,7 +9,7 @@
   <table class="table table-striped table-dark">
     <thead>
       <tr>
-        <th scope="col">ID</th>
+        <th scope="col">Expense ID</th>
         <th scope="col">Name</th>
         <th scope="col">Status</th>
       </tr>
@@ -18,7 +18,7 @@
 @foreach($expensecategory as $item)
       <tr>
         <!-- <th scope="row">{{$item->id}}</th> -->
-        <td>{{$item->id}}</td>
+        <td>{{$item->expense_id}}</td>
         <td>{{$item->name}}</td>
         <td>{{$item->status}}</td>
           <td>

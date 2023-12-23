@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    @notifyCss
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -15,11 +16,11 @@
             <h1>
                 Input your Information!
             </h1>
-            <form  action="{{route('expense.store')}}"method="post">
+            <form action="{{route('expense.store')}}" method="post">
                 @csrf
                 <div class="form-group">
-                    <label for="exampleInputEmail1">ID</label>
-                    <input required type="number" name="id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter ID">
+                    <label for="exampleInputEmail1">Expense ID</label>
+                    <input required type="number" name="expense_id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter ID">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Title</label>
@@ -52,7 +53,9 @@
                 <button type="submit" class="btn btn-primary mt-2">Submit</button>
             </form>
         </div>
-    </main >
+    </main>
+    <x-notify::notify />
+    @notifyJs
 </body>
 
 </html>

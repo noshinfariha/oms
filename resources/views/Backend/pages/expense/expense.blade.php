@@ -7,18 +7,20 @@
 <table class="table table-striped table-dark">
     <thead>
       <tr>
-        <th scope="col">ID</th>
+        <th scope="col"> Expense ID</th>
         <th scope="col">Title</th>
         <th scope="col">Category ID</th>
         <th scope="col">Expense By</th>
         <th scope="col">Description</th>
         <th scope="col">Amount</th>
         <th scope="col">Date</th>
+        <th scope="col">Action</th>
+
     </thead>
     <tbody>
 @foreach($expensedata as $item)
       <tr>
-        <td>{{$item->id}}</td>
+        <td>{{$item->expense_id}}</td>
         <td>{{$item->title}}</td>
         <td>{{$item->category_id}}</td>
         <td>{{$item->expense_by}}</td>
