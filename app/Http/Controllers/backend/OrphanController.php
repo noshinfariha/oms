@@ -97,7 +97,7 @@ class OrphanController extends Controller
        // dd($fariha->all());    
         Orphan::create([
             'orphan_name' => $fariha->orphan_name,
-            'status' => $fariha->status,
+            'status' => 'Active',
             'age' => $fariha->age,
             'image' => $fileName,
             'gender' => $fariha->gender,

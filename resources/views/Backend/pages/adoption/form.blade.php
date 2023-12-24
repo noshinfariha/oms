@@ -68,6 +68,9 @@
                     <label for="exampleInputEmail1">GD Form</label>
                     <input type="file" name="gd_form" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter GD Number">
                 </div>
+                <div class="form-group">
+                    <input type="hidden" name="status" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Status">
+                </div>
 
                 <button type="submit" class="btn btn-primary mt-2">Submit</button>
             </form>

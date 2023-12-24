@@ -39,11 +39,11 @@
                 <label for="female">Female</label>
                 </div>
                 
-                <label for="exampleInputEmail1">Status</label>
+                <!-- <label for="exampleInputEmail1">Status</label>
                 <select name="status" id="" class="form-control" required>
                     <option value="Adopt">Adopt</option>
                     <option value="Not Adopt">Not Adopt</option>
-                 </select>
+                 </select> -->
                 <div class="form-group">
                     <label for="exampleInputEmail1">Image</label>
                     <input  type="file" name="image" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">

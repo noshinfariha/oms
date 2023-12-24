@@ -16,6 +16,7 @@
         <th scope="col">Marital Status</th>
         <th scope="col">GD number</th>
         <th scope="col">GD Form</th>
+        <th scope="col">Status</th>
          <th scope="col">Action</th>        
      </tr>  
     </thead>
@@ -32,10 +33,12 @@
         <td>{{$item->marital_status}}</td>
         <td>{{$item->gd_number}}</td>
         <td>{{$item->gd_form}}</td>
+        <td>{{$item->status}}</td>
+
 
        <td>
-        <a href="{{route('adoption.view',$item->id)}}" class="btn btn-primary">Accept</a>
-          <a href="{{route('adoption.delete', $item->id) }}"class="btn btn-success">Reject</a>
+        <a href="{{route('adoption.accept',$item->id)}}" class="btn btn-primary">Accept</a>
+          <a href="{{route('adoption.reject', $item->id) }}"class="btn btn-success">Reject</a>
         </td>
       </tr>
 @endforeach

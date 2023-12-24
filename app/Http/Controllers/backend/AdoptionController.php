@@ -16,6 +16,8 @@ class AdoptionController extends Controller
         $adoption->update([
         'status'=>'adopted'
         ]);
+        notify()->success('mhjgdfjks');
+        return redirect()->route('adoption');
     }
     public function reject()
     {
@@ -85,6 +87,8 @@ class AdoptionController extends Controller
             'marital_status' => $request->marital_status,
             'gd_number' => $request->gd_number,
             'gd_form' => $request->gd_form,
+            'status' => $request->status,
+
             ]);
             return redirect()->route('adoption');
         }
@@ -123,6 +127,8 @@ class AdoptionController extends Controller
             'marital_status' => $noshin->marital_status,
             'gd_number' => $noshin->gd_number,
             'gd_form' => $fileName,
+            'status' => 'pending',
+
 
              ]);
         return redirect()->route('forntend.orphon.list');

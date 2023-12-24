@@ -11,8 +11,8 @@
 <i class="material-icons opacity-10">weekend</i>
 </div>
 <div class="text-end pt-1">
-<p class="text-sm mb-0 text-capitalize">Today's Money</p>
-<h4 class="mb-0">$53k</h4>
+<p class="text-sm mb-0 text-capitalize">Todays Money</p>
+<h4 class="mb-0">{{$donations}}</h4>
 </div>
 </div>
 <hr class="dark horizontal my-0">
@@ -28,8 +28,8 @@
 <i class="material-icons opacity-10">person</i>
 </div>
 <div class="text-end pt-1">
-<p class="text-sm mb-0 text-capitalize">Today's Users</p>
-<h4 class="mb-0">2,300</h4>
+<p class="text-sm mb-0 text-capitalize">Today's Orphans</p>
+<h4 class="mb-0">{{$orphans}}</h4>
 </div>
 </div>
 <hr class="dark horizontal my-0">
@@ -45,8 +45,8 @@
 <i class="material-icons opacity-10">person</i>
 </div>
 <div class="text-end pt-1">
-<p class="text-sm mb-0 text-capitalize">New Clients</p>
-<h4 class="mb-0">3,462</h4>
+<p class="text-sm mb-0 text-capitalize">New Staff</p>
+<h4 class="mb-0">{{$staff}}</h4>
 </div>
 </div>
 <hr class="dark horizontal my-0">
@@ -62,8 +62,8 @@
 <i class="material-icons opacity-10">weekend</i>
 </div>
 <div class="text-end pt-1">
-<p class="text-sm mb-0 text-capitalize">Sales</p>
-<h4 class="mb-0">$103,430</h4>
+<p class="text-sm mb-0 text-capitalize">Expenses</p>
+<h4 class="mb-0">{{$expenses}}</h4>
 </div>
 </div>
 <hr class="dark horizontal my-0">

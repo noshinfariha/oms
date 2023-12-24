@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('marital_status');
             $table->string('gd_number');
             $table->string('gd_form');
+            $table->string('status')->default('pending');
              $table->timestamps();
         });
     }
