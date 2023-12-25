@@ -9,7 +9,7 @@
 						<a href="#">Contact</a>
 					</div>
 					<div class="col-md-6 col-sm-6 fh5co-link">
-						<form action="{{route('User.search')}}" method="get">
+						<form action="{{route('orphan.search')}}" method="get">
 							<div class="row">
 								<input type="text" class="col-md-9" placeholder="Search..." name="search">
 								<button type="submit" class="btn btn-sm btn-success">Search</button>

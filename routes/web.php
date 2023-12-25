@@ -34,7 +34,7 @@ Route::get('/user/profile', [frontendUserController::class, 'userprofile'])->nam
 
 Route::get('/registartion', [FrontendHomeController::class, 'registration'])->name('user.registration');
 Route::post('/registration/store', [frontendUserController::class, 'store'])->name('User.store');
-Route::get('/search', [frontendUserController::class, 'search'])->name('User.search');
+
 
 
 Route::get('/user/login', [frontendUserController::class, 'login'])->name('Login_User');
@@ -60,6 +60,9 @@ Route::post('/adoptions/store', [AdoptionController::class, 'store'])->name('ado
 //Adoption Update
 
 Route::post('/adoptions/update', [AdoptionController::class, 'update'])->name('adoption.update');
+//search
+
+Route::get('/search', [frontendOrphanController::class, 'search'])->name('orphan.search');
 
 
 
@@ -239,3 +242,5 @@ Route::group(['prefix' => 'backend'], function () {
 //     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
 //      Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 //  });
+
+

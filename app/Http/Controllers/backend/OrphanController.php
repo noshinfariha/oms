@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Adoption;
 use App\Models\Orphan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -20,6 +21,7 @@ class OrphanController extends Controller
     {
 
         $orphansdata = Orphan::paginate(3);
+       
         return view("Backend.pages.orphans.orphan", compact('orphansdata'));
     }
     public function form()

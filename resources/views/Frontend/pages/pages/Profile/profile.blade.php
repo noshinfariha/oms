@@ -1,8 +1,8 @@
 @extends('Frontend.master')
 @section('container')
 
-<div class="container">
-    <div class="container rounded bg-white mb-5">
+<div class="p-5">
+    <div class="rounded bg-white mb-5">
         <div class="row">
             <div class="col-md-3 border-right">
                 <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="">
@@ -63,7 +63,7 @@
 
 </div>
 
-<div class="mL-5 border border-warning">
+<div class=" m-6 border border-warning">
     <table class="table table-striped table-dark ">
         <thead>
             <tr>
@@ -82,9 +82,11 @@
             </tr>
         </thead>
         <tbody>
+           
             @foreach($adoptions as $adoption)
+            
             <tr>
-                <td>{{$adoption->orphan->orphan_name}}</td>
+                <td>{{$adoption->orphans->orphan_name}}</td>
                 <td>{{$adoption->applicant_name}}</td>
                 <td>{{$adoption->phone}}</td>
                 <td>{{$adoption->address}}</td>
@@ -92,13 +94,13 @@
                 <td>{{$adoption->source_income}}</td>
                 <td>{{$adoption->marital_status}}</td>
                 <td>{{$adoption->gd_number}}</td>
-                <td>{{$adoption->status}}</td>
+   
 
                 <td> <a href="{{url('/uploads/' . $adoption->gd_form)}}"  target="blank" class="btn btn-sm btn-success">View</a></td>
-                <td>{{$adoption->gd_form}}</td>
-
+                <!-- <td>{{$adoption->gd_form}}</td> -->
+                <td>{{$adoption->status}}</td>
                 <td >
-                    <a href="#" class="btn btn-sm btn-danger">Cancel Adoption</a>
+                    <a href="#" class="btn btn-sm btn-danger mr-5">Cancel Adoption</a>
                     <a href="{{route('adoption.store')}}" class="btn btn-sm btn-success">Update</a>
 
                 </td>

@@ -25,9 +25,13 @@
                       <h4>{{$orphansdata->orphan_name}}</h4>
                       <p class="text-secondary mb-1">Full Stack Developer</p>
                       <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
-                      <a href="{{route('forntend.adopt', $orphansdata->id)}}" class="btn btn-primary">Adopt Now</a>
 
-                    
+                      @if($orphansdata->status=='Active')
+                      
+                      <a href="{{route('forntend.adopt', $orphansdata->id)}}" class="btn btn-primary">Adopt Now</a>
+                     @else
+                     <p>Already Adopted</p>
+                    @endif
                     </div>
                   </div>
                 </div>

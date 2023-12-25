@@ -30,20 +30,7 @@ class UserController extends Controller
         notify()->success('User registration success ');
         return redirect()->route('frontend');
     }
-    // search
-    public function search(Request $request)
-    {
-        // dd(request()->all())
-
-        if($request->search)
-        {
-            $orphans=Orphan::where('name','LIKE','%'.$request->search.'%')->get();
-        }else{
-            $orphans=Orphan::all();
-        }
-
-        return view("Frontend.pages.orphan.orphan",compact('orphans'));
-    }
+   
 
 
 
@@ -82,9 +69,9 @@ class UserController extends Controller
     }
 
     public function userprofile(){
-
+         
         $adoptions = Adoption::with('orphans')->get();
-    //    dd($adoptions->toarray());
+         
 
         return view('Frontend.pages.pages.Profile.profile',compact('adoptions'));
     }

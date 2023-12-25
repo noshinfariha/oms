@@ -16,12 +16,27 @@ class AdoptionController extends Controller
         $adoption->update([
         'status'=>'adopted'
         ]);
-        notify()->success('mhjgdfjks');
+        
+        Orphan::find($adoption->orphan_id)->update([
+            'status'=>'adopted'
+         ]);
+
+        notify()->success('Adoption Successfull');
         return redirect()->route('adoption');
     }
-    public function reject()
+    public function reject($id)
     {
+        $adoption = Adoption::find($id);
+        $adoption->update([
+        'status'=>'rejected'
+        ]);
+        
+        Orphan::find($adoption->orphan_id)->update([
+            'status'=>'rejected'
+         ]);
 
+        notify()->success('Adoption failed');
+        return redirect()->route('adoption');
 
 
     }
@@ -96,10 +111,6 @@ class AdoptionController extends Controller
     public function store(Request $noshin)
     {
 
-
-
-        //   dd($noshin ->all());
-
         $validate = validator::make($noshin->all(), [
             'gd_number' => 'required',
         ]);
@@ -128,9 +139,10 @@ class AdoptionController extends Controller
             'gd_number' => $noshin->gd_number,
             'gd_form' => $fileName,
             'status' => 'pending',
-
-
              ]);
+
+            
+
         return redirect()->route('forntend.orphon.list');
     }
     public function adoptionupdate(){
