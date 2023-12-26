@@ -21,29 +21,29 @@
      </tr>  
     </thead>
     <tbody>
-@foreach($adoptionsdata as $item)
+
+  
       <tr>
     
-        <td>{{$item->orphans->orphan_name}}</td>
-        <td>{{$item->applicant_name}}</td>
-        <td>{{$item->phone}}</td>
-        <td>{{$item->address}}</td>
-        <td>{{$item->occupation}}</td>
-        <td>{{$item->source_income}}</td>
-        <td>{{$item->marital_status}}</td>
-        <td>{{$item->gd_number}}</td>
-        <td>{{$item->gd_form}}</td>
-        <td>{{$item->status}}</td>
+        <td>{{$data->orphans->orphan_name ?? ""}}</td>
+        <td>{{$data->applicant_name ?? ""}}</td>
+        <td>{{$data->phone ?? ""}}</td>
+        <td>{{$data->address ?? ""}}</td>
+        <td>{{$data->occupation ?? ""}}</td>
+        <td>{{$data->source_income ?? ""}}</td>
+        <td>{{$data->marital_status ?? ""}}</td>
+        <td>{{$data->gd_number ?? ""}}</td>
+        <td>{{$data->gd_form ?? ""}}</td>
+        <td>{{$data->status ?? ""}}</td>
 
 
        <td>
-        <a href="{{route('adoption.accept',$item->id)}}" class="btn btn-primary">Accept</a>
-          <a href="{{route('adoption.reject', $item->id) }}"class="btn btn-success">Reject</a>
+        <a href="{{route('adoption.accept',$data->id)}}" class="btn btn-primary">Accept</a>
+          <a href="{{route('adoption.reject', $data->id) }}"class="btn btn-success">Reject</a>
         </td>
       </tr>
-@endforeach
+
     </tbody>
   </table>
 
-{{ $adoptionsdata->links() }}
 @endsection

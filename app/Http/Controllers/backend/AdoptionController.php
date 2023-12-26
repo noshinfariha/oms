@@ -111,6 +111,8 @@ class AdoptionController extends Controller
     public function store(Request $noshin)
     {
 
+        dd('hi');
+
         $validate = validator::make($noshin->all(), [
             'gd_number' => 'required',
         ]);
@@ -145,11 +147,26 @@ class AdoptionController extends Controller
 
         return redirect()->route('forntend.orphon.list');
     }
-    public function adoptionupdate(){
+    public function adoptionEdit($id){
         
-    
-        return view("Backend.pages.adoption.adoption",compact('adoptionsdata'));
+        // dd('hi');
+        $data = Adoption::with('orphans')->find($id);
+        // dd($adoptionsdata);
+        return view("Backend.pages.adoption.adoption", compact('data'));
 
   
+}
+public function cancel($id){
+    $adoption = Adoption::find($id);
+    $adoption->update([
+    'status'=>'cancel'
+    ]);
+    
+    Orphan::find($adoption->orphan_id)->update([
+        'status'=>'cancel'
+     ]);
+
+    notify()->success('Adoption Cancel');
+    return redirect()->route('user.profile');
 }
 }

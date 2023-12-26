@@ -96,13 +96,19 @@
                 <td>{{$adoption->gd_number}}</td>
    
 
-                <td> <a href="{{url('/uploads/' . $adoption->gd_form)}}"  target="blank" class="btn btn-sm btn-success">View</a></td>
+                <td> <a href="{{url('/uploads/' . $adoption->gd_form)}}"  target="blank" class="btn btn-sm btn-danger">View</a></td>
                 <!-- <td>{{$adoption->gd_form}}</td> -->
                 <td>{{$adoption->status}}</td>
                 <td >
-                    <a href="#" class="btn btn-sm btn-danger mr-5">Cancel Adoption</a>
-                    <a href="{{route('adoption.store')}}" class="btn btn-sm btn-success">Update</a>
+                @if($adoption->status=='pending')
+                <a href="{{route('adoption.cancel', $adoption->id)}}"class="btn btn-success">Cancel Adoption</a>
+                    @endif
 
+                    @if($adoption->status !='adopted')
+                    <a href="{{route('front.adoption.edit', $adoption->id)}}" class="btn btn-m  btn-success">Update</a>
+                    @endif
+
+                
                 </td>
             </tr>
             @endforeach

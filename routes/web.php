@@ -55,14 +55,18 @@ Route::get('/forntend/orphan/list/{id}', [FrontendOrphanController::class, 'view
 
 
 Route::get('/forntend/adopt/{id}', [AdoptionController::class, 'view'])->name('forntend.adopt');
-Route::post('/adoptions/store', [AdoptionController::class, 'store'])->name('adoption.store');
+Route::get('/adoptions/store', [AdoptionController::class, 'store'])->name('adoption.store');
 
 //Adoption Update
 
-Route::post('/adoptions/update', [AdoptionController::class, 'update'])->name('adoption.update');
+Route::get('/adoption/edit/{id}', [AdoptionController::class, 'adoptionEdit'])->name('front.adoption.edit');
 //search
 
 Route::get('/search', [frontendOrphanController::class, 'search'])->name('orphan.search');
+
+//Cancel Adoption
+Route::get('/adoptions/cancel/{id}', [AdoptionController::class, 'cancel'])->name('adoption.cancel');
+
 
 
 
