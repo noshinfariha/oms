@@ -55,7 +55,7 @@ Route::get('/forntend/orphan/list/{id}', [FrontendOrphanController::class, 'view
 
 
 Route::get('/forntend/adopt/{id}', [AdoptionController::class, 'view'])->name('forntend.adopt');
-Route::get('/adoptions/store', [AdoptionController::class, 'store'])->name('adoption.store');
+Route::post('/adoptions/store', [AdoptionController::class, 'store'])->name('adoption.store');
 
 //Adoption Update
 
