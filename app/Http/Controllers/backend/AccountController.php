@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\backend;
 
-use App\Http\Controllers\Controller;
 use App\Models\Account;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
 
 
 class AccountController extends Controller
@@ -71,6 +72,18 @@ class AccountController extends Controller
 
  public function store(Request $fariha)
     {
+        $validator = Validator::make($fariha->all(), [
+            'orphan_name' => 'required|string|max:255',
+            'status' => 'required|string',
+            'age' => 'required|integer|min:1',
+            'image' => 'required', 
+            'radio' => 'required|in:Male,Female',
+        ]);
+    
+        
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
       // dd($fariha->all());
        Account::create([
         'orphan_name' => $fariha->orphan_name,

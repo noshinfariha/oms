@@ -74,17 +74,21 @@ class abcParentsController extends Controller
     public function store(Request $fariha)
     {
         {
-             $validate = validator::make($fariha->all(),[
-                'email'=>'required', 
-                'phone'=>'required'
-    
-    
-             ]);
-    
-            //  if($validate->fails()){
-            //      return redirect()->back();
-             } 
-        {
+
+            $validate = Validator::make($fariha->all(), [
+                'full_name' => 'required|string|max:255',
+                'email' => 'required|email|unique:parents,email',
+                'phone' => 'required',
+                'address' => 'required|string|max:255',
+                'image' => 'required',
+            ]);
+        
+            
+            if ($validate->fails()) {
+                return redirect()->back()->withErrors($validate)->withInput();
+            }
+            
+        
             $fileName = null;
             if ($fariha->hasFile('image')) {
                 $file = $fariha->file('image');

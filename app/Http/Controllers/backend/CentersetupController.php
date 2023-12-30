@@ -72,15 +72,17 @@ public function form()
     public function store(Request $fariha)
 
     {
-         $validate = validator::make($fariha->all(),[ 
-            'module'=>'required'
-    
-
-         ]);
-
-         if($validate->fails()){
-             return redirect()->back();
-         } 
+        $validator = Validator::make($fariha->all(), [
+            'task_id' => 'required', 
+            'module' => 'required|string|max:255',
+            'task' => 'required|string|max:255',
+            'status' => 'required',
+        ]);
+        
+        
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        } 
 
 
  // dd($fariha->all());    

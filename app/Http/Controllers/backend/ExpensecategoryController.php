@@ -69,8 +69,9 @@ public function form()
 
     {
          $validate = validator::make($fariha->all(),[ 
-           // 'payment method'=>'payment method'
-    
+            'expense_id' => 'required',
+            'name' => 'required|string|max:255',
+            'status' => 'required',
 
          ]);
 
@@ -78,8 +79,7 @@ public function form()
              return redirect()->back();
          } 
 
-
- // dd($fariha->all());    
+   
        Expensecategory::create([
         'expense_id'=>$fariha->expense_id,
         'name'=>$fariha->name,
