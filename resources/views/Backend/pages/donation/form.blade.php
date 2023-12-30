@@ -1,7 +1,3 @@
-
-@extends("Frontend.master")
-
-@section('container')
 <!DOCTYPE html>
 <html lang="en">
 
@@ -54,5 +50,4 @@
     </main >
 </body>
 
-</html><br><br>
-@endsection
+</html>
