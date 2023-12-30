@@ -4,7 +4,7 @@
 
 <div class="fh5co-hero">
 			<div class="fh5co-overlay"></div>
-			<div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(https://st3.depositphotos.com/1385248/14794/i/450/depositphotos_147947683-stock-photo-hands-with-contact-us-words.jpg);">
+			<div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url();">
 				<div class="desc animate-box">
 					<h2><strong>Contact</strong> Us</h2>
 					<span>CHILD CARE </span>
