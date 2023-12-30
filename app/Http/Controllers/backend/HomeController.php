@@ -25,9 +25,7 @@ class HomeController extends Controller
         return view("Backend.pages.dashboard",compact('donations','orphans','staff','expenses'));
         
     }
-    public function n2(){
-        return view("n2");
-    }
+
 }
 
 
