@@ -77,16 +77,17 @@ class OrphanController extends Controller
 { //dd($fariha->all());
     {
          $validate = validator::make($fariha->all(),[
-            'status'=>'required', 
+            'orphan_name' => 'required|string|max:255',
+            'age' => 'required|numeric',
+            'image' => 'required', 
+            'gender' => 'required|string|max:255',
             
-
-
          ]);
 
-        // if($validate->fails()){
-            // return redirect()->back();
+        if($validate->fails()){
+            return redirect()->back();
          } 
-    {
+    
         $fileName = null;
         if ($fariha->hasFile('image')) {
             $file = $fariha->file('image');

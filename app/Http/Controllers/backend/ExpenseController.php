@@ -72,7 +72,11 @@ class ExpenseController extends Controller
     {
 
         $validate = validator::make($noshin->all(), [
-            // 'Title'=>'required', 
+            'title' => 'required|string|max:255',
+            'expense_by' => 'required|string|max:255',
+            'description' => 'required|string|max:255',
+            'amount' => 'required|numeric',
+            'date' => 'required|date',
 
         ]);
 
