@@ -111,21 +111,21 @@ class AdoptionController extends Controller
     public function store(Request $noshin)
     {
 
-        $validator = Validator::make($noshin->all(), [
-            'orphan_id' => 'required', 
-            'applicant_name' => 'required|string|max:255',
-            'phone' => 'required',
-            'address' => 'required|string|max:255',
-            'occupation' => 'required5',
-            'source_income' => 'required',
-            'marital_status' => 'required',
-            'gd_number' => 'required',
-            'gd_form' => 'required',
-        ]);
+        // $validator = Validator::make($noshin->all(), [
+        //     'orphan_id' => 'required', 
+        //     'applicant_name' => 'required|string|max:255',
+        //     'phone' => 'required',
+        //     'address' => 'required|string|max:255',
+        //     'occupation' => 'required5',
+        //     'source_income' => 'required',
+        //     'marital_status' => 'required',
+        //     'gd_number' => 'required',
+        //     'gd_form' => 'required',
+        // ]);
         
-        if ($validator->fails()) {
-            return redirect()->back()->withErrors($validator)->withInput();
-        }
+        // if ($validator->fails()) {
+        //     return redirect()->back()->withErrors($validator)->withInput();
+        // }
         
         $fileName = null;
         if ($noshin->hasFile('gd_form')) {
