@@ -14,7 +14,7 @@
                             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Orphan</div>
                         
 
-                            <a href="{{route('orphan.search',$orphan->id)}}">
+                            <a href="{{route('forntend.orphan.view',$orphan->id)}}">
                                 <img class="card-img-top" src="{{url('/uploads/'.$orphan->image)}}" alt="..." />
                             
                                 <div class="card-body p-4">

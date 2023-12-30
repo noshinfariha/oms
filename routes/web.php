@@ -57,9 +57,9 @@ Route::get('/forntend/orphan/list/{id}', [FrontendOrphanController::class, 'view
 
 //Adopt now 
 
-
-Route::get('/forntend/adopt/{id}', [AdoptionController::class, 'view'])->name('forntend.adopt');
 Route::post('/adoptions/store', [AdoptionController::class, 'store'])->name('adoption.store');
+Route::get('/forntend/update/{id}', [AdoptionController::class, 'adoptupdate'])->name('update');
+
 
 //Adoption Update
 
@@ -100,7 +100,10 @@ Route::group(['prefix' => 'backend'], function () {
   Route::get('/login/form', [LoginController::class, 'login'])->name('login');
   Route::post('/login/store', [LoginController::class, 'store'])->name('login.store');
 
-  Route::group(['middleware' => 'auth'], function () {
+  Route::group(['middleware' => 'auth'], function () { 
+    Route::get('/forntend/adopt/{id}', [AdoptionController::class, 'view'])->name('forntend.adopt');
+
+
     Route::group(['middleware' => 'adminLogin'], function () {
       Route::get('/', [HomeController::class, 'home'])->name("dashboard");
 
@@ -178,6 +181,8 @@ Route::group(['prefix' => 'backend'], function () {
       Route::get('adoptions/view/{id}', [AdoptionController::class, 'view'])->name('adoption.view');
       Route::get('adoptions/accept/{id}', [AdoptionController::class, 'accept'])->name('adoption.accept');
       Route::get('adoptions/reject/{id}', [AdoptionController::class, 'reject'])->name('adoption.reject');
+      Route::get('/forntend/adopt/{id}', [AdoptionController::class, 'view'])->name('forntend.adopt');
+
 
 
 

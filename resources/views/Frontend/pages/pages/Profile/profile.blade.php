@@ -105,7 +105,7 @@
                     @endif
 
                     @if($adoption->status !='adopted')
-                    <a href="{{route('front.adoption.edit', $adoption->id)}}" class="btn btn-m  btn-success">Update</a>
+                    <a href="{{route('update', $adoption->id)}}" class="btn btn-m  btn-success">Update</a>
                     @endif
 
                 
