@@ -18,6 +18,7 @@ use App\Http\Controllers\backend\LoginController;
 use App\Http\Controllers\backend\LogoutController;
 use App\Http\Controllers\backend\CentersetupController;
 use App\Http\Controllers\backend\ExpensecategoryController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController as ControllersDashboardController;
 use App\Http\Controllers\frontend\HomeController as FrontendHomeController;
 use App\Http\Controllers\frontend\orphanController as FrontendOrphanController;
@@ -35,6 +36,9 @@ Route::get('/user/profile', [frontendUserController::class, 'userprofile'])->nam
 Route::get('/registartion', [FrontendHomeController::class, 'registration'])->name('user.registration');
 Route::post('/registration/store', [frontendUserController::class, 'store'])->name('User.store');
 
+
+Route::get('/contact',[ ContactController::class,'index'])->name('contact.index');
+Route::post('/contact-store',[ ContactController::class,'store'])->name('contact.store');
 
 
 Route::get('/user/login', [frontendUserController::class, 'login'])->name('Login_User');

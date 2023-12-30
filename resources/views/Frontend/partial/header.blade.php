@@ -34,7 +34,7 @@
 					<nav id="fh5co-menu-wrap" role="navigation">
 						<ul class="sf-menu" id="fh5co-primary-menu">
 							<li class="active">
-								<a href="index.html">Home</a>
+								<a href="{{route('frontend')}}">Home</a>
 							</li>
 			  
 			  
@@ -49,7 +49,7 @@
 								</ul>
 							</li>
 
-							<li class=""><a href="http://127.0.0.1:8000/user/profile#" class="fh5co-sub-ddown sf-with-ul mouse2">Projects</a>
+							<li class=""><a href="#" class="fh5co-sub-ddown sf-with-ul mouse2">Projects</a>
 								<ul class="fh5co-sub-menu dropdown-content2" style="display: none;">
 								<li><a href="https://www.free-css.com/free-css-templates">Water World</a></li>
 								<li><a href="https://www.free-css.com/free-css-templates">Cloth Giving</a></li>
@@ -58,7 +58,7 @@
 							</li>
 							<li><a href="donor.html">Donor</a></li>
 							<li><a href="{{route('forntend.orphon.list')}}">Orphan</a></li>
-							<li><a href="contact.html">Contact</a></li>
+							<li><a href="{{url('/contact')}}">Contact</a></li>
 							@guest
 							<li style="margin-left: 10px;">
 								<a href="{{route('user.registration')}}" class="btn btn-primary btn-lg active  ml-5" role="button" aria-pressed="true">Registration </a>
