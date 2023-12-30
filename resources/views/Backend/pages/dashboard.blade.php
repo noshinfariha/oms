@@ -11,13 +11,12 @@
 <i class="material-icons opacity-10">weekend</i>
 </div>
 <div class="text-end pt-1">
-<p class="text-sm mb-0 text-capitalize">Todays Money</p>
+<p class="text-sm mb-0 text-capitalize">Total donation</p>
 <h4 class="mb-0">{{$donations}}</h4>
 </div>
 </div>
 <hr class="dark horizontal my-0">
 <div class="card-footer p-3">
-<p class="mb-0"><span class="text-success text-sm font-weight-bolder">+55% </span>than last week</p>
 </div>
 </div>
 </div>
@@ -28,13 +27,12 @@
 <i class="material-icons opacity-10">person</i>
 </div>
 <div class="text-end pt-1">
-<p class="text-sm mb-0 text-capitalize">Today's Orphans</p>
+<p class="text-sm mb-0 text-capitalize">Total orphans</p>
 <h4 class="mb-0">{{$orphans}}</h4>
 </div>
 </div>
 <hr class="dark horizontal my-0">
 <div class="card-footer p-3">
-<p class="mb-0"><span class="text-success text-sm font-weight-bolder">+3% </span>than last month</p>
 </div>
 </div>
 </div>
@@ -45,13 +43,12 @@
 <i class="material-icons opacity-10">person</i>
 </div>
 <div class="text-end pt-1">
-<p class="text-sm mb-0 text-capitalize">New Staff</p>
+<p class="text-sm mb-0 text-capitalize">Total Staff</p>
 <h4 class="mb-0">{{$staff}}</h4>
 </div>
 </div>
 <hr class="dark horizontal my-0">
 <div class="card-footer p-3">
-<p class="mb-0"><span class="text-danger text-sm font-weight-bolder">-2%</span> than yesterday</p>
 </div>
 </div>
 </div>
@@ -68,7 +65,6 @@
 </div>
 <hr class="dark horizontal my-0">
 <div class="card-footer p-3">
-<p class="mb-0"><span class="text-success text-sm font-weight-bolder">+5% </span>than yesterday</p>
 </div>
 </div>
 </div>

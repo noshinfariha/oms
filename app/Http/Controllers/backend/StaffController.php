@@ -81,10 +81,10 @@ public function update(Request $request, $id)
 
             {
                 $validate = validator::make($noshin->all(),[
-                   'email'=>'required', 
-                   
-       
-       
+                    'fullname' => 'required|string|max:255',
+                    'email' => 'required|email|unique:staff,email',
+                    'phone' => 'required|string|max:15',
+                    'address' => 'required|string|max:255',
                 ]);
        
                 if($validate->fails()){
