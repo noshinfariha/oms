@@ -36,18 +36,7 @@
 							<li class="active">
 								<a href="{{route('frontend')}}">Home</a>
 							</li>
-			  
-			  
-			  				<li>
-								<a href="http://127.0.0.1:8000/user/profile#" class="fh5co-sub-ddown sf-with-ul mouse1">Get Involved</a>
-								<ul class="fh5co-sub-menu dropdown-content1" style="display: none;">
-									<li><a href="http://127.0.0.1:8000/donations/form">Donate</a></li>
-									<li><a href="http://127.0.0.1:8000/user/profile#">Fundraise</a></li>
-									<li><a href="http://127.0.0.1:8000/user/profile#">Campaign</a></li>
-									<li><a href="http://127.0.0.1:8000/user/profile#">Philantrophy</a></li>
-									<li><a href="http://127.0.0.1:8000/user/profile#">Volunteer</a></li>
-								</ul>
-							</li>
+			  			  				
 
 							<li class=""><a href="#" class="fh5co-sub-ddown sf-with-ul mouse2">Projects</a>
 								<ul class="fh5co-sub-menu dropdown-content2" style="display: none;">

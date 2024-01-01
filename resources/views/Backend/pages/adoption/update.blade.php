@@ -1,3 +1,7 @@
+@extends("frontend.master")
+@section('container')
+<br><br>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,27 +22,27 @@
             <form action="{{route('adoption.store')}}" method="post" enctype="multipart/form-data">
                 @csrf
 
-               Name: <p> {{$orphans->orphan_name}}</p>
-               Image: <p> <img src="{{url('/uploads/' . $orphans->image)}}" alt="Admin" class="rounded-circle" width="150" ml-5></p>
+               Name: <p> {{$edit->applicant_name}}</p>
+               Image: <p> <img src="{{url('/uploads/' . $edit->gd_form)}}" alt="Admin" class="rounded-circle" width="150" ml-5></p>
                 <div class="form-group">
                  
-                    <input type="hidden" value="{{$orphans->id}}" name="orphan_id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter ID">
+                    <input type="hidden" value="{{$edit->id}}" name="orphan_id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter ID">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Applicant Name</label>
-                    <input type="text" value="{{$orphans->applicant_name}}" name="applicant_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter First Name">
+                    <input type="text" name="applicant_name" class="form-control" value="{{$edit->applicant_name}}" placeholder="Enter First Name">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Phone</label>
-                    <input required type="number" name="phone" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="id">
+                    <input required type="number" name="phone" value="{{$edit->phone}}" class="form-control" placeholder="018020202020">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Address</label>
-                    <input type="text" name="address" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
+                    <input type="text" name="address" class="form-control" value="{{$edit->address}}" placeholder="Enter name">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Occupation</label>
-                    <input type="text" name="occupation" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter date">
+                    <input type="text" name="occupation" class="form-control" value="{{$edit->occupation}}"  placeholder="Enter date">
                 </div>
                 <div class="form-group">
                     <label class="mt-2">Source of Income</label>
@@ -62,11 +66,11 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">GD Number</label>
-                    <input type="number" name="gd_number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter GD Number">
+                    <input type="number" name="gd_number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter GD Number" value="{{$edit->gd_number}}">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">GD Form</label>
-                    <input type="file" name="gd_form" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter GD Number">
+                    <input type="file" name="gd_form" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter GD Number" value="{{$edit->gd_form}}">
                 </div>
                 <div class="form-group">
                     <input type="hidden" name="status" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Status">
@@ -78,4 +82,5 @@
     </main>
 </body>
 
-</html>
+</html><br><br><br><br>
+@endsection

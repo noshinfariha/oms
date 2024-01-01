@@ -62,9 +62,9 @@ class AdoptionController extends Controller
 
     public function adoptupdate($id)
     {
-        $orphans = Orphan::find($id);
+        $edit = Adoption::find($id);
         //   dd($orphans );
-        return view("Backend.pages.adoption.update", compact('orphans')); //to take data from model
+        return view("Backend.pages.adoption.update", compact('edit')); //to take data from model
 
     }
 

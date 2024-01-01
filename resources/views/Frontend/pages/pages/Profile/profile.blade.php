@@ -67,6 +67,7 @@
     <table class="table table-striped table-dark ">
         <thead>
             <tr>
+            <th scope="col">Image</th>
                 <th scope="col">Orphan Name</th>
                 <th scope="col">Applicant Name</th>
                 <th scope="col">Phone</th>
@@ -86,6 +87,7 @@
             @foreach($adoptions as $adoption)
             
             <tr>
+            <td><img src="{{url('/uploads/' . $adoption->gd_form)}}" alt=""></td>
                 <td>{{$adoption->orphans->orphan_name}}</td>
                 <td>{{$adoption->applicant_name}}</td>
                 <td>{{$adoption->phone}}</td>
