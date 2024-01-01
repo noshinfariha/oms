@@ -59,7 +59,7 @@ Route::get('/forntend/orphan/list/{id}', [FrontendOrphanController::class, 'view
 
 Route::post('/adoptions/store', [AdoptionController::class, 'store'])->name('adoption.store');
 Route::get('/forntend/update/{id}', [AdoptionController::class, 'adoptupdate'])->name('update');
-
+Route::post('/forntend/update-date/{id}', [AdoptionController::class, 'adoptupdatedate'])->name('update.data');
 
 //Adoption Update
 

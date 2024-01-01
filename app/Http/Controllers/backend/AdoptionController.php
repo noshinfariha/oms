@@ -182,4 +182,30 @@ public function cancel($id){
     notify()->success('Adoption Cancel');
     return redirect()->route('user.profile');
 }
+
+public function adoptupdatedate(Request $request,$id){
+    $fileName = null;
+    if ($request->hasFile('gd_form')) {
+        $file = $request->file('gd_form');
+        $fileName = date('Ymdhis') . '.' . $file->getClientOriginalExtension();
+        $file->move("uploads", $fileName);
+    }
+    $update = Adoption::find($id);
+    $update->update([
+
+            'orphan_id'         => $request->orphan_id,
+            'applicant_name'    => $request->applicant_name,
+            'phone'             => $request->phone,
+            'address'           => $request->address,
+            'occupation'        => $request->occupation,
+            'source_income'     => $request->source_income,
+            'marital_status'    => $request->marital_status,
+            'gd_number'         => $request->gd_number,
+            'gd_form'           => $fileName,
+            'status'            => 'pending',
+
+    ]);
+    notify()->success('success','Adoption updated successfully!');
+    return redirect()->back();
+}
 }

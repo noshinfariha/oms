@@ -19,7 +19,7 @@
             <h1>
                 Input your Information!
             </h1>
-            <form action="{{route('adoption.store')}}" method="post" enctype="multipart/form-data">
+            <form action="{{route('update.data',$edit->id)}}" method="post" enctype="multipart/form-data">
                 @csrf
 
                Name: <p> {{$edit->applicant_name}}</p>
@@ -76,7 +76,7 @@
                     <input type="hidden" name="status" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Status">
                 </div>
 
-                <button type="submit" class="btn btn-primary mt-2">Submit</button>
+                <button type="submit" class="btn btn-primary mt-2">Update</button>
             </form>
         </div>
     </main>
