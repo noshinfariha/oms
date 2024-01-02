@@ -22,9 +22,7 @@
             <form action="{{route('update.data',$edit->id)}}" method="post" enctype="multipart/form-data">
                 @csrf
 
-               Name: <p> {{$edit->applicant_name}}</p>
-               Image: <p> <img src="{{url('/uploads/' . $edit->gd_form)}}" alt="Admin" class="rounded-circle" width="150" ml-5></p>
-                <div class="form-group">
+               Name: <p> {{$edit->applicant_name}}</p>            
                  
                     <input type="hidden" value="{{$edit->id}}" name="orphan_id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter ID">
                 </div>
