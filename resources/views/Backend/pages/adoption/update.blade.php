@@ -22,7 +22,7 @@
             <form action="{{route('update.data',$edit->id)}}" method="post" enctype="multipart/form-data">
                 @csrf
 
-               Name: <p> {{$edit->applicant_name}}</p>
+               Name: <p> {{$edit->orphans->orphan_name}}</p>
 
                 <div class="form-group">
                  
