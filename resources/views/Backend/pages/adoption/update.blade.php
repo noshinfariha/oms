@@ -22,7 +22,9 @@
             <form action="{{route('update.data',$edit->id)}}" method="post" enctype="multipart/form-data">
                 @csrf
 
-               Name: <p> {{$edit->applicant_name}}</p>            
+               Name: <p> {{$edit->applicant_name}}</p>
+
+                <div class="form-group">
                  
                     <input type="hidden" value="{{$edit->id}}" name="orphan_id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter ID">
                 </div>
