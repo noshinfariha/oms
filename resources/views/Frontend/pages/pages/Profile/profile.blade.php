@@ -88,7 +88,7 @@
             
             <tr>
             <td><img src="{{url('/uploads/' . $adoption->gd_form)}}" alt=""></td>
-                <td>{{$adoption->orphans->orphan_name}}</td>
+            <td>{{ optional($adoption->orphans)->orphan_name }}</td>
                 <td>{{$adoption->applicant_name}}</td>
                 <td>{{$adoption->phone}}</td>
                 <td>{{$adoption->address}}</td>
