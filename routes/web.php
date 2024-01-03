@@ -42,8 +42,6 @@ Route::get('/forntend/update/{id}', [AdoptionController::class, 'adoptupdate'])-
 Route::post('/forntend/update-date/{id}', [AdoptionController::class, 'adoptupdatedate'])->name('update.data');
 
 
-
-
 Route::group(['middleware' => 'auth'], function () {
 
   Route::get('/forntend/adopt/{id}', [AdoptionController::class, 'view'])->name('forntend.adopt');
@@ -52,17 +50,10 @@ Route::group(['middleware' => 'auth'], function () {
 Route::get('/', [FrontendHomeController::class, 'frontendhome'])->name('frontend');
 Route::get('/user/profile', [frontendUserController::class, 'userprofile'])->name('user.profile');
 
-
-
-
-
 Route::get('/contact',[ ContactController::class,'index'])->name('contact.index');
 Route::post('/contact-store',[ ContactController::class,'store'])->name('contact.store');
 
-
-
 Route::get('/logout', [frontendUserController::class, 'logout'])->name('User_Logout');
-
 
 // donation route 
 Route::get('/donations/form', [DonationController::class, 'form'])->name('donation.form');
@@ -73,10 +64,6 @@ Route::post('/donations/store', [DonationController::class, 'store'])->name('don
 Route::get('/forntend/orphan/list', [FrontendOrphanController::class, 'form'])->name('forntend.orphon.list');
 Route::get('/forntend/orphan/list/{id}', [FrontendOrphanController::class, 'view'])->name('forntend.orphan.view');
 
-//Adopt now 
-
-
-
 //Adoption Update
 
 Route::get('/adoption/edit/{id}', [AdoptionController::class, 'adoptionEdit'])->name('front.adoption.edit');
@@ -86,8 +73,6 @@ Route::get('/search', [frontendOrphanController::class, 'search'])->name('orphan
 
 //Cancel Adoption
 Route::get('/adoptions/cancel/{id}', [AdoptionController::class, 'cancel'])->name('adoption.cancel');
-
-
 
 
 // SSLCOMMERZ Start
@@ -103,11 +88,6 @@ Route::post('/cancel', [SslCommerzPaymentController::class, 'cancel']);
 
 Route::post('/ipn', [SslCommerzPaymentController::class, 'ipn']);
 //SSLCOMMERZ END
-
-
-
-
-
 
 
 //BACKEND
@@ -250,10 +230,9 @@ Route::group(['prefix' => 'backend'], function () {
       Route::put('/centersetup/update/{id}', [CentersetupController::class, 'update'])->name('centersetup.update');
       Route::get('/centersetup/view/{id}', [CentersetupController::class, 'view'])->name('centersetup.view');
 
-
-
-
-
+    //Report
+    Route::get('/report',[ReportController::class,'report'])->name('report');
+    Route::get('/report/search',[ReportController::class,'reportSearch'])->name('order.report.search');
 
       Route::get('/logout', [LogoutController::class, 'logout'])->name('logout');
     });
