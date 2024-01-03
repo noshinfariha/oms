@@ -2,7 +2,7 @@
 
 @section('content')
 
-<br><br><h1 style="text-align: center">Orphan Application Report</h1>
+<br><br><h1 style="text-align: center">Orphan Adoption Report</h1>
 <div class="container">
     <form action="{{ route('order.report.search') }}" method="get">
         <div class="row">
@@ -22,7 +22,7 @@
     
     <div id="orphanReport">
 
-        <h1>Orphan Application Reports - {{ date('Y-m-d') }}</h1>
+        <h1>Orphan Adoption Reports - {{ date('Y-m-d') }}</h1>
         <table class="table table-striped">
             <thead>
             <tr>
