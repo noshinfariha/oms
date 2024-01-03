@@ -29,20 +29,38 @@ use App\Models\Expensecategory;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 //Frontend
+
+Route::get('/registartion', [FrontendHomeController::class, 'registration'])->name('user.registration');
+Route::post('/registration/store', [frontendUserController::class, 'store'])->name('User.store');
+
+Route::get('/user/login', [frontendUserController::class, 'login'])->name('Login_User');
+Route::post('/user/login', [frontendUserController::class, 'userlogin'])->name('User_Login');
+
+
+  Route::post('/adoptions/store', [AdoptionController::class, 'store'])->name('adoption.store');
+Route::get('/forntend/update/{id}', [AdoptionController::class, 'adoptupdate'])->name('update');
+Route::post('/forntend/update-date/{id}', [AdoptionController::class, 'adoptupdatedate'])->name('update.data');
+
+
+
+
+Route::group(['middleware' => 'auth'], function () {
+
+  Route::get('/forntend/adopt/{id}', [AdoptionController::class, 'view'])->name('forntend.adopt');
+
+});
 Route::get('/', [FrontendHomeController::class, 'frontendhome'])->name('frontend');
 Route::get('/user/profile', [frontendUserController::class, 'userprofile'])->name('user.profile');
 
 
-Route::get('/registartion', [FrontendHomeController::class, 'registration'])->name('user.registration');
-Route::post('/registration/store', [frontendUserController::class, 'store'])->name('User.store');
+
 
 
 Route::get('/contact',[ ContactController::class,'index'])->name('contact.index');
 Route::post('/contact-store',[ ContactController::class,'store'])->name('contact.store');
 
 
-Route::get('/user/login', [frontendUserController::class, 'login'])->name('Login_User');
-Route::post('/user/login', [frontendUserController::class, 'userlogin'])->name('User_Login');
+
 Route::get('/logout', [frontendUserController::class, 'logout'])->name('User_Logout');
 
 
@@ -57,9 +75,7 @@ Route::get('/forntend/orphan/list/{id}', [FrontendOrphanController::class, 'view
 
 //Adopt now 
 
-Route::post('/adoptions/store', [AdoptionController::class, 'store'])->name('adoption.store');
-Route::get('/forntend/update/{id}', [AdoptionController::class, 'adoptupdate'])->name('update');
-Route::post('/forntend/update-date/{id}', [AdoptionController::class, 'adoptupdatedate'])->name('update.data');
+
 
 //Adoption Update
 
@@ -101,7 +117,6 @@ Route::group(['prefix' => 'backend'], function () {
   Route::post('/login/store', [LoginController::class, 'store'])->name('login.store');
 
   Route::group(['middleware' => 'auth'], function () { 
-    Route::get('/forntend/adopt/{id}', [AdoptionController::class, 'view'])->name('forntend.adopt');
 
 
     Route::group(['middleware' => 'adminLogin'], function () {
@@ -181,7 +196,6 @@ Route::group(['prefix' => 'backend'], function () {
       Route::get('adoptions/view/{id}', [AdoptionController::class, 'view'])->name('adoption.view');
       Route::get('adoptions/accept/{id}', [AdoptionController::class, 'accept'])->name('adoption.accept');
       Route::get('adoptions/reject/{id}', [AdoptionController::class, 'reject'])->name('adoption.reject');
-      Route::get('/forntend/adopt/{id}', [AdoptionController::class, 'view'])->name('forntend.adopt');
 
 
 
