@@ -145,6 +145,7 @@ class AdoptionController extends Controller
         // dd($noshin ->all());
         Adoption::create([
             'orphan_id' => $noshin->orphan_id,
+            'user_id' => auth()->user()->id,
             'applicant_name' => $noshin->applicant_name,
             'phone' => $noshin->phone,
             'address' => $noshin->address,

@@ -70,9 +70,7 @@ class UserController extends Controller
 
     public function userprofile(){
          
-        $adoptions = Adoption::with('orphans')->get();
-
-        
+        $adoptions = Adoption::with('orphans')->where('user_id',auth()->user()->id)->get();
          
 
         return view('Frontend.pages.pages.Profile.profile',compact('adoptions'));

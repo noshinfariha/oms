@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('adoptions', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id');
             $table->string('orphan_id');
             $table->string('applicant_name');
             $table->string('phone');
