@@ -5,6 +5,7 @@ namespace App\Http\Controllers\backend;
 use App\Http\Controllers\Controller;
 use App\Models\Account;
 use App\Models\Expense;
+use App\Models\Expensecategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -18,12 +19,14 @@ class ExpenseController extends Controller
     }
     public function list()
     {
-        $expensedata = Expense::paginate(3);
+        $expensedata = Expense:: with(['category'])->paginate(3);
         return view('Backend.pages.expense.expense', compact('expensedata'));
     }
     public function form()
+
     {
-        return view('Backend.pages.expense.form');
+        $expensecategories=Expensecategory::all();
+        return view('Backend.pages.expense.form', compact ('expensecategories'));
     }
 
     public function delete($id)
@@ -46,16 +49,8 @@ class ExpenseController extends Controller
     public function update(Request $request, $id)
     {
         $expenseEdit = Expense::find($id);
-        if ($expenseEdit) {
-
-            $fileName = $expenseEdit->image;
-            if ($request->hasFile('image')) {
-                $file = $request->file('image');
-                $fileName = date('Ymdhis') . '.' . $file->getClientOriginalExtension();
-                $file->move("uploads", $fileName);
-            }
+        
             $expenseEdit->update([
-                'expense_id' => $request->expense_id,
                 'title' => $request->title,
                 'category_id' => $request->category_id,
                 'expense_by' => $request->expense_by,
@@ -65,7 +60,7 @@ class ExpenseController extends Controller
 
             ]);
             return redirect()->route('expense');
-        }
+        
     }
 
     public function store(Request $noshin)
@@ -75,12 +70,16 @@ class ExpenseController extends Controller
             'title' => 'required|string|max:255',
             'expense_by' => 'required|string|max:255',
             'description' => 'required|string|max:255',
-            'amount' => 'required|numeric',
+            'amount' => 'required|numeric|min:1',
             'date' => 'required|date',
+            'category_id' => 'required|numeric|min:0',
+
+
 
         ]);
 
         if ($validate->fails()) {
+            notify()->error($validate->getMessageBag()->first()); 
             return redirect()->back();
         }
         // dd($noshin ->all());
@@ -88,7 +87,7 @@ class ExpenseController extends Controller
         if ($acc->amount >= $noshin->amount) {
             $acc->decrement('amount',  $noshin->amount);            
             Expense::create([
-                'expense_id' => $noshin->expense_id,
+
                 'title' => $noshin->title,
                 'category_id' => $noshin->category_id,
                 'expense_by' => $noshin->expense_by,
@@ -97,6 +96,7 @@ class ExpenseController extends Controller
                 'date' => $noshin->date,
 
             ]);
+          
             notify()->success('Expence done successfully');
             return redirect()->route('expense');
         } else {

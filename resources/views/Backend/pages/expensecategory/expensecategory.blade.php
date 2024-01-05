@@ -9,7 +9,7 @@
   <table class="table table-striped table-dark">
     <thead>
       <tr>
-        <th scope="col">Expense ID</th>
+        <th scope="col">ID</th>
         <th scope="col">Name</th>
         <th scope="col">Status</th>
         <th scope="col">Action</th>
@@ -17,10 +17,12 @@
       </tr>
     </thead>
     <tbody>
+      @php //serial custom to maintain right serial
+      $id=0;
+      @endphp
 @foreach($expensecategory as $item)
       <tr>
-        <!-- <th scope="row">{{$item->id}}</th> -->
-        <td>{{$item->expense_id}}</td>
+        <th scope="row">{{++$id}}</th>
         <td>{{$item->name}}</td>
         <td>{{$item->status}}</td>
           <td>

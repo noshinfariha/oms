@@ -7,29 +7,18 @@
   <table class="table table-striped table-dark">
     <thead>
       <tr>
-        <th scope="col">Orphan Name</th>
-        <th scope="col">Age</th>
-        <th scope="col">Image</th>
-        <th scope="col">Gender</th>
-        <th scope="col">Status</th>
-        <th scope="col">Action</th>
+        <th scope="col">Amount</th>   
       </tr>
     </thead>
     <tbody>
 @foreach($accountsdata as $item)
       <tr>
-        <td>{{$item->orphan_name}}</td>
-        <td>{{$item->age}}</td>
-        <td>{{$item->image}}</td>
-        <td>{{$item->gender}}</td>
-        <td>{{$item->status}}</td>
-        <td>
-        <a href="{{route('account.view',$item->id)}}" class="btn btn-primary">View</a>
-        <a href="{{route('account.edit',$item->id)}}" class="btn btn-danger">Edit</a>
-        <a href="{{route('account.delete', $item->id)}}" class="btn btn-success">Delete</a>
-        </td>
+        <td>{{$item->amount}}</td>
       </tr>
 @endforeach
+    </tbody>
+  </table>
+
 <button onclick="printlist()">Print List</button>
     <script>
     function printlist() {

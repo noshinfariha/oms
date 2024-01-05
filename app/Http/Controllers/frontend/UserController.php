@@ -64,7 +64,7 @@ class UserController extends Controller
     public function logout()
     {
         auth()->logout();
-        notify()->success('user login success');
+        notify()->success('user logout success');
         return redirect()->route('frontend');
     }
 

@@ -74,11 +74,14 @@ class DonationController extends Controller
         // dd($noshin->all());
         $validate = validator::make($noshin->all(), [
             'payment_method' => 'required',
-        ]);
+            'amount' => 'required|numeric|min:10',
+     ]);
 
-        if ($validate->fails()) {
-            return redirect()->back();
-        }
+     if ($validate->fails()) {
+        notify()->error($validate->getMessageBag()->first()); 
+        return redirect()->back();
+    }
+        
         //store payment data
         $donation = Donation::create([
             'amount' => $noshin->amount,

@@ -80,6 +80,7 @@ public function update(Request $request, $id)
         public function store(Request $noshin){
 
             {
+                
                 $validate = validator::make($noshin->all(),[
                     'fullname' => 'required|string|max:255',
                     'email' => 'required|email|unique:staff,email',
@@ -88,7 +89,9 @@ public function update(Request $request, $id)
                 ]);
        
                 if($validate->fails()){
-                    return redirect()->back();
+                    notify()->error($validate->getMessageBag()->first()); 
+                  //  return redirect()->back();
+                   
                 } 
 
         $fileName = null;

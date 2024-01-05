@@ -1,3 +1,5 @@
+@extends("Backend.master")
+@section('content')
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,18 +20,19 @@
             </h1>
             <form action="{{route('expense.store')}}" method="post">
                 @csrf
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Expense ID</label>
-                    <input required type="number" name="expense_id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter ID">
-                </div>
+               
                 <div class="form-group">
                     <label for="exampleInputEmail1">Title</label>
                     <input type="text" name="title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Title">
                 </div>
 
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Category ID</label>
-                    <input type="number" name="category_id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Category ID">
+                    <label for="exampleInputEmail1">Category</label>
+                    <select name="category_id" class="form-control" id="">
+                        @foreach($expensecategories as $category)
+                        <option value="{{$category->id}}">{{$category->name}}</option>
+                        @endforeach
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Expense By</label>
@@ -59,3 +62,4 @@
 </body>
 
 </html>
+@endsection 

@@ -47,29 +47,20 @@ public function form()
     public function update(Request $request, $id)
     {
         $expensecategoryEdit = Expensecategory::find($id);
-        if ($expensecategoryEdit) {
-
-              $fileName=$expensecategoryEdit->image;
-            if($request->hasFile('image'))
-            {
-                $file=$request->file('image');
-                $fileName=date('Ymdhis').'.'.$file->getClientOriginalExtension();               
-                $file->move("uploads",$fileName);
       
-            }
             $expensecategoryEdit->update([
-                'expense_id' => $request->expense_id,
+
                 'name' => $request->name,
                 'status' => $request->status,  
               ]);
             return redirect()->route('expensecategory');
-        }
+        
     }
     public function store(Request $fariha)
 
     {
          $validate = validator::make($fariha->all(),[ 
-            'expense_id' => 'required',
+        
             'name' => 'required|string|max:255',
             'status' => 'required',
 
@@ -81,7 +72,7 @@ public function form()
 
    
        Expensecategory::create([
-        'expense_id'=>$fariha->expense_id,
+
         'name'=>$fariha->name,
         'status'=> $fariha->status,
       

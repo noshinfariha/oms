@@ -7,9 +7,9 @@
 <table class="table table-striped table-dark">
     <thead>
       <tr>
-        <th scope="col"> Expense ID</th>
+        <th scope="col">ID</th>
         <th scope="col">Title</th>
-        <th scope="col">Category ID</th>
+        <th scope="col">Category</th>
         <th scope="col">Expense By</th>
         <th scope="col">Description</th>
         <th scope="col">Amount</th>
@@ -18,11 +18,15 @@
 
     </thead>
     <tbody>
+    @php //serial custom to maintain right serial
+      $id=0;
+      @endphp
 @foreach($expensedata as $item)
       <tr>
-        <td>{{$item->expense_id}}</td>
+        <td>{{++$id}}</td>
         <td>{{$item->title}}</td>
-        <td>{{$item->category_id}}</td>
+        <td>{{$item->category->name?? 'N/A'}}</td>  
+        <!-- not applicable -->
         <td>{{$item->expense_by}}</td>
         <td>{{$item->description}}</td>
         <td>{{$item->amount}}</td>

@@ -18,10 +18,7 @@
             <form action="{{route('expensecategory.update', $expensecategoryEdit->id)}}"method="post" enctype="multipart/form-data"> 
                 @csrf 
                 @method('put')
-                <div class="form-group">
-                    <label for="exampleInputEmail1">ID</label>
-                    <input value="{{$expensecategoryEdit->id}}" required type="number" name="id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter ID">
-                </div>
+              
                 <div class="form-group">
                     <label for="exampleInputEmail1">Name</label>
                     <input value="{{$expensecategoryEdit->name}}" required type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Description">

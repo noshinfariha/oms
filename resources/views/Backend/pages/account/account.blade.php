@@ -2,7 +2,6 @@
 @section('content')
 <h2>Accounts Information</h2>
 
-<a href="{{route('account.form')}}" type="button" class="btn btn-dark"> Account info</a>
 <a href="{{route('account.print')}}" type="button" class="btn btn-primary"> Print</a>
 
   <table class="table table-striped table-dark">

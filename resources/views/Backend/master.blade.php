@@ -79,11 +79,12 @@
 
 @include("Backend.partial.sidebar")
 
-  <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
 
-    @include("Backend.partial.header")
+
+  <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
     
 
+  @include("Backend.partial.header")
 
 
     @yield('content')

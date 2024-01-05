@@ -13,12 +13,11 @@ return new class extends Migration
     {
         Schema::create('expenses', function (Blueprint $table) {
             $table->id();
-            $table->string('expense_id');
             $table->string('title');
-            $table->string('category_id');
+            $table->foreignId('category_id');
             $table->string('expense_by');
             $table->string('description');
-            $table->string('amount');
+            $table->unsignedBigInteger('amount');
             $table->string('date');
 
 
