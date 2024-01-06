@@ -21,7 +21,7 @@
         <td>{{$item->task}}</td>
         <td>{{$item->status}}</td>
         <td>
-        <a href="{{route('centersetup.view',$item->id)}}" class="btn btn-primary">View</a>
+  
         <a href="{{ route('centersetup.edit', $item->id) }}"class="btn btn-danger">Edit</a>
           <a href="{{ route('centersetup.delete', $item->id) }}"class="btn btn-success">Delete</a>
         </td>

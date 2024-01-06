@@ -26,7 +26,7 @@
         <td>{{$item->name}}</td>
         <td>{{$item->status}}</td>
           <td>
-          <a href="{{route('expensecategory.view',$item->id)}}" class="btn btn-primary">View</a>
+        
           <a href="{{route('expensecategory.edit', $item->id)}}" class="btn btn-danger">Edit</a>
            <a href="{{route('expensecategory.delete', $item->id)}}" class="btn btn-success">Delete</a>
 

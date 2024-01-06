@@ -185,7 +185,7 @@ class SslCommerzPaymentController extends Controller
             $validation = $sslc->orderValidate($request->all(), $tran_id, $amount, $currency);
 
             if ($validation) {
-                // dd('hi again');
+                
                 /*
                 That means IPN did not work or IPN URL was not set in your merchant panel. Here you need to update order status
                 in order table as Processing or Complete.

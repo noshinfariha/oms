@@ -5,16 +5,16 @@
 <a href="{{route('orphan.form')}}" type="button" class="btn btn-dark">Add Orphan</a>
 <a href="{{route('orphan.print')}}" type="button" class="btn btn-primary">Print</a>
 
-  <table class="table table-striped table-dark" style="background-color: red;">
+  <table class="table table-striped table-dark">
     <thead>
       <tr>
-        <th class="col bg-secondary" scope="col">Orphan Name</th>
-        <th class="col bg-secondary"scope="col" style="background-color: green;">ID</th>
-        <th class="col bg-secondary"scope="col">Age</th>
-        <th class="col bg-secondary"scope="col">Gender</th>
-        <th class="col bg-secondary"scope="col">Status</th>
-        <th class="col bg-secondary"scope="col">Image</th>
-        <th class="col bg-secondary"scope="col">Action</th>
+        <th class="col" scope="col">Orphan Name</th>
+        <th class="col"scope="col">ID</th>
+        <th class="col"scope="col">Age</th>
+        <th class="col"scope="col">Gender</th>
+        <th class="col"scope="col">Status</th>
+        <th class="col"scope="col">Image</th>
+        <th class="col"scope="col">Action</th>
       </tr>
     </thead>
     <tbody>

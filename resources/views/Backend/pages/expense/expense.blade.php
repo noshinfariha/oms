@@ -32,7 +32,7 @@
         <td>{{$item->amount}}</td>
         <td>{{$item->date}}</td>
         <td>
-        <a href="{{route('expense.view',$item->id)}}" class="btn btn-primary">View</a>
+    
         <a href="{{route('expense.edit',$item->id)}}" class="btn btn-danger">Edit</a>
         <a href="{{route('expense.delete',$item->id)}}" class="btn btn-success">Delete</a>
         </td>

@@ -34,13 +34,6 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white {{ request()->is('backend/parents/list') ? 'active bg-gradient-primary' : ''}}" href="{{route('parents')}}">
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">table_view</i>
-            </div>
-            <span class="nav-link-text ms-1">Parent</span>
-          </a>
-        <li class="nav-item">
           <a class="nav-link text-white {{ request()->is('backend/adoptions/list') ? 'active bg-gradient-primary' : ''}} " href="{{route('adoption')}}">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">table_view</i>
@@ -65,19 +58,19 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white {{ request()->is('backend/expense/list') ? 'active bg-gradient-primary' : ''}}" href="{{route('expense')}}">
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">table_view</i>
-            </div>
-            <span class="nav-link-text ms-1">Expense</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white {{ request()->is('backend/expensecategory/list') ? 'active bg-gradient-primary' : ''}} " href="{{route('expensecategory')}}">
+          <a class="nav-link text-white {{ request()->is('backend/expensecategory/list') ? 'active bg-gradient-primary' : ''}}" href="{{route('expensecategory')}}">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">table_view</i>
             </div>
             <span class="nav-link-text ms-1">Expense Category</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white {{ request()->is('backend/expense/list') ? 'active bg-gradient-primary' : ''}} " href="{{route('expense')}}">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">table_view</i>
+            </div>
+            <span class="nav-link-text ms-1">Expense</span>
           </a>
         </li>
         <li class="nav-item">
@@ -89,21 +82,42 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white {{ request()->is('backend/report') ? 'active bg-gradient-primary' : ''}}" href="{{route('report')}}">
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">table_view</i>
-            </div>
-            <span class="nav-link-text ms-1">Report</span>
-          </a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link text-white {{ request()->is('backend/centersetup/list') ? 'active bg-gradient-primary' : ''}}" href="{{route('centersetup')}}">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">table_view</i>
             </div>
-            <span class="nav-link-text ms-1">Center Setup</span>
+            <span class="nav-link-text ms-1">Center Setup</span> 
           </a>
         </li>
+
+        
+        <li class="nav-item">
+          <a class="nav-link text-white {{ request()->is('backend/report') ? 'active bg-gradient-primary' : ''}}" href="{{route('report')}}">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">table_view</i>
+            </div>
+            <span class="nav-link-text ms-1">Adoption Report</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link text-white {{ request()->is('backend/report') ? 'active bg-gradient-primary' : ''}}">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">table_view</i>
+            </div>
+            <span class="nav-link-text ms-1">Orphan Report</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link text-white {{ request()->is('backend/report') ? 'active bg-gradient-primary' : ''}}">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">table_view</i>
+            </div>
+            <span class="nav-link-text ms-1">Donation Report</span>
+          </a>
+        </li>
+
       </ul>
     </div>
     <div class="sidenav-footer position-absolute w-100 bottom-0 ">

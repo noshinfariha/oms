@@ -135,16 +135,6 @@ Route::group(['prefix' => 'backend'], function () {
       Route::get('staff/view/{id}', [StaffController::class, 'view'])->name('staff.view');
 
 
-      Route::get('/parents/print', [abcParentsController::class, 'print'])->name('parents.print');
-      Route::get('/parents/list', [abcParentsController::class, 'list'])->name('parents');
-      Route::get('/parents/form', [abcParentsController::class, 'form'])->name('parents.form');
-      Route::post('/parents/store', [abcParentsController::class, 'store'])->name('parents.store');
-      Route::get('parents/delete/{id}', [abcParentsController::class, 'delete'])->name('parents.delete');
-      Route::get('parents/edit/{id}', [abcParentsController::class, 'edit'])->name('parents.edit');
-      Route::put('parents/update/{id}', [abcParentsController::class, 'update'])->name('parents.update');
-      Route::get('parents/view/{id}', [abcParentsController::class, 'view'])->name('parents.view');
-
-
       Route::get('/report/print', [ReportController::class, 'print'])->name('report.print');
       Route::get('/report/list', [ReportController::class, 'list'])->name('report');
       Route::get('/report/form', [ReportController::class, 'form'])->name('report.form');
@@ -158,22 +148,16 @@ Route::group(['prefix' => 'backend'], function () {
 
       Route::get('/account/print', [AccountController::class, 'print'])->name('account.print');
       Route::get('/account/list', [AccountController::class, 'list'])->name('account');
-      Route::get('/account/form', [AccountController::class, 'form'])->name('account.form');
-      Route::post('/account/store', [AccountController::class, 'store'])->name('account.store');
-      Route::get('/account/{id}', [AccountController::class, 'delete'])->name('account.delete');
-      Route::get('account/edit/{id}', [AccountController::class, 'edit'])->name('account.edit');
-      Route::put('account/update/{id}', [AccountController::class, 'update'])->name('account.update');
-      Route::get('account/view/{id}', [AccountController::class, 'view'])->name('account.view');
+     
 
 
 
       Route::get('/adoptions/print', [AdoptionController::class, 'print'])->name('adoption.print');
       Route::get('/adoptions/list', [AdoptionController::class, 'list'])->name('adoption');
       Route::get('/adoptions/form', [AdoptionController::class, 'form'])->name('adoption.form');
-      Route::get('adoptions/delete/{id}', [AdoptionController::class, 'delete'])->name('adoption.delete');
       Route::get('/adoptions/edit/{id}', [AdoptionController::class, 'edit'])->name('adoption.edit');
       Route::put('adoptions/update/{id}', [AdoptionController::class, 'update'])->name('adoption.update');
-      Route::get('adoptions/view/{id}', [AdoptionController::class, 'view'])->name('adoption.view');
+     Route::get('adoptions/view/{id}', [AdoptionController::class, 'view'])->name('adoption.view');
       Route::get('adoptions/accept/{id}', [AdoptionController::class, 'accept'])->name('adoption.accept');
       Route::get('adoptions/reject/{id}', [AdoptionController::class, 'reject'])->name('adoption.reject');
 
@@ -186,7 +170,6 @@ Route::group(['prefix' => 'backend'], function () {
       Route::get('donations/delete/{id}', [DonationController::class, 'delete'])->name('donation.delete');
       Route::get('donations/edit/{id}', [DonationController::class, 'edit'])->name('donation.edit');
       Route::put('donations/update/{id}', [DonationController::class, 'update'])->name('donation.update');
-      Route::get('donations/view/{id}', [DonationController::class, 'view'])->name('donation.view');
 
 
 
@@ -197,7 +180,6 @@ Route::group(['prefix' => 'backend'], function () {
       Route::get('donor/delete/{id}', [DonorController::class, 'delete'])->name('donor.delete');
       Route::get('donor/edit/{id}', [DonorController::class, 'edit'])->name('donor.edit');
       Route::put('donor/update/{id}', [DonorController::class, 'update'])->name('donor.update');
-      Route::get('donor/view/{id}', [DonorController::class, 'view'])->name('donor.view');
 
 
 
@@ -208,7 +190,6 @@ Route::group(['prefix' => 'backend'], function () {
       Route::get('expense/delete/{id}', [ExpenseController::class, 'delete'])->name('expense.delete');
       Route::get('expense/edit/{id}', [ExpenseController::class, 'edit'])->name('expense.edit');
       Route::put('expense/update/{id}', [ExpenseController::class, 'update'])->name('expense.update');
-      Route::get('expense/view/{id}', [ExpenseController::class, 'view'])->name('expense.view');
 
 
       Route::get('/expensecategory/print', [ExpensecategoryController::class, 'print'])->name('expensecategory.print');
@@ -218,7 +199,6 @@ Route::group(['prefix' => 'backend'], function () {
       Route::get('expensecategory/delete/{id}', [ExpensecategoryController::class, 'delete'])->name('expensecategory.delete');
       Route::get('expensecategory/edit/{id}', [ExpensecategoryController::class, 'edit'])->name('expensecategory.edit');
       Route::put('expensecategory/update/{id}', [ExpensecategoryController::class, 'update'])->name('expensecategory.update');
-      Route::get('expensecategory/view/{id}', [ExpensecategoryController::class, 'view'])->name('expensecategory.view');
 
 
       Route::get('/centersetup/print', [CentersetupController::class, 'print'])->name('centersetup.print');
@@ -228,11 +208,18 @@ Route::group(['prefix' => 'backend'], function () {
       Route::get('/centersetup/delete/{id}', [CentersetupController::class, 'delete'])->name('centersetup.delete');
       Route::get('/centersetup/edit/{id}', [CentersetupController::class, 'edit'])->name('centersetup.edit');
       Route::put('/centersetup/update/{id}', [CentersetupController::class, 'update'])->name('centersetup.update');
-      Route::get('/centersetup/view/{id}', [CentersetupController::class, 'view'])->name('centersetup.view');
 
     //Report
     Route::get('/report',[ReportController::class,'report'])->name('report');
     Route::get('/report/search',[ReportController::class,'reportSearch'])->name('order.report.search');
+
+    //Route::get('/report/orphan',[ReportController::class,'reportorphan'])->name('report.orphan');
+    //Route::get('/report/orphan/search',[ReportController::class,'reportorphanSearch'])->name('report.orphan.search');
+
+    //Route::get('/report/donation',[ReportController::class,'reportdonation'])->name('report.donation');
+    //Route::get('/report/donation/search',[ReportController::class,'reportdonationSearch'])->name('report.donation.search');
+
+
 
       Route::get('/logout', [LogoutController::class, 'logout'])->name('logout');
     });
