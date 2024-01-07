@@ -20,26 +20,26 @@
                 @csrf
 
                Name: <p> {{$orphans->orphan_name}}</p>
-               Image: <p> <img src="{{url('/uploads/' . $orphans->image)}}" alt="Admin" class="rounded-circle" width="150" ml-5></p>
+               Image: <p> <img src="{{url('/uploads/' . $orphans->image)}}"  class="rounded-circle" width="150" ml-5></p>
                 <div class="form-group">
                  
-                    <input type="hidden" value="{{$orphans->id}}" name="orphan_id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter ID">
+                    <input type="hidden" value="{{$orphans->id}}" name="orphan_id" class="form-control"  placeholder="Enter ID">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Applicant Name</label>
-                    <input type="text" name="applicant_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter First Name">
+                    <input type="text" name="applicant_name" class="form-control"  placeholder="Enter Name">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Phone</label>
-                    <input required type="number" name="phone" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="id">
+                    <input required type="number" name="phone" class="form-control"  placeholder="Enter number">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Address</label>
-                    <input type="text" name="address" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
+                    <input type="text" name="address" class="form-control"  placeholder="Enter address">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Occupation</label>
-                    <input type="text" name="occupation" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter date">
+                    <input type="text" name="occupation" class="form-control"  placeholder="Enter occupation">
                 </div>
                 <div class="form-group">
                     <label class="mt-2">Source of Income</label>
@@ -52,25 +52,15 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label class="mt-2">Marital Status</label>
-                    <select class="form-control" name="marital_status" required>
-                        <option value="single">Single</option>
-                        <option value="single">Married</option>
-                        <option value="single">Divorced</option>
-                        <option value="single">Widowed</option>
-                        <option value="single">Separated</option>
-                    </select>
-                </div>
-                <div class="form-group">
                     <label for="exampleInputEmail1">GD Number</label>
-                    <input type="number" name="gd_number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter GD Number">
+                    <input type="number" name="gd_number" class="form-control"  placeholder="Enter GD Number">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">GD Form</label>
-                    <input type="file" name="gd_form" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter GD Number">
+                    <input type="file" name="gd_form" class="form-control"  placeholder="Enter GD Number">
                 </div>
                 <div class="form-group">
-                    <input type="hidden" name="status" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Status">
+                    <input type="hidden" name="status" class="form-control"  placeholder="Enter Status">
                 </div>
 
                 <button type="submit" class="btn btn-primary mt-2">Submit</button>

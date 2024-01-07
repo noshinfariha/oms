@@ -21,19 +21,19 @@
                 @csrf
                 <div class="form-group">
                     <label for="exampleInputEmail1">Task id</label>
-                    <input required type="number" name="task_id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="id">
+                    <input required type="number" name="task_id" class="form-control"  placeholder="Id">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Module</label>
-                    <input type="text" name="module" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
+                    <input type="text" name="module" class="form-control"  placeholder="Enter Name">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Task</label>
-                    <input type="text" name="task" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter date">
+                    <input type="text" name="task" class="form-control"  placeholder="Enter Task">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Status</label>
-                    <input type="text" name="status" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter date">
+                    <input type="text" name="status" class="form-control" placeholder="Enter Status">
                  </div>
                
                 <button type="submit" class="btn btn-primary mt-2">Submit</button>

@@ -20,19 +20,19 @@
                 @method('put')
                 <div class="form-group">
                     <label for="exampleInputEmail1">Task id</label>
-                    <input value="{{$centersetupEdit->task_id}}"  required type="number" name="task_id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter ID">
+                    <input value="{{$centersetupEdit->task_id}}"  required type="number" name="task_id" class="form-control"  placeholder="Enter ID">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Module</label>
-                    <input value="{{$centersetupEdit->module}}" type="text" name="module" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Module">
+                    <input value="{{$centersetupEdit->module}}" type="text" name="module" class="form-control"  placeholder="Enter Module">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Task</label>
-                    <input value="{{$centersetupEdit->task}}" type="text" name="task" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Task">
+                    <input value="{{$centersetupEdit->task}}" type="text" name="task" class="form-control"  placeholder="Enter Task">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Status</label>
-                    <input value="{{$centersetupEdit->status}}" type="text" name="status" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Status">
+                    <input value="{{$centersetupEdit->status}}" type="text" name="status" class="form-control"  placeholder="Enter Status">
                  </div>
                
                 <button type="submit" class="btn btn-primary mt-2">Submit</button>

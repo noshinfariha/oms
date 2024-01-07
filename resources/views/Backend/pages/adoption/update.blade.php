@@ -21,28 +21,21 @@
             </h1>
             <form action="{{route('update.data',$edit->id)}}" method="post" enctype="multipart/form-data">
                 @csrf
-
-                Orphan Name: <p> {{$edit->orphans->orphan_name}}</p>
-
-                <div class="form-group">
-                 
-                    <input type="hidden" value="{{$edit->id}}" name="orphan_id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter ID">
-                </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Applicant Name</label>
-                    <input type="text" name="applicant_name" class="form-control" value="{{$edit->applicant_name}}" placeholder="Enter First Name">
+                    <input type="text" name="applicant_name" class="form-control" value="{{$edit->applicant_name}}" placeholder="Enter Name">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Phone</label>
-                    <input required type="number" name="phone" value="{{$edit->phone}}" class="form-control" placeholder="018020202020">
+                    <input required type="number" name="phone" value="{{$edit->phone}}" class="form-control" placeholder="Enter Number">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Address</label>
-                    <input type="text" name="address" class="form-control" value="{{$edit->address}}" placeholder="Enter name">
+                    <input type="text" name="address" class="form-control" value="{{$edit->address}}" placeholder="Enter Address">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Occupation</label>
-                    <input type="text" name="occupation" class="form-control" value="{{$edit->occupation}}"  placeholder="Enter date">
+                    <input type="text" name="occupation" class="form-control" value="{{$edit->occupation}}"  placeholder="Enter Occupation">
                 </div>
                 <div class="form-group">
                     <label class="mt-2">Source of Income</label>
@@ -55,25 +48,17 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label class="mt-2">Marital Status</label>
-                    <select class="form-control" name="marital_status" required>
-                        <option value="single">Single</option>
-                        <option value="single">Married</option>
-                        <option value="single">Divorced</option>
-                        <option value="single">Widowed</option>
-                        <option value="single">Separated</option>
-                    </select>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">GD Number</label>
-                    <input type="number" name="gd_number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter GD Number" value="{{$edit->gd_number}}">
+                    <input type="number" name="gd_number" class="form-control"  placeholder="Enter GD Number" value="{{$edit->gd_number}}">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">GD Form</label>
-                    <input type="file" name="gd_form" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter GD Number" value="{{$edit->gd_form}}">
+                    <input type="file" name="gd_form" class="form-control" placeholder="Enter GD Number" value="{{$edit->gd_form}}">
                 </div>
                 <div class="form-group">
-                    <input type="hidden" name="status" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Status">
+                    <input type="hidden" name="status" class="form-control"  placeholder="Enter Status">
                 </div>
 
                 <button type="submit" class="btn btn-primary mt-2">Update</button>

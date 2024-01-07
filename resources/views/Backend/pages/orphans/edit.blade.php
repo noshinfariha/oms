@@ -23,10 +23,6 @@
                     <input value="{{$orphanEdit->orphan_name}}" type="text" name="orphan_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter First Name">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">ID</label>
-                    <input  value="{{$orphanEdit->id}}" type="text" name="id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter id">
-                </div>
-                <div class="form-group">
                     <label for="exampleInputEmail1">Age</label>
                     <input  value="{{$orphanEdit->age}}" required type="number" name="age" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter age">
 
@@ -47,9 +43,11 @@
                 <label for="female">Female</label>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Status</label>
-                    <input  value="{{$orphanEdit->status}}" type="text" name="status" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Status">
-                </div>
+                <label class="mt-2">Status</label>
+                    <select class="form-control" name="status" required>
+                        <option value="Active">Active</option>
+                        <option value="Inactive">Inactive</option>
+                    </select>
                 <button type="submit" class="btn btn-primary mt-2">Submit</button>
             </form>
         </div>

@@ -13,7 +13,6 @@
         <th scope="col">Address</th> 
         <th scope="col">Occupation</th>
         <th scope="col">Source of income</th>
-        <th scope="col">Marital Status</th>
         <th scope="col">GD number</th>
         <th scope="col">GD Form</th>
         <th scope="col">Status</th>
@@ -31,7 +30,6 @@
         <td>{{$item->address}}</td>
         <td>{{$item->occupation}}</td>
         <td>{{$item->source_income}}</td>
-        <td>{{$item->marital_status}}</td>
         <td>{{$item->gd_number}}</td>
         <td>{{$item->gd_form}}</td>
         <td>{{$item->status}}</td>

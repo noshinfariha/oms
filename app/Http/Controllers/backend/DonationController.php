@@ -85,7 +85,6 @@ class DonationController extends Controller
         //store payment data
         $donation = Donation::create([
             'amount' => $noshin->amount,
-
             'payment_method' => $noshin->payment_method,
             'receiver_account' => $noshin->receiver_account,
             'transaction_id' => $noshin->transaction_id,

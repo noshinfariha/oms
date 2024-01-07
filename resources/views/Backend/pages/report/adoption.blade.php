@@ -15,7 +15,7 @@
                 <input name="to_date" type="date" class="form-control">
             </div>
             <div class="col-md-4">
-                <button type="submit" class="btn btn-success">Search</button>
+                <button type="submit" class="btn btn-primary">Search</button>
             </div>
         </div>
     </form>
@@ -32,7 +32,6 @@
                 <th scope="col">Address</th>
                 <th scope="col">Occupation</th>
                 <th scope="col">Source of Income</th>
-                <th scope="col">Marital Status</th>
                 <th scope="col">GD Number</th>
                 <th scope="col">GD Form</th>
                 <th scope="col">Status</th>
@@ -48,7 +47,6 @@
                             <td>{{ $applicant->address }}</td>
                             <td>{{ $applicant->occupation }}</td>
                             <td>{{ $applicant->source_income }}</td>
-                            <td>{{ $applicant->marital_status }}</td>
                             <td>{{ $applicant->gd_number }}</td>
                             <td>{{ $applicant->gd_form }}</td>
                             <td>{{ $applicant->status }}</td>
@@ -59,7 +57,7 @@
         </table>
     </div>
 
-    <button onclick="printDiv('orphanReport')" class="btn btn-success">Print</button>
+    <button onclick="printDiv('orphanReport')" class="btn btn-primary">Print</button>
 </div>
 
 <script>

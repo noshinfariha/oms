@@ -84,7 +84,7 @@ public function update(Request $request, $id)
                 $validate = validator::make($noshin->all(),[
                     'fullname' => 'required|string|max:255',
                     'email' => 'required|email|unique:staff,email',
-                    'phone' => 'required|string|max:15',
+                    'phone' => 'required|string|max:11|min:11',
                     'address' => 'required|string|max:255',
                 ]);
        

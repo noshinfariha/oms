@@ -20,20 +20,20 @@
                 @method('put')
                 <div class="form-group">
                     <label for="exampleInputEmail1">Full Name</label>
-                    <input value="{{$donorEdit->full_name}}" required type="text" name="full_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Full Name">
+                    <input value="{{$donorEdit->full_name}}" required type="text" name="full_name" class="form-control"  placeholder="Enter Full Name">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Phone</label>
-                    <input value="{{$donorEdit->phone}}"  required type="text" name="phone" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email">
+                    <input value="{{$donorEdit->phone}}"  required type="text" name="phone" class="form-control"  placeholder="Enter Email">
                 </div>
                 
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email</label>
-                    <input value="{{$donorEdit->email}}"  required type="number" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Phone Number">
+                    <input value="{{$donorEdit->email}}"  required type="number" name="email" class="form-control"  placeholder="Enter Phone Number">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Address</label>
-                    <input value="{{$donorEdit->address}}"  required type="text" name="address" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Address">
+                    <input value="{{$donorEdit->address}}"  required type="text" name="address" class="form-control"  placeholder="Enter Address">
                 </div>
                 <button type="submit" class="btn btn-primary mt-2">Submit</button>
             </form>

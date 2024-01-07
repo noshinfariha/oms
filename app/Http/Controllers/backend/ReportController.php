@@ -17,7 +17,7 @@ public function report()
     //dd('yes');
     $applicants = Adoption::all();
 
-    return view('backend.pages.report.reports',compact('applicants'));
+    return view('Backend.pages.report.donation',compact('applicants'));
 }
 
 public function reportSearch(Request $request)
@@ -46,7 +46,7 @@ public function reportSearch(Request $request)
 
 
     $applicants=Adoption::whereBetween('created_at', [$from, $to])->get();
-    return view('backend.pages.report.reports',compact('applicants'));
+    return view('Backend.pages.report.adoption',compact('applicants'));
 }
 
     public function reportorphan()
@@ -54,7 +54,7 @@ public function reportSearch(Request $request)
     //dd('yes');
     $orphans = Orphan::all();
 
-    return view('backend.pages.report.orphans',compact('reportorphanSearch'));
+    return view('Backend.pages.report.orphans',compact('reportorphanSearch'));
 }
 
 public function reportorphanSearch(Request $request)

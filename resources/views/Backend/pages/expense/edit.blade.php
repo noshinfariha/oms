@@ -20,25 +20,25 @@
                 @method('put')
                 <div class="form-group">
                     <label for="exampleInputEmail1">ID</label>
-                    <input value="{{$expenseEdit->id}}" required type="number" name="id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter ID">
+                    <input value="{{$expenseEdit->id}}" required type="number" name="id" class="form-control"  placeholder="Enter ID">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Title</label>
-                    <input value="{{$expenseEdit->title}}" required type="number" name="expense_amount" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Title">
+                    <input value="{{$expenseEdit->title}}" required type="number" name="expense_amount" class="form-control" placeholder="Enter Title">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Category ID</label>
-                    <input value="{{$expenseEdit->category_id}}" required type="number" name="category_id" textarea class ="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Category ID">
+                    <input value="{{$expenseEdit->category_id}}" required type="number" name="category_id" textarea class ="form-control"  placeholder="Enter Category ID">
                 </div>
 
                 <div class="form-group">
                     <label for="exampleInputEmail1">Expense By</label>
-                    <input value="{{$expenseEdit->expense_by}}" required type="text" name="expense_by" textarea class ="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Expense By">
+                    <input value="{{$expenseEdit->expense_by}}" required type="text" name="expense_by" textarea class ="form-control"  placeholder="Enter Expense By">
                 </div>
 
                 <div class="form-group">
                     <label for="exampleInputEmail1">Description</label>
-                    <input value="{{$expenseEdit->description}}" required type="text" name="description" textarea class ="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Description">
+                    <input value="{{$expenseEdit->description}}" required type="text" name="description" textarea class ="form-control" placeholder="Enter Description">
                 </div>
 
                 <div class="form-group">

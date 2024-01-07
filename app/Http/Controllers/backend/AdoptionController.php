@@ -117,8 +117,17 @@ class AdoptionController extends Controller
         }
     }
     public function store(Request $noshin)
-    {
+    {  
+    
+        $validate = validator::make($noshin->all(), [
+            'phone' => 'required|max:15|min:11',
 
+        ]);
+
+        if ($validate->fails()) {
+            notify()->error($validate->getMessageBag()->first()); 
+            return redirect()->back();
+        }
         
         $fileName = null;
         if ($noshin->hasFile('gd_form')) {

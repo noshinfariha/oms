@@ -18,6 +18,15 @@ class UserController extends Controller
     public function store(Request $request)
     {
         // dd($request->all());
+        $validate = Validator::make($request->all(),[
+            'email'=> 'required',
+            'phone'=> 'required|min:11|max:11',
+        ]);
+        if($validate->fails()){
+            notify()->success('User registration success ');
+            return redirect()->back();
+        }
+
        
         User::create([
             'name' => $request->name,

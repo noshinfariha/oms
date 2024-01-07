@@ -4,9 +4,9 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-3 col-sm-6 text-left fh5co-link">
-						<a href="#">FAQ</a>
-						<a href="#">Forum</a>
-						<a href="#">Contact</a>
+						<a href="#"></a>
+						<a href="#"></a>
+						<a href="#"></a>
 					</div>
 					<div class="col-md-6 col-sm-6 fh5co-link">
 						<form action="{{route('orphan.search')}}" method="get">
@@ -17,9 +17,9 @@
 						</form>
 					</div>
 					<div class="col-md-3 col-sm-6 text-right fh5co-social">
-						<a href="#" class="grow"><i class="icon-facebook2"></i></a>
-						<a href="#" class="grow"><i class="icon-twitter2"></i></a>
-						<a href="#" class="grow"><i class="icon-instagram2"></i></a>
+						<a href="#" class="grow"></a>
+						<a href="#" class="grow"></a>
+						<a href="#" class="grow"></a>
 					</div>
 				</div>
 			</div>
@@ -35,19 +35,10 @@
 						<ul class="sf-menu" id="fh5co-primary-menu">
 							<li class="active">
 								<a href="{{route('frontend')}}">Home</a>
-							</li>
-			  			  				
-
-							<li class=""><a href="#" class="fh5co-sub-ddown sf-with-ul mouse2">Projects</a>
-								<ul class="fh5co-sub-menu dropdown-content2" style="display: none;">
-								<li><a href="https://www.free-css.com/free-css-templates">Water World</a></li>
-								<li><a href="https://www.free-css.com/free-css-templates">Cloth Giving</a></li>
-								<li><a href="https://www.free-css.com/free-css-templates">Medical Mission</a></li>
-								</ul>
-							</li>
 							<li><a href="donor.html">Donor</a></li>
 							<li><a href="{{route('forntend.orphon.list')}}">Orphan</a></li>
-							<li><a href="{{url('/contact')}}">Contact</a></li>
+							<li><a href="">About Us</a></li>
+								<li><a href="{{url('/contact')}}">Contact</a></li>
 							@guest
 							<li style="margin-left: 10px;">
 								<a href="{{route('user.registration')}}" class="btn btn-primary btn-lg active  ml-5" role="button" aria-pressed="true">Registration </a>
@@ -69,47 +60,6 @@
 		</header>
 	</div>
 </div>
-<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> 
-<script>
-$('.mouse1').mouseenter(function () {
-       $('.dropdown-content1').show();
-     }
- )
-$('.mouse1').mouseleave(function () {
-       $('.dropdown-content1').hide();
-     }
- )
-
- $('.dropdown-content1').mouseenter(function () {
-       $('.dropdown-content1').show();
-     }
- )
-$('.dropdown-content1').mouseleave(function () {
-       $('.dropdown-content1').hide();
-     }
- )
- 
-</script>
-
-<script>
-$('.mouse2').mouseenter(function () {
-       $('.dropdown-content2').show();
-     }
- )
-$('.mouse2').mouseleave(function () {
-       $('.dropdown-content2').hide();
-     }
- )
-
- $('.dropdown-content2').mouseenter(function () {
-       $('.dropdown-content2').show();
-     }
- )
-$('.dropdown-content2').mouseleave(function () {
-       $('.dropdown-content2').hide();
-     }
- )
- 
 
 
-</script>
+

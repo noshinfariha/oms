@@ -74,7 +74,7 @@ class OrphanController extends Controller
 
 
     public function store(Request $fariha)
-{ //dd($fariha->all());
+{ 
     {
          $validate = validator::make($fariha->all(),[
             'orphan_name' => 'required|string|max:255',
@@ -92,8 +92,6 @@ class OrphanController extends Controller
         if ($fariha->hasFile('image')) {
             $file = $fariha->file('image');
             $fileName = date('Ymdhis') . '.' . $file->getClientOriginalExtension();
-            // $destination = "uploads";
-            // $file->move($destination, $fileName);
         }
             $file->move("uploads", $fileName);
         }

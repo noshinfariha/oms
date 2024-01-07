@@ -62,7 +62,7 @@
     </div>
 
 </div>
-
+@if(count($adoptions) > 0)
 <div class=" m-6 border border-warning">
     <table class="table table-striped table-dark ">
         <thead>
@@ -73,7 +73,6 @@
                 <th scope="col">Address</th>
                 <th scope="col">Occupation</th>
                 <th scope="col">Source of Income</th>
-                <th scope="col">Marital Status</th>
                 <th scope="col">GD Number</th>
                 <th scope="col">GD Form</th>
                 <th scope="col">Status</th>
@@ -92,12 +91,8 @@
                 <td>{{$adoption->address}}</td>
                 <td>{{$adoption->occupation}}</td>
                 <td>{{$adoption->source_income}}</td>
-                <td>{{$adoption->marital_status}}</td>
                 <td>{{$adoption->gd_number}}</td>
-   
-
-                <td> <a href="{{url('/uploads/' . $adoption->gd_form)}}"  target="blank" class="btn btn-sm btn-danger">View</a></td>
-                <!-- <td>{{$adoption->gd_form}}</td> -->
+     <td> <a href="{{url('/uploads/' . $adoption->gd_form)}}"  target="blank" class="btn btn-sm btn-danger">View</a></td>
                 <td>{{$adoption->status}}</td>
                 <td >
                 @if($adoption->status=='pending')
@@ -115,6 +110,9 @@
         </tbody>
     </table>
     <br><br>
+    @else
+    <b><p style="text-align: center;">No Activity Yet</p></b>
+@endif
     <div class="mt-5 text-center"><a href="{{route('User_Logout')}}" class="btn btn-primary profile-button" type="button">Logout</a></div>
     <br><br>
 </div>

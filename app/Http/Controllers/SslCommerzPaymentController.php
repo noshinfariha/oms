@@ -202,6 +202,8 @@ class SslCommerzPaymentController extends Controller
                 $acc=Account::first();
                 $acc->increment('amount',  $amount);
 
+            notify()->success('payment done successfully');
+
                 return redirect()->route('frontend');
             }
         } else if ($donation->status == 'Processing' || $donation->status == 'Complete') {
@@ -210,7 +212,7 @@ class SslCommerzPaymentController extends Controller
              */
             echo "Transaction is successfully Completed";
         } else {
-            // dd('bye');
+            
             #That means something wrong happened. You can redirect customer to your product page.
             echo "Invalid Transaction";
         }

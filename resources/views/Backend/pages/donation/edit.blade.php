@@ -21,27 +21,25 @@
                 @method('put')
                 <div class="form-group">
                     <label for="exampleInputEmail1"> Amount</label>
-                    <input value="{{$donationEdit->amount}}"  required type="number" name="amount" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Amount">
+                    <input value="{{$donationEdit->amount}}"  required type="number" name="amount" class="form-control" placeholder="Enter Amount">
                 </div>
                 <div class="form-group">
-                <label for="exampleInputEmail1">Payment Method</label>
-                <select name="payment_method" id="" class="form-control" required>
-                    <option value="Bkash">Bank</option>
-                    <option value="Rocket">Bkash</option>
-                    <option value="Rocket">Rocket</option>
-                 </select>
+                    <label for="exampleInputEmail1">Payment Method</label>
+                    <input value="{{$donationEdit->payment_method}}"  required type="number" name="payment_method" class="form-control"  placeholder="Enter Receiver Account">
+                </div>
+              
             </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Receiver Account</label>
-                    <input value="{{$donationEdit->receiver_account}}"  required type="number" name="receiver_account" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Receiver Account">
+                    <input value="{{$donationEdit->receiver_account}}"  required type="number" name="receiver_account" class="form-control"  placeholder="Enter Receiver Account">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Transaction ID</label>
-                    <input value="{{$donationEdit->transaction_id}}"  required type="number" name="transaction_id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Transaction ID">
+                    <input value="{{$donationEdit->transaction_id}}"  required type="number" name="transaction_id" class="form-control"  placeholder="Enter Transaction ID">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Receipt</label>
-                    <input value="{{$donationEdit->task_id}}"  required type="file" name="receipt" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input value="{{$donationEdit->task_id}}"  required type="file" name="receipt" class="form-control" >
                     @error('image')
                     <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
