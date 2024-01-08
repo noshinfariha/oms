@@ -21,16 +21,16 @@
                 @csrf 
                 <div class="form-group">
                     <label for="exampleInputEmail1">Orphan Name</label>
-                    <input type="text" name="orphan_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter First Name">
+                    <input type="text" name="orphan_name" class="form-control"  placeholder="Enter First Name">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">ID</label>
-                    <input type="number" name="id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter First Name">
+                    <input type="number" name="id" class="form-control"  placeholder="Enter First Name">
                 </div>
                
                 <div class="form-group">
                     <label for="exampleInputEmail1">Age</label>
-                    <input type="number" name="age" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter First Name">
+                    <input type="number" name="age" class="form-control"  placeholder="Enter First Name">
                 </div>
 
                 <div class="form-group
@@ -43,10 +43,8 @@
                
                 <div class="form-group">
                     <label for="exampleInputEmail1">Image</label>
-                    <input  type="file" name="image" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                    <!-- @error('image')
-                    <div class="alert alert-danger">{{ $message }}</div>
-                        @enderror -->
+                    <input  type="file" name="image" class="form-control" >
+                    
                 </div>
                 <button type="submit" class="btn btn-primary mt-2">Submit</button>
             </form>

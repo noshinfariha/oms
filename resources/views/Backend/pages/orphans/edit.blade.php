@@ -20,17 +20,17 @@
                 @method('put')
                 <div class="form-group">
                     <label for="exampleInputEmail1">Orphan Name</label>
-                    <input value="{{$orphanEdit->orphan_name}}" type="text" name="orphan_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter First Name">
+                    <input value="{{$orphanEdit->orphan_name}}" type="text" name="orphan_name" class="form-control"  placeholder="Enter First Name">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Age</label>
-                    <input  value="{{$orphanEdit->age}}" required type="number" name="age" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter age">
+                    <input  value="{{$orphanEdit->age}}" required type="number" name="age" class="form-control"  placeholder="Enter age">
 
                 </div>
                         
                 <div class="form-group">
                     <label for="exampleInputEmail1">Image</label>
-                    <input  value="{{$orphanEdit->image}}"  type="file" name="image" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input  value="{{$orphanEdit->image}}"  type="file" name="image" class="form-control" >
                     @error('image')
                     <div class="alert alert-danger">{{ $message }}</div>
                         @enderror

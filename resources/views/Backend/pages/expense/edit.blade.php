@@ -43,7 +43,7 @@
 
                 <div class="form-group">
                     <label for="exampleInputEmail1">Amount</label>
-                    <input value="{{$expenseEdit->amount}}" required type="number" name="amount" textarea class ="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Amount">
+                    <input value="{{$expenseEdit->amount}}" required type="number" name="amount" textarea class ="form-control"  placeholder="Enter Amount">
                 </div>
 
                <button type="submit" class="btn btn-primary mt-2">Submit</button>

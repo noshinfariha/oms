@@ -31,7 +31,7 @@
         <td>{{$item->occupation}}</td>
         <td>{{$item->source_income}}</td>
         <td>{{$item->gd_number}}</td>
-        <td>{{$item->gd_form}}</td>
+        <td> <a href="{{url('/uploads/' . $item->gd_form)}}"  target="blank" class="btn btn-sm btn-danger">View</a></td>
         <td>{{$item->status}}</td>
 
 

@@ -25,25 +25,16 @@
                     <input type="number" name="amount" class="form-control"  placeholder="Enter Amount">
                 </div>
                 <div class="form-group">
-                <label for="exampleInputEmail1">Payment Method</label>
-                <select name="payment_method" id="" class="form-control" required>
-                    <option value="Bkash">Mobile Banking</option>
-                    <option value="Rocket">Net Banking</option>
-                
-                 </select>
-            </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Receiver Account</label>
-                    <input  type="number" name="receiver_account" class="form-control"  placeholder="Enter Type">
+                    <label for="exampleInputEmail1"> Name</label>
+                    <input type="text" name="donor_name" class="form-control"  placeholder="Enter Amount">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Transaction ID</label>
-                    <input type="number" name=" transaction_id" class="form-control"  placeholder="Enter Type">
+                    <label for="exampleInputEmail1"> Phone</label>
+                    <input type="number" name="phone" class="form-control"  placeholder="Enter Amount">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Receipt</label>
-                    <input  type="file" name="receipt" class="form-control" >
-                   
+                    <label for="exampleInputEmail1"> Address</label>
+                    <input type="text" name="address" class="form-control"  placeholder="Enter Amount">
                 </div>
                 <button type="submit" class="btn btn-primary mt-2">Submit</button>
             </form>

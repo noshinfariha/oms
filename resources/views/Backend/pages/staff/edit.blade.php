@@ -20,19 +20,19 @@
                 @method('put')
                 <div class="form-group">
                     <label for="exampleInputEmail1">Full Name</label>
-                    <input value="{{$staffEdit->full_name}}" type="text" name="full_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Full Name">
+                    <input value="{{$staffEdit->full_name}}" type="text" name="full_name" class="form-control"  placeholder="Enter Full Name">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email</label>
-                    <input value="{{$staffEdit->email}}" type="text" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email">
+                    <input value="{{$staffEdit->email}}" type="text" name="email" class="form-control"  placeholder="Enter Email">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Phone</label>
-                    <input value="{{$staffEdit->phone}}" type="number" name="phone" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Number">
+                    <input value="{{$staffEdit->phone}}" type="number" name="phone" class="form-control"  placeholder="Enter Number">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Address</label>
-                    <input value="{{$staffEdit->address}}" type="text" name="address" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Address">
+                    <input value="{{$staffEdit->address}}" type="text" name="address" class="form-control"  placeholder="Enter Address">
                 </div>
 
                

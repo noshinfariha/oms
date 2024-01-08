@@ -21,19 +21,19 @@
                 @csrf
                 <div class="form-group">
                     <label for="exampleInputEmail1">Full Name</label>
-                    <input type="text" name="fullname" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter First Name">
+                    <input type="text" name="fullname" class="form-control"  placeholder="Enter First Name">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email</label>
-                    <input type="text" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Mail">
+                    <input type="text" name="email" class="form-control"  placeholder="Enter Mail">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Phone</label>
-                    <input type="text" name="phone" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Number">
+                    <input type="text" name="phone" class="form-control"  placeholder="Enter Number">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Address</label>
-                    <input type="text" name="address" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Address">
+                    <input type="text" name="address" class="form-control" placeholder="Enter Address">
                 </div>
                
                  <button type="submit" class="btn btn-primary mt-2">Submit</button>

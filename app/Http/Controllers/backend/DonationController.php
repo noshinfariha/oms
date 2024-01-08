@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Http\Controllers\backend;
-
 use App\Models\Donation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -9,7 +7,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use App\Library\SslCommerz\SslCommerzNotification;
 use App\Models\Account;
-
 class DonationController extends Controller
 {
     public function print()
@@ -26,85 +23,31 @@ class DonationController extends Controller
     {
         return view("Backend.pages.donation.form");
     }
-
-    public function delete($id)
-    {
-        $donationDelete = Donation::find($id);
-
-        if ($donationDelete) {
-            $donationDelete->delete();
-        }
-        return redirect()->route('donation');
-    }
-    
-
-    public function edit($id)
-    {
-        $donationEdit = Donation::find($id);
-        return view('Backend.pages.donation.edit', compact('donationEdit'));
-    }
-
-    public function update(Request $request, $id)
-    {
-        $donationEdit = Donation::find($id);
-        if ($donationEdit) {
-
-            $fileName = $donationEdit->image;
-            if ($request->hasFile('image')) {
-                $file = $request->file('image');
-                $fileName = date('Ymdhis') . '.' . $file->getClientOriginalExtension();
-                $file->move("uploads", $fileName);
-            }
-
-
-            $donationEdit->update([
-                'amount' => $request->amount,
-                'payment_method' => $request->payment_method,
-                'receiver_account' => $request->receiver_account,
-                'transaction_id' => $request->transaction_id,
-                'receipt' => $request->receipt,
-                'status' => $request->status,
-
-            ]);
-            return redirect()->route('donation');
-        }
-    }
     public function store(Request $noshin)
     {
-        // dd($noshin->all());
         $validate = validator::make($noshin->all(), [
-            'payment_method' => 'required',
             'amount' => 'required|numeric|min:10',
-     ]);
-
-     if ($validate->fails()) {
-        notify()->error($validate->getMessageBag()->first()); 
-        return redirect()->back();
-    }
-        
-        //store payment data
+            'phone' => 'required|min:11|max:11',
+        ]);
+        if ($validate->fails()) {
+            notify()->error($validate->getMessageBag()->first());
+            return redirect()->back();
+        }
         $donation = Donation::create([
             'amount' => $noshin->amount,
-            'payment_method' => $noshin->payment_method,
-            'receiver_account' => $noshin->receiver_account,
-            'transaction_id' => $noshin->transaction_id,
-            'receipt' => $noshin->receipt,
-            'status'=> 'pending',
+            'name' => $noshin->donor_name,
+            'phone' => $noshin->phone,
+            'address' => $noshin->address,
         ]);
-
-        //payment
-        // dd($donation->toarray());
         $this->payment($donation);
         return redirect()->route('frontend');
     }
     public function payment($payment)
     {
-        // dd($payment);
         $post_data = array();
         $post_data['total_amount'] = $payment->amount; # You cant not pay less than 10
         $post_data['currency'] = "BDT";
-        $post_data['tran_id'] = $payment->transaction_id; // tran_id must be unique
-
+        $post_data['tran_id'] = "0";
         # CUSTOMER INFORMATION
         $post_data['cus_name'] = 'Customer Name';
         $post_data['cus_email'] = 'customer@mail.com';
@@ -116,7 +59,6 @@ class DonationController extends Controller
         $post_data['cus_country'] = "Bangladesh";
         $post_data['cus_phone'] = '8801XXXXXXXXX';
         $post_data['cus_fax'] = "";
-
         # SHIPMENT INFORMATION
         $post_data['ship_name'] = "Store Test";
         $post_data['ship_add1'] = "Dhaka";
@@ -126,24 +68,17 @@ class DonationController extends Controller
         $post_data['ship_postcode'] = "1000";
         $post_data['ship_phone'] = "8801XXXXXXXXX";
         $post_data['ship_country'] = "Bangladesh";
-
         $post_data['shipping_method'] = "NO";
         $post_data['product_name'] = "Computer";
         $post_data['product_category'] = "Goods";
         $post_data['product_profile'] = "physical-goods";
-
         # OPTIONAL PARAMETERS
         $post_data['value_a'] = "ref001";
         $post_data['value_b'] = "ref002";
         $post_data['value_c'] = "ref003";
         $post_data['value_d'] = "ref004";
-
-        // dd($post_data);
-
         $sslc = new SslCommerzNotification();
-        # initiate(Transaction Data , false: Redirect to SSLCOMMERZ gateway/ true: Show all the Payement gateway here )
         $payment_options = $sslc->makePayment($post_data, 'hosted');
-
         if (!is_array($payment_options)) {
             print_r($payment_options);
             $payment_options = array();

@@ -23,7 +23,7 @@
                
                 <div class="form-group">
                     <label for="exampleInputEmail1">Title</label>
-                    <input type="text" name="title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Title">
+                    <input type="text" name="title" class="form-control"  placeholder="Enter Title">
                 </div>
 
                 <div class="form-group">
@@ -36,22 +36,22 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Expense By</label>
-                    <input type="text" name="expense_by" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Expense By">
+                    <input type="text" name="expense_by" class="form-control" placeholder="Enter Expense By">
                 </div>
 
                 <div class="form-group">
                     <label for="exampleInputEmail1">Description</label>
-                    <input type="text" name="description" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Description">
+                    <input type="text" name="description" class="form-control"  placeholder="Enter Description">
                 </div>
 
                 <div class="form-group">
                     <label for="exampleInputEmail1">Amount</label>
-                    <input type="number" name="amount" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Amount">
+                    <input type="number" name="amount" class="form-control" placeholder="Enter Amount">
                 </div>
 
                 <div class="form-group">
                     <label for="exampleInputEmail1">Date</label>
-                    <input type="date" name="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Date">
+                    <input type="date" name="date" class="form-control"  placeholder="Enter Date">
                 </div>
                 <button type="submit" class="btn btn-primary mt-2">Submit</button>
             </form>

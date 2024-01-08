@@ -14,13 +14,10 @@ return new class extends Migration
         Schema::create('donations', function (Blueprint $table) {
             $table->id();
             $table->integer('amount');
-            $table->string('payment_method');
-            $table->string('receiver_account')->nullable();
-            $table->string('transaction_id')->unique();
-            $table->string('receipt')->nullable();
-            $table->string('status')->nullable();
-          
-              $table->timestamps();
+            $table->string('name')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('address')->nullable();
+            $table->timestamps();
         });
     }
 

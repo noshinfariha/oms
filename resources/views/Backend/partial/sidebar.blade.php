@@ -96,27 +96,10 @@
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">table_view</i>
             </div>
-            <span class="nav-link-text ms-1">Adoption Report</span>
+            <span class="nav-link-text ms-1">Report</span>
           </a>
         </li>
 
-        <li class="nav-item">
-          <a class="nav-link text-white {{ request()->is('backend/report') ? 'active bg-gradient-primary' : ''}}">
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">table_view</i>
-            </div>
-            <span class="nav-link-text ms-1">Orphan Report</span>
-          </a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link text-white {{ request()->is('backend/report') ? 'active bg-gradient-primary' : ''}}">
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">table_view</i>
-            </div>
-            <span class="nav-link-text ms-1">Donation Report</span>
-          </a>
-        </li>
 
       </ul>
     </div>

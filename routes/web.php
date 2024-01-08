@@ -135,15 +135,6 @@ Route::group(['prefix' => 'backend'], function () {
       Route::get('staff/view/{id}', [StaffController::class, 'view'])->name('staff.view');
 
 
-      Route::get('/report/print', [ReportController::class, 'print'])->name('report.print');
-      Route::get('/report/list', [ReportController::class, 'list'])->name('report');
-      Route::get('/report/form', [ReportController::class, 'form'])->name('report.form');
-      Route::post('/report/store', [ReportController::class, 'store'])->name('report.store');
-      Route::get('report/delete/{id}', [ReportController::class, 'delete'])->name('report.delete');
-      Route::get('report/edit/{id}', [ReportController::class, 'edit'])->name('report.edit');
-      Route::put('report/update/{id}', [ReportController::class, 'update'])->name('report.update');
-      Route::get('report/view/{id}', [ReportController::class, 'view'])->name('report.view');
-
 
 
       Route::get('/account/print', [AccountController::class, 'print'])->name('account.print');
@@ -211,13 +202,13 @@ Route::group(['prefix' => 'backend'], function () {
 
     //Report
     Route::get('/report',[ReportController::class,'report'])->name('report');
-    Route::get('/report/search',[ReportController::class,'reportSearch'])->name('order.report.search');
+    Route::get('/report/search',[ReportController::class,'reportSearch'])->name('adoption.report.search');
 
-    Route::get('/report/orphan',[ReportController::class,'reportorphan'])->name('report.orphan');
-    Route::get('/report/orphan/search',[ReportController::class,'reportorphanSearch'])->name('report.orphan.search');
+    Route::get('/report/donation',[ReportController::class,'donationreport'])->name('donation.report');
+    Route::get('/report/donation/search',[ReportController::class,'reportdonationSearch'])->name('donation.report.search');
 
-    Route::get('/report/donation',[ReportController::class,'reportdonation'])->name('report.donation');
-    Route::get('/report/donation/search',[ReportController::class,'reportdonationSearch'])->name('report.donation.search');
+    Route::get('/report/orphan',[ReportController::class,'orphanreport'])->name('orphan.report');
+    Route::get('/report/orphan/search',[ReportController::class,'reportorphanSearch'])->name('orphan.report.search');
 
 
 

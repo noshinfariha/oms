@@ -16,9 +16,13 @@
         </tr>
     </thead>
     <tbody>
+    @php //serial custom to maintain right serial
+      $id=0;
+      @endphp
 @foreach($staffdata as $item)
       <tr>
-        <td>{{$item->full_name}}</td>
+       <td>{{++$id}}</td>
+      <td>{{$item->full_name}}</td>
         <td>{{$item->email}}</td>
         <td>{{$item->phone}}</td>
         <td>{{$item->address}}</td>

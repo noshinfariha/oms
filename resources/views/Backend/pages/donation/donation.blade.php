@@ -9,27 +9,19 @@
     <thead>
       <tr>
         <th scope="col">Amount</th>
-        <th scope="col">Payment Method</th> 
-        <th scope="col">Receiver Account</th> 
-        <th scope="col">Transaction ID</th> 
-        <th scope="col">Receipt</th> 
-         <th scope="col">Status</th> 
-          <th scope="col">Action</th>
+        <th scope="col">Donor Name</th> 
+        <th scope="col">Phone</th> 
+        <th scope="col">Address</th> 
       </tr>
     </thead>
     <tbody>
 @foreach($donationsdata as $item)
       <tr>
         <td>{{$item->amount}}</td>
-        <td>{{$item->payment_method}}</td>
-        <td>{{$item->receiver_account}}</td>
-        <td>{{$item->transaction_id}}</td>
-        <td>{{$item->receipt}}</td>
-        <td>{{$item->status}}</td>
-        <td>
-        <a href="{{route('donation.edit', $item->id)}}" class="btn btn-danger">Edit</a>
-          <a href="{{route('donation.delete', $item->id)}}" class="btn btn-success">Delete</a>
-        </td>
+        <td>{{$item->name}}</td>
+        <td>{{$item->phone}}</td>
+        <td>{{$item->address}}</td>
+
       </tr>
 @endforeach
     </tbody>
