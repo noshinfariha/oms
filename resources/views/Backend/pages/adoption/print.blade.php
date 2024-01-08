@@ -1,0 +1,49 @@
+@extends("Backend.master")
+@section('content')
+<h2>Adoption Information</h2>
+
+<table class="table table-striped table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Orphan Name</th>
+        <th scope="col">Applicant Name</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Address</th> 
+        <th scope="col">Occupation</th>
+        <th scope="col">Source of income</th>
+        <th scope="col">GD number</th>
+        <th scope="col">GD Form</th>
+         <th scope="col">Action</th>        
+     </tr>  
+    </thead>
+    <tbody>
+@foreach($adoptionsdata as $item)
+      <tr>
+    
+        <td>{{$item->orphans->orphan_name}}</td>
+        <td>{{$item->applicant_name}}</td>
+        <td>{{$item->phone}}</td>
+        <td>{{$item->address}}</td>
+        <td>{{$item->occupation}}</td>
+        <td>{{$item->source_income}}</td>
+        <td>{{$item->gd_number}}</td>
+        <td>{{$item->gd_form}}</td>
+
+       <td>
+        <a href="{{route('adoption.view',$item->id)}}" class="btn btn-primary">Accept</a>
+          <a href="{{route('adoption.delete', $item->id) }}"class="btn btn-success">Reject</a>
+        </td>
+      </tr>
+@endforeach
+
+<button onclick="printlist()">Print List</button>
+    <script>
+    function printlist() {
+        window.print();
+    }
+    </script>
+    </tbody>
+  </table>
+
+{{ $adoptionsdata->links() }}
+@endsection
