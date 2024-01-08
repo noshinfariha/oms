@@ -99,11 +99,9 @@
             <thead>
             <tr>
                 <th scope="col">Amount</th>
-                <th scope="col">Payment Method</th>
-                <th scope="col">Receiver Account</th>
-                <th scope="col">Transaction ID</th>
-                <th scope="col">Receipt</th>
-                <th scope="col">Status</th>
+                <th scope="col">Name</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Address</th>      
             </tr>
             </thead>
             <tbody>
@@ -111,12 +109,11 @@
                     @foreach($donations as $key => $donation)
                         <tr>
                             <th scope="row">{{ $key + 1 }}</th>
-                            <td>{{ $applicant->amount }}</td>
-                            <td>{{ $applicant->payment_method }}</td>
-                            <td>{{ $applicant->receiver_account }}</td>
-                            <td>{{ $applicant->transaction_id}}</td>
-                            <td>{{ $applicant->receipt}}</td>
-                            <td>{{ $applicant->status }}</td>
+                            <td>{{ $donation->amount }}</td>
+                            <td>{{ $donation->name }}</td>
+                            <td>{{ $donation->phone }}</td>
+                            <td>{{ $donation->address}}</td>
+                            <
                             
                         </tr>
                     @endforeach
@@ -168,12 +165,12 @@
                     @foreach($orphans as $key => $orphan)
                         <tr>
                             <th scope="row">{{ $key + 1 }}</th>
-                            <td>{{ $applicant->id }}</td>
-                            <td>{{ $applicant->orphan_name}}</td>
-                            <td>{{ $applicant->age }}</td>
-                            <td>{{ $applicant->gender}}</td>
-                            <td>{{ $applicant->status }}</td>
-                            <td>{{ $applicant->image }}</td>     
+                            <td>{{ $orphan->id }}</td>
+                            <td>{{ $orphan->orphan_name}}</td>
+                            <td>{{ $orphan->age }}</td>
+                            <td>{{ $orphan->gender}}</td>
+                            <td>{{ $orphan->status }}</td>
+                            <td>{{ $orphan->image }}</td>     
                         </tr>
                     @endforeach
                 @endif

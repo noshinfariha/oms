@@ -17,8 +17,10 @@ public function report()
 {
     
     $applicants = Adoption::all();
+  $donations = Donation::all();
+    $orphans = Orphan::all();
 
-    return view('Backend.pages.report.reports',compact('applicants'));
+    return view('Backend.pages.report.reports',compact('applicants','donations','orphans'));
 }
 
 public function reportSearch(Request $request)

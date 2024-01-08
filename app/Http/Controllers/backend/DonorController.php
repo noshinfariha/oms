@@ -5,6 +5,7 @@ namespace App\Http\Controllers\backend;
 use App\Models\Donor;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Donation;
 use Illuminate\Support\Facades\Validator;
 
 class DonorController extends Controller
@@ -14,14 +15,14 @@ class DonorController extends Controller
         return view("Backend.pages.donor.print",compact('donorsdata'));
     }
     public function list(){
-        $donorsdata=Donor::paginate(3);
+        $donorsdata=Donation::paginate(3);
         return view("Backend.pages.donor.donor",compact('donorsdata'));
     }
     public function form(){
         return view("Backend.pages.donor.form");
     }
-    public function delete($id)
-{
+
+
 
         
 
@@ -48,7 +49,7 @@ public function store (Request $noshin){
     }
 }
 
-} 
+
 
 
 

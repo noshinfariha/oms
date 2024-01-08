@@ -18,27 +18,19 @@
             <form action="{{route('donor.store')}}"method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Full Name</label>
+                    <label for="exampleInputEmail1"> Name</label>
                     <input type="text" name="full_name" class="form-control"  placeholder="Enter First Name">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Phone</label>
                     <input type="number" name="phone" class="form-control" placeholder="Enter Mail">
                 </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Email</label>
-                    <input type="text" name="email" class="form-control"  placeholder="Enter Password">
-                </div>
+              
                 <div class="form-group">
                     <label for="exampleInputEmail1">Address</label>
                     <input type="text" name="role" class="form-control"  placeholder="Enter Address">
                 </div>
 
-
-                <select class="form-control" name="role" required>                    
-                        <option value="Parent">parent</option>
-                        <option value="Donor">donor</option>                   
-                </select>
 
                 <button type="submit" class="btn btn-primary mt-2">Submit</button>
             </form>

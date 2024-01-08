@@ -1,7 +1,7 @@
 @extends('Frontend.master')
 
 @section('container')
-<h2>Orphans Information</h2>
+<h2 class="text-center">Orphans Information </h2>
 
 <div class="row pt-4">
   @foreach($orphansdata as $item)

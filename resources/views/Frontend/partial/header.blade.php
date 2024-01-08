@@ -35,7 +35,7 @@
 						<ul class="sf-menu" id="fh5co-primary-menu">
 							<li class="active">
 								<a href="{{route('frontend')}}">Home</a>
-							<li><a href="donor.html">Donor</a></li>
+							<li><a href="{{route('frontend.donor')}}">Donor</a></li>
 							<li><a href="{{route('forntend.orphon.list')}}">Orphan</a></li>
 							<li><a href="">About Us</a></li>
 								<li><a href="{{url('/contact')}}">Contact</a></li>

@@ -20,6 +20,7 @@ use App\Http\Controllers\backend\CentersetupController;
 use App\Http\Controllers\backend\ExpensecategoryController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController as ControllersDashboardController;
+use App\Http\Controllers\frontend\donorController as FrontendDonorController;
 use App\Http\Controllers\frontend\HomeController as FrontendHomeController;
 use App\Http\Controllers\frontend\orphanController as FrontendOrphanController;
 use App\Http\Controllers\frontend\UserController as frontendUserController;
@@ -29,6 +30,9 @@ use App\Models\Expensecategory;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 //Frontend
+
+Route::get('/frontend-donor-list', [FrontendDonorController::class, 'frontend_donor_list'])->name('frontend.donor');
+
 
 Route::get('/registartion', [FrontendHomeController::class, 'registration'])->name('user.registration');
 Route::post('/registration/store', [frontendUserController::class, 'store'])->name('User.store');

@@ -50,7 +50,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white {{ request()->is('backend/donors/list') ? 'active bg-gradient-primary' : ''}} " href="{{route('donor')}}">
+          <a class="nav-link text-white {{ request()->is('backend/donor/list') ? 'active bg-gradient-primary' : ''}} " href="{{route('donor')}}">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">table_view</i>
             </div>
