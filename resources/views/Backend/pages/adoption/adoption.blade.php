@@ -27,7 +27,7 @@
         <td>{{$item->orphans->orphan_name}}</td>
         <td>{{$item->applicant_name}}</td>
         <td>{{$item->phone}}</td>
-        <td>{{$item->address}}</td>
+        <td>{{$item->address}}</td> kk
         <td>{{$item->occupation}}</td>
         <td>{{$item->source_income}}</td>
         <td>{{$item->gd_number}}</td>
